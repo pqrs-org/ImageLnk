@@ -150,7 +150,7 @@ class ImageLnkTest extends PHPUnit_Framework_TestCase {
   // ======================================================================
   function test_lockerz1() {
     $url = 'http://lockerz.com/s/71921454';
-    $title = "Butternekojump's Photo | Lockerz";
+    $title = "noeynekojump's Photo | Lockerz";
     $imageurls = array(
       'http://c0013619.r32.cf1.rackcdn.com/x2_4496f2e',
       );
@@ -227,7 +227,7 @@ class ImageLnkTest extends PHPUnit_Framework_TestCase {
   }
 
   // ======================================================================
-  private $pixiv_author_ = '柴系＠ティア99【い12ｂ】';
+  private $pixiv_author_ = '柴系＠ティア99【い12ａ】';
 
   function test_pixiv1() {
     $url = 'http://www.pixiv.net/member_illust.php?mode=medium&illust_id=10461576';
@@ -445,7 +445,7 @@ class ImageLnkTest extends PHPUnit_Framework_TestCase {
   // ======================================================================
   function test_wikipedia1() {
     $url = 'http://en.wikipedia.org/wiki/File:PANSDeinonychus.JPG';
-    $title = 'PANSDeinonychus.JPG English: Deinonychus antirrhopus skeleton, Philadelphia Academy of Natural Sciences';
+    $title = 'English: Deinonychus antirrhopus skeleton, Philadelphia Academy of Natural Sciences';
     $imageurls = array(
       'http://upload.wikimedia.org/wikipedia/commons/e/e6/PANSDeinonychus.JPG',
       );
@@ -599,10 +599,10 @@ class ImageLnkTest extends PHPUnit_Framework_TestCase {
   }
 
   function test_zakzak2() {
-    $url = 'http://www.zakzak.co.jp/gravure/idol/photos/20110806/idl1108061505000-p12.htm';
-    $title = '巨乳れい、運動会でおっぱいモミモミ！  - グラビアアイドル - ZAKZAK';
+    $url = 'http://www.zakzak.co.jp/sports/baseball/photos/20120216/bbl1202161232005-p1.htm';
+    $title = '中畑監督、イカをもらい「まあイイか」  - スポーツ - ZAKZAK';
     $imageurls = array(
-      'http://www.zakzak.co.jp/gravure/idol/images/20110806/idl1108061505000-p12.jpg',
+      'http://www.zakzak.co.jp/sports/baseball/images/20120216/bbl1202161232005-p1.jpg',
       );
     $this->check_response($url, $title, $imageurls);
   }
@@ -655,7 +655,7 @@ class ImageLnkTest extends PHPUnit_Framework_TestCase {
   }
 
   // ======================================================================
-  private $twitter_author_ = "みやびファントム（実際ちゃんとした版）";
+  private $twitter_author_ = "みやびフォトンマップ（実際間接照明）";
   function test_twitter1() {
     $url = 'http://twitter.com/#!/miyabiarts/status/112889718550691840';
     $title = "twitter: {$this->twitter_author_}: 定期的に貼っておこう。 http://t.co/rvCK9mr";
@@ -725,7 +725,7 @@ class ImageLnkTest extends PHPUnit_Framework_TestCase {
   // ======================================================================
   function test_cookpad1() {
     $url = 'http://cookpad.com/recipe/720203';
-    $title = '大根とツナとホタテのサラダ♪ by ともにゃんママ [クックパッド] 簡単おいしいみんなのレシピが112万品';
+    $title = '大根とツナとホタテのサラダ♪ by ともにゃんママ [クックパッド] 簡単おいしいみんなのレシピが115万品';
     $imageurls = array(
       'http://d3921.cpcdn.com/recipes/720203/280/24ece10f66b104ef0562b0b2f477d49f.jpg?u=887658&p=1232792798',
       );
