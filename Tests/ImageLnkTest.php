@@ -127,6 +127,15 @@ class ImageLnkTest extends PHPUnit_Framework_TestCase {
     $this->check_response($url, $title, $imageurls);
   }
 
+  function test_ascii3() {
+    $url = 'http://ascii.jp/elem/000/000/672/672411/img800.html';
+    $title = '寒い日に寄り添ってぬくぬくする猫たち';
+    $imageurls = array(
+      'http://ascii.jp/elem/000/000/672/672411/DSC00017_800x.jpg',
+      );
+    $this->check_response($url, $title, $imageurls);
+  }
+
   // ======================================================================
   function test_akibablog1() {
     $url = 'http://node3.img3.akibablog.net/11/may/1/real-qb/119.html';

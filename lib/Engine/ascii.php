@@ -5,7 +5,7 @@ class ImageLnkEngine_ascii {
   const sitename = 'http://ascii.jp/';
 
   public static function handle_common($url) {
-    if (! preg_match('/^http:\/\/ascii\.jp(\/elem\/.*?\/)img.html$/', $url, $matches)) {
+    if (! preg_match('/^http:\/\/ascii\.jp(\/elem\/.*?\/)img.*\.html$/', $url, $matches)) {
       return FALSE;
     }
 
