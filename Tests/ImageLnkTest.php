@@ -464,7 +464,7 @@ class ImageLnkTest extends PHPUnit_Framework_TestCase {
   // ======================================================================
   function test_instagram1() {
     $url = 'http://instagr.am/p/E6VjC/';
-    $title = 'photo: “おはよう”';
+    $title = 'おはよう';
     $imageurls = array(
       'http://distillery.s3.amazonaws.com/media/2011/05/29/9c4d66f169a24764961977326e2fc1cf_7.jpg',
       );

@@ -17,10 +17,8 @@ class ImageLnkEngine_instagram {
     $response->setReferer($url);
 
     ImageLnkHelper::setResponseFromOpenGraph($response, $html);
-
-    if (preg_match('/<div class="caption">(.*?)<\/div>/s', $html, $matches)) {
-      $response->setTitle($response->getTitle() . ': ' . trim($matches[1]));
-    }
+    // Decode \xXX
+    $response->setTitle(preg_replace ('/\\\\x([0-9a-fA-F]{2})/e', "pack('H*',utf8_decode('\\1'))", $response->getTitle()));
 
     return $response;
   }
