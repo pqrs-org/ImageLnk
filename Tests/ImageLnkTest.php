@@ -236,7 +236,7 @@ class ImageLnkTest extends PHPUnit_Framework_TestCase {
   }
 
   // ======================================================================
-  private $pixiv_author_ = '柴系＠ティア99【い12ａ】';
+  private $pixiv_author_ = '柴系';
 
   function test_pixiv1() {
     $url = 'http://www.pixiv.net/member_illust.php?mode=medium&illust_id=10461576';
@@ -514,7 +514,7 @@ class ImageLnkTest extends PHPUnit_Framework_TestCase {
   // ======================================================================
   function test_engadget_jp1() {
     $url = 'http://japanese.engadget.com/photos/asus-eee-pad-memo-3d-memic-hands-on/4173481/';
-    $title = 'Asus Eee Pad MeMO 3D / MeMIC hands on - Engadget Galleries';
+    $title = 'Asus Eee Pad MeMO 3D / MeMIC hands on  - Engadget Japanese';
     $imageurls = array(
       'http://www.blogcdn.com/japanese.engadget.com/media/2011/05/asuseeepadmemohandsoncomputex1103-1306749954.jpg',
       );
@@ -523,7 +523,7 @@ class ImageLnkTest extends PHPUnit_Framework_TestCase {
 
   function test_engadget_jp2() {
     $url = 'http://japanese.engadget.com/photos/memorex-gaming-peripherals-e3-2011/4179706/';
-    $title = 'Memorex gaming Peripherals (E3 2011) - Engadget Galleries';
+    $title = 'Memorex gaming Peripherals (E3 2011)  - Engadget Japanese';
     $imageurls = array(
       'http://www.blogcdn.com/japanese.engadget.com/media/2011/06/3dsgameselector.jpg',
       );
@@ -664,7 +664,7 @@ class ImageLnkTest extends PHPUnit_Framework_TestCase {
   }
 
   // ======================================================================
-  private $twitter_author_ = "みやびフォトンマップ（実際間接照明）";
+  private $twitter_author_ = "みやび（ろくろ職人）";
   function test_twitter1() {
     $url = 'http://twitter.com/#!/miyabiarts/status/112889718550691840';
     $title = "twitter: {$this->twitter_author_}: 定期的に貼っておこう。 http://t.co/rvCK9mr";
@@ -734,7 +734,7 @@ class ImageLnkTest extends PHPUnit_Framework_TestCase {
   // ======================================================================
   function test_cookpad1() {
     $url = 'http://cookpad.com/recipe/720203';
-    $title = '大根とツナとホタテのサラダ♪ by ともにゃんママ [クックパッド] 簡単おいしいみんなのレシピが115万品';
+    $title = '大根とツナとホタテのサラダ♪ by ともにゃんママ [クックパッド] 簡単おいしいみんなのレシピが117万品';
     $imageurls = array(
       'http://d3921.cpcdn.com/recipes/720203/280/24ece10f66b104ef0562b0b2f477d49f.jpg?u=887658&p=1232792798',
       );
