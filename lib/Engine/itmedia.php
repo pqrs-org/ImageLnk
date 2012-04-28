@@ -30,7 +30,7 @@ class ImageLnkEngine_itmedia {
 
     if (preg_match_all('%<a (.+?)>%', $html, $matches)) {
       foreach ($matches[1] as $a) {
-        if (preg_match('%onclick="designCnt\(\'largeImgMain\'\);"%', $a)) {
+        if (preg_match('%onclick="designCnt\(\'largeImgMain\'\);"%i', $a)) {
           if (preg_match('%href="(.+?)"%', $a, $m)) {
             $response->setBackLink($m[1]);
             break;
