@@ -236,7 +236,7 @@ class ImageLnkTest extends PHPUnit_Framework_TestCase {
   }
 
   // ======================================================================
-  private $pixiv_author_ = '柴系＠もう恐５【こ-39】';
+  private $pixiv_author_ = '柴系＠例大祭【け44ｂ】';
 
   function test_pixiv1() {
     $url = 'http://www.pixiv.net/member_illust.php?mode=medium&illust_id=10461576';
@@ -417,7 +417,7 @@ class ImageLnkTest extends PHPUnit_Framework_TestCase {
     $url = 'http://titlebot.tumblr.com/post/5544499061';
     $title = 'titlebot: ネコと和解せよ';
     $imageurls = array(
-      'http://26.media.tumblr.com/tumblr_llal1ttZ7W1qfqa6no1_400.jpg',
+      'http://25.media.tumblr.com/tumblr_llal1ttZ7W1qfqa6no1_400.jpg',
       );
     $this->check_response($url, $title, $imageurls);
   }
@@ -734,7 +734,7 @@ class ImageLnkTest extends PHPUnit_Framework_TestCase {
   // ======================================================================
   function test_cookpad1() {
     $url = 'http://cookpad.com/recipe/720203';
-    $title = '大根とツナとホタテのサラダ♪ by ともにゃんママ [クックパッド] 簡単おいしいみんなのレシピが120万品';
+    $title = '大根とツナとホタテのサラダ♪ by ともにゃんママ [クックパッド] 簡単おいしいみんなのレシピが122万品';
     $imageurls = array(
       'http://d3921.cpcdn.com/recipes/720203/280/24ece10f66b104ef0562b0b2f477d49f.jpg?u=887658&p=1232792798',
       );
@@ -780,7 +780,7 @@ class ImageLnkTest extends PHPUnit_Framework_TestCase {
     $url = 'http://www.amazon.co.jp/gp/product/B006FCG96G/';
     $title = 'Amazon.co.jp： ピュアニーモキャラクターシリーズ 魔法少女まどか☆マギカ 暁美ほむら 制服Ver.: ホビー';
     $imageurls = array(
-      'http://ecx.images-amazon.com/images/I/41PpQnkCaoL._SL500_AA300_.jpg',
+      'http://ec2.images-amazon.com/images/I/41PpQnkCaoL._SL500_AA300_.jpg',
       );
     $this->check_response($url, $title, $imageurls);
   }
