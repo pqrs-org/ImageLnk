@@ -14,16 +14,20 @@ class ImageLnkHelper {
     }
   }
 
+  public static function collapseWhiteSpaces($text) {
+    return preg_replace("/[\t\r\n ]+/", ' ', $text);
+  }
+
   public static function setResponseFromOpenGraph($response, $html) {
     foreach (self::scanSingleTag('meta', $html) as $meta) {
-      if (preg_match('/ property="og:title"/', $meta)) {
-        if (preg_match('/ content="(.+?)"/is', $meta, $matches)) {
+      if (preg_match('/ property=[\'"]og:title[\'"]/', $meta)) {
+        if (preg_match('/ content=[\'"](.+?)[\'"]/is', $meta, $matches)) {
           $response->setTitle($matches[1]);
         }
       }
 
-      if (preg_match('/ property="og:image"/', $meta)) {
-        if (preg_match('/ content="(.+?)"/is', $meta, $matches)) {
+      if (preg_match('/ property=[\'"]og:image[\'"]/', $meta)) {
+        if (preg_match('/ content=[\'"](.+?)[\'"]/is', $meta, $matches)) {
           $response->addImageURL($matches[1]);
         }
       }

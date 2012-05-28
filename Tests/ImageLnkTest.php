@@ -789,4 +789,14 @@ class ImageLnkTest extends PHPUnit_Framework_TestCase {
     $url = 'http://ec2.images-amazon.com/images/I/41PpQnkCaoL._SL500_AA300_.jpg';
     $this->expect_false($url);
   }
+
+  // ======================================================================
+  function test_viame1() {
+    $url = 'http://via.me/-1h54j0g';
+    $title = 'fslasht(えふてぃ) (fslasht) : 今日のお昼はロースカツカレーが100円引きということでゴーゴー...';
+    $imageurls = array(
+      'http://s3.amazonaws.com/com.clixtr.picbounce/photos/36786cb0-8ab0-012f-16db-123139181e4e/s600x600.jpg',
+      );
+    $this->check_response($url, $title, $imageurls);
+  }
 }
