@@ -17,7 +17,7 @@ class ImageLnkEngine_instagram {
     $response->setReferer($url);
 
     ImageLnkHelper::setResponseFromOpenGraph($response, $html);
-    if (preg_match('/<div class="caption">(.*?)<\/div>/s', $html, $matches)) {
+    if (preg_match('/<span class="caption-text">(.*?)<\/span>/s', $html, $matches)) {
       $response->setTitle(trim($matches[1]));
     }
 
