@@ -159,7 +159,7 @@ class ImageLnkTest extends PHPUnit_Framework_TestCase {
   // ======================================================================
   function test_lockerz1() {
     $url = 'http://lockerz.com/s/71921454';
-    $title = "noeynekojump's Photo | Lockerz";
+    $title = "noeynekojump's Photo:  | Lockerz";
     $imageurls = array(
       'http://c0013619.r32.cf1.rackcdn.com/x2_4496f2e',
       );
@@ -227,22 +227,22 @@ class ImageLnkTest extends PHPUnit_Framework_TestCase {
 
   // ======================================================================
   function test_nicovideo1() {
-    $url = 'http://www.nicovideo.jp/watch/sm12589060';
-    $title = '中野テルヲ　うっかり楽曲担当してしまったのであろうCM ‐ ニコニコ動画(原宿)';
+    $url = 'http://www.nicovideo.jp/watch/sm17606436';
+    $title = '【折り紙】バラを折ってみた ‐ ニコニコ動画(原宿)';
     $imageurls = array(
-      'http://tn-skr1.smilevideo.jp/smile?i=12589060',
+      'http://tn-skr1.smilevideo.jp/smile?i=17606436',
       );
     $this->check_response($url, $title, $imageurls);
   }
 
   // ======================================================================
-  private $pixiv_author_ = '柴系＠例大祭【け44ｂ】';
+  private $pixiv_author_ = '柴系＠なおれい【かわ-１７】';
 
   function test_pixiv1() {
     $url = 'http://www.pixiv.net/member_illust.php?mode=medium&illust_id=10461576';
     $title = "「凛として鼻血」/「{$this->pixiv_author_}」のイラスト [pixiv]";
     $imageurls = array(
-      'http://img11.pixiv.net/img/taishi22/10461576.png',
+      'http://i1.pixiv.net/img11/img/taishi22/10461576.png',
       );
     $referer = 'http://www.pixiv.net/member_illust.php?mode=big&illust_id=10461576';
     $this->check_response($url, $title, $imageurls, $referer);
@@ -252,7 +252,7 @@ class ImageLnkTest extends PHPUnit_Framework_TestCase {
     $url = 'http://www.pixiv.net/member_illust.php?mode=big&illust_id=10461576';
     $title = "「凛として鼻血」/「{$this->pixiv_author_}」のイラスト [pixiv]";
     $imageurls = array(
-      'http://img11.pixiv.net/img/taishi22/10461576.png',
+      'http://i1.pixiv.net/img11/img/taishi22/10461576.png',
       );
     $this->check_response($url, $title, $imageurls);
   }
@@ -261,8 +261,8 @@ class ImageLnkTest extends PHPUnit_Framework_TestCase {
     $url = 'http://www.pixiv.net/member_illust.php?mode=manga&illust_id=18741440';
     $title = 'ははのひとってもマミさん【まどか☆マギカ】';
     $imageurls = array(
-      'http://img11.pixiv.net/img/taishi22/18741440_p0.png',
-      'http://img11.pixiv.net/img/taishi22/18741440_p1.png',
+      'http://i1.pixiv.net/img11/img/taishi22/18741440_p0.png',
+      'http://i1.pixiv.net/img11/img/taishi22/18741440_p1.png',
       );
     $this->check_response($url, $title, $imageurls);
   }
@@ -271,7 +271,7 @@ class ImageLnkTest extends PHPUnit_Framework_TestCase {
     $url = 'http://www.pixiv.net/member_illust.php?mode=manga_big&illust_id=18741440&page=1';
     $title = "「ははのひとってもマミさん【まどか☆マギカ】」/「{$this->pixiv_author_}」の漫画 [pixiv]";
     $imageurls = array(
-      'http://img11.pixiv.net/img/taishi22/18741440_big_p1.png',
+      'http://i1.pixiv.net/img11/img/taishi22/18741440_big_p1.png',
       );
     $this->check_response($url, $title, $imageurls);
   }
@@ -280,7 +280,7 @@ class ImageLnkTest extends PHPUnit_Framework_TestCase {
     $url = 'http://www.pixiv.net/member_illust.php?mode=medium&illust_id=18741440';
     $title = "「ははのひとってもマミさん【まどか☆マギカ】」/「{$this->pixiv_author_}」の漫画 [pixiv]";
     $imageurls = array(
-      'http://img11.pixiv.net/img/taishi22/18741440_big_p0.png',
+      'http://i1.pixiv.net/img11/img/taishi22/18741440_big_p0.png',
       );
     $referer = 'http://www.pixiv.net/member_illust.php?mode=manga_big&illust_id=18741440&page=0';
     $this->check_response($url, $title, $imageurls, $referer);
@@ -290,7 +290,7 @@ class ImageLnkTest extends PHPUnit_Framework_TestCase {
     $url = 'http://touch.pixiv.net/member_illust.php?mode=medium&illust_id=18741440';
     $title = "「ははのひとってもマミさん【まどか☆マギカ】」/「{$this->pixiv_author_}」の漫画 [pixiv]";
     $imageurls = array(
-      'http://img11.pixiv.net/img/taishi22/18741440_big_p0.png',
+      'http://i1.pixiv.net/img11/img/taishi22/18741440_big_p0.png',
       );
     $referer = 'http://www.pixiv.net/member_illust.php?mode=manga_big&illust_id=18741440&page=0';
     $this->check_response($url, $title, $imageurls, $referer);
@@ -311,7 +311,7 @@ class ImageLnkTest extends PHPUnit_Framework_TestCase {
     $url = 'http://www.youtube.com/watch?v=Tlmho7SY-ic&feature=player_embedded';
     $title = 'YouTube Turns Five!';
     $imageurls = array(
-      'http://i1.ytimg.com/vi/Tlmho7SY-ic/hqdefault.jpg',
+      'http://i1.ytimg.com/vi/Tlmho7SY-ic/mqdefault.jpg',
       );
     $this->check_response($url, $title, $imageurls);
   }
@@ -368,7 +368,7 @@ class ImageLnkTest extends PHPUnit_Framework_TestCase {
   // ======================================================================
   function test_twipple1() {
     $url = 'http://p.twipple.jp/6FGRA';
-    $title = 'オレもマジでつぶやき内容に注意しよう&h... : ついっぷるフォト';
+    $title = 'オレもマジでつぶやき内容に注意しよう…　今後はさわやかなつぶやきに終始しよう |エディの投稿画像';
     $imageurls = array(
       'http://p.twpl.jp/show/orig/6FGRA',
       );
@@ -464,7 +464,7 @@ class ImageLnkTest extends PHPUnit_Framework_TestCase {
   // ======================================================================
   function test_instagram1() {
     $url = 'http://instagr.am/p/E6VjC/';
-    $title = '“おはよう”';
+    $title = 'おはよう';
     $imageurls = array(
       'http://distillery.s3.amazonaws.com/media/2011/05/29/9c4d66f169a24764961977326e2fc1cf_7.jpg',
       );
@@ -734,7 +734,7 @@ class ImageLnkTest extends PHPUnit_Framework_TestCase {
   // ======================================================================
   function test_cookpad1() {
     $url = 'http://cookpad.com/recipe/720203';
-    $title = '大根とツナとホタテのサラダ♪ by ともにゃんママ [クックパッド] 簡単おいしいみんなのレシピが122万品';
+    $title = '大根とツナとホタテのサラダ♪ by ともにゃんママ [クックパッド] 簡単おいしいみんなのレシピが125万品';
     $imageurls = array(
       'http://d3921.cpcdn.com/recipes/720203/280/24ece10f66b104ef0562b0b2f477d49f.jpg?u=887658&p=1232792798',
       );
