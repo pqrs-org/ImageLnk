@@ -2,10 +2,11 @@
 
 class ImageLnkEngine_instagram {
   const language = NULL;
-  const sitename = 'http://instagr.am/';
+  const sitename = 'http://instagram.com/';
 
   public static function handle($url) {
-    if (! preg_match('/^http:\/\/instagr\.am\/p\//', $url)) {
+    if (! preg_match('%^http://instagram\.com/p/%', $url) &&
+        ! preg_match('%^http://instagr\.am/p/%', $url)) {
       return FALSE;
     }
 
