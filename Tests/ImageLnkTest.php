@@ -236,7 +236,7 @@ class ImageLnkTest extends PHPUnit_Framework_TestCase {
   }
 
   // ======================================================================
-  private $pixiv_author_ = '柴系＠なおれい【かわ-１７】';
+  private $pixiv_author_ = '柴系';
 
   function test_pixiv1() {
     $url = 'http://www.pixiv.net/member_illust.php?mode=medium&illust_id=10461576';
@@ -463,6 +463,15 @@ class ImageLnkTest extends PHPUnit_Framework_TestCase {
 
   // ======================================================================
   function test_instagram1() {
+    $url = 'http://instagram.com/p/E6VjC/';
+    $title = 'おはよう';
+    $imageurls = array(
+      'http://distillery.s3.amazonaws.com/media/2011/05/29/9c4d66f169a24764961977326e2fc1cf_7.jpg',
+      );
+    $this->check_response($url, $title, $imageurls);
+  }
+
+  function test_instagram2() {
     $url = 'http://instagr.am/p/E6VjC/';
     $title = 'おはよう';
     $imageurls = array(
@@ -795,7 +804,7 @@ class ImageLnkTest extends PHPUnit_Framework_TestCase {
     $url = 'http://via.me/-1h54j0g';
     $title = 'fslasht(えふてぃ) (fslasht) : 今日のお昼はロースカツカレーが100円引きということでゴーゴー...';
     $imageurls = array(
-      'http://s3.amazonaws.com/com.clixtr.picbounce/photos/36786cb0-8ab0-012f-16db-123139181e4e/s600x600.jpg',
+      'http://img.viame-cdn.com/photos/36786cb0-8ab0-012f-16db-123139181e4e/s600x600.jpg',
       );
     $this->check_response($url, $title, $imageurls);
   }
