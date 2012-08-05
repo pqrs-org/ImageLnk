@@ -368,7 +368,7 @@ class ImageLnkTest extends PHPUnit_Framework_TestCase {
   // ======================================================================
   function test_twipple1() {
     $url = 'http://p.twipple.jp/6FGRA';
-    $title = 'オレもマジでつぶやき内容に注意しよう…　今後はさわやかなつぶやきに終始しよう |エディの投稿画像';
+    $title = 'オレもマジでつぶやき内容に注意しよう&hellip;　今後はさわやかなつぶやきに終始しよう |エディの投稿画像';
     $imageurls = array(
       'http://p.twpl.jp/show/orig/6FGRA',
       );
@@ -673,7 +673,7 @@ class ImageLnkTest extends PHPUnit_Framework_TestCase {
   }
 
   // ======================================================================
-  private $twitter_author_ = "みやびあーつ";
+  private $twitter_author_ = "ゆとりなみやびあーつ";
   function test_twitter1() {
     $url = 'http://twitter.com/#!/miyabiarts/status/112889718550691840';
     $title = "twitter: {$this->twitter_author_}: 定期的に貼っておこう。 http://t.co/rvCK9mr";
@@ -743,7 +743,7 @@ class ImageLnkTest extends PHPUnit_Framework_TestCase {
   // ======================================================================
   function test_cookpad1() {
     $url = 'http://cookpad.com/recipe/720203';
-    $title = '大根とツナとホタテのサラダ♪ by ともにゃんママ [クックパッド] 簡単おいしいみんなのレシピが125万品';
+    $title = '大根とツナとホタテのサラダ♪ by ともにゃんママ [クックパッド] 簡単おいしいみんなのレシピが127万品';
     $imageurls = array(
       'http://d3921.cpcdn.com/recipes/720203/280/24ece10f66b104ef0562b0b2f477d49f.jpg?u=887658&p=1232792798',
       );
