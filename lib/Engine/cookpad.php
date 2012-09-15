@@ -18,7 +18,7 @@ class ImageLnkEngine_cookpad {
 
     $response->setTitle(ImageLnkHelper::getTitle($html));
 
-    if (preg_match('%<div id="main-photo">(.+?)</div>%s', $html, $matches)) {
+    if (preg_match("%<div class='clearfix' id='main-photo'>(.+?)</div>%s", $html, $matches)) {
       foreach (ImageLnkHelper::scanSingleTag('img', $matches[1]) as $img) {
         if (preg_match('/ src="(.+?)"/s', $img, $m)) {
           $response->addImageURL($m[1]);
