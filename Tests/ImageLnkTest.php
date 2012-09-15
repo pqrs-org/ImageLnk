@@ -678,7 +678,7 @@ class ImageLnkTest extends PHPUnit_Framework_TestCase {
     $url = 'http://twitter.com/#!/miyabiarts/status/112889718550691840';
     $title = "twitter: {$this->twitter_author_}: 定期的に貼っておこう。 http://t.co/rvCK9mr";
     $imageurls = array(
-      'http://p.twimg.com/AZEQmdUCAAETlsu.jpg',
+      'http://pbs.twimg.com/media/AZEQmdUCAAETlsu.jpg',
       );
     $referer = "http://api.twitter.com/1/statuses/show.json?id=112889718550691840&include_entities=true&contributor_details=true";
     $this->check_response($url, $title, $imageurls, $referer);
@@ -688,7 +688,7 @@ class ImageLnkTest extends PHPUnit_Framework_TestCase {
     $url = 'https://twitter.com/#!/miyabiarts/status/112889718550691840';
     $title = "twitter: {$this->twitter_author_}: 定期的に貼っておこう。 http://t.co/rvCK9mr";
     $imageurls = array(
-      'http://p.twimg.com/AZEQmdUCAAETlsu.jpg',
+      'http://pbs.twimg.com/media/AZEQmdUCAAETlsu.jpg',
       );
     $referer = "http://api.twitter.com/1/statuses/show.json?id=112889718550691840&include_entities=true&contributor_details=true";
     $this->check_response($url, $title, $imageurls, $referer);
@@ -698,7 +698,7 @@ class ImageLnkTest extends PHPUnit_Framework_TestCase {
     $url = 'https://mobile.twitter.com/#!/miyabiarts/status/112889718550691840';
     $title = "twitter: {$this->twitter_author_}: 定期的に貼っておこう。 http://t.co/rvCK9mr";
     $imageurls = array(
-      'http://p.twimg.com/AZEQmdUCAAETlsu.jpg',
+      'http://pbs.twimg.com/media/AZEQmdUCAAETlsu.jpg',
       );
     $referer = "http://api.twitter.com/1/statuses/show.json?id=112889718550691840&include_entities=true&contributor_details=true";
     $this->check_response($url, $title, $imageurls, $referer);
@@ -804,7 +804,7 @@ class ImageLnkTest extends PHPUnit_Framework_TestCase {
     $url = 'http://via.me/-1h54j0g';
     $title = 'fslasht(えふてぃ) (fslasht) : 今日のお昼はロースカツカレーが100円引きということでゴーゴー...';
     $imageurls = array(
-      'http://img.viame-cdn.com/photos/36786cb0-8ab0-012f-16db-123139181e4e/s600x600.jpg',
+      'http://viametest.s3.amazonaws.com/34fa6110-8ab0-012f-e191-12313d140e53',
       );
     $this->check_response($url, $title, $imageurls);
   }
