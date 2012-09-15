@@ -617,10 +617,10 @@ class ImageLnkTest extends PHPUnit_Framework_TestCase {
   }
 
   function test_zakzak2() {
-    $url = 'http://www.zakzak.co.jp/sports/baseball/photos/20120216/bbl1202161232005-p1.htm';
-    $title = '中畑監督、イカをもらい「まあイイか」  - スポーツ - ZAKZAK';
+    $url = 'http://www.zakzak.co.jp/sports/baseball/photos/20120915/bbl1209151444004-p1.htm';
+    $title = 'Ｇ坂本、悪夢の合コン“トラウマ”…知名度アップへ慢心なし  - スポーツ - ZAKZAK';
     $imageurls = array(
-      'http://www.zakzak.co.jp/sports/baseball/images/20120216/bbl1202161232005-p1.jpg',
+      'http://www.zakzak.co.jp/sports/baseball/images/20120915/bbl1209151444004-p1.jpg',
       );
     $this->check_response($url, $title, $imageurls);
   }
