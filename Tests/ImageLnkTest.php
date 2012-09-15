@@ -159,7 +159,7 @@ class ImageLnkTest extends PHPUnit_Framework_TestCase {
   // ======================================================================
   function test_lockerz1() {
     $url = 'http://lockerz.com/s/71921454';
-    $title = "noeynekojump's Photo:  | Lockerz";
+    $title = "Photo - noeynekojump | Lockerz";
     $imageurls = array(
       'http://c0013619.r32.cf1.rackcdn.com/x2_4496f2e',
       );
@@ -221,7 +221,8 @@ class ImageLnkTest extends PHPUnit_Framework_TestCase {
     $imageurls = array(
       'http://image.itmedia.co.jp/mobile/articles/1110/14/l_os_appsomm03.jpg',
       );
-    $backlink = 'http://plusd.itmedia.co.jp/mobile/articles/1110/14/news142.html#l_os_appsomm03.jpg';
+    $backlink = 'http://www.itmedia.co.jp/mobile/articles/1110/14/news142.html#l_os_appsomm03.jpg';
+
     $this->check_response($url, $title, $imageurls, NULL, $backlink);
   }
 
