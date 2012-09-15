@@ -236,7 +236,7 @@ class ImageLnkTest extends PHPUnit_Framework_TestCase {
   }
 
   // ======================================================================
-  private $pixiv_author_ = '柴系';
+  private $pixiv_author_ = '柴系＠くそねむおぢさん';
 
   function test_pixiv1() {
     $url = 'http://www.pixiv.net/member_illust.php?mode=medium&illust_id=10461576';
@@ -319,7 +319,7 @@ class ImageLnkTest extends PHPUnit_Framework_TestCase {
   // ======================================================================
   function test_yfrog1() {
     $url = 'http://yfrog.com/1xj3nvj';
-    $title = 'yfrog Photo : http://yfrog.com/1xj3nvj Shared by atty303';
+    $title = 'yfrog Photo : http://twitter.yfrog.com/1xj3nvj Shared by atty303';
     $imageurls = array(
       'http://a.yfrog.com/img69/7185/j3nv.jpg',
       );
@@ -368,7 +368,7 @@ class ImageLnkTest extends PHPUnit_Framework_TestCase {
   // ======================================================================
   function test_twipple1() {
     $url = 'http://p.twipple.jp/6FGRA';
-    $title = 'オレもマジでつぶやき内容に注意しよう&hellip;　今後はさわやかなつぶやきに終始しよう |エディの投稿画像';
+    $title = 'オレもマジでつぶやき内容に注意しよう&hellip;　今後はさわやかなつぶやきに終始しよう |エディ清正の投稿画像';
     $imageurls = array(
       'http://p.twpl.jp/show/orig/6FGRA',
       );
