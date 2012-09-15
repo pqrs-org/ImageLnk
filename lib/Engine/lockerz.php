@@ -5,7 +5,7 @@ class ImageLnkEngine_lockerz {
   const sitename = 'http://lockerz.com/';
 
   public static function handle($url) {
-    if (! preg_match('/^http:\/\/lockerz.com\/s\//', $url)) {
+    if (! preg_match('/^http:\/\/(pics\.)?lockerz.com\/s\//', $url)) {
       return FALSE;
     }
 

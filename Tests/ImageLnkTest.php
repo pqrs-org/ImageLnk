@@ -166,6 +166,15 @@ class ImageLnkTest extends PHPUnit_Framework_TestCase {
     $this->check_response($url, $title, $imageurls);
   }
 
+  function test_lockerz2() {
+    $url = 'http://pics.lockerz.com/s/176075122';
+    $title = "まさかでじこのうまい棒がくるとは。 Photo - ほりい なおき | Lockerz";
+    $imageurls = array(
+      'http://c0014144.r32.cf1.rackcdn.com/x2_a7eb172',
+      );
+    $this->check_response($url, $title, $imageurls);
+  }
+
   // ======================================================================
   function test_dengeki1() {
     $url = 'http://news.dengeki.com/elem/000/000/364/364901/img.html';
