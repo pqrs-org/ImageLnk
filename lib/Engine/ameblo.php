@@ -17,7 +17,9 @@ class ImageLnkEngine_ameblo {
     $response->setReferer($url);
 
     $response->setTitle(ImageLnkHelper::getTitle($html));
-    if (preg_match('/<div id="imageMain">.*?<img .*?src="(.+?)"/s', $html, $matches)) {
+    if (preg_match('%<div id="originalImgUrl">(.+?)</div>%s', $html, $matches)) {
+      $response->addImageURL($matches[1]);
+    } elseif (preg_match('/<div id="imageMain">.*?<img .*?src="(.+?)"/s', $html, $matches)) {
       $response->addImageURL($matches[1]);
     } else {
       foreach (ImageLnkHelper::scanSingleTag('img', $html) as $imgtag) {
