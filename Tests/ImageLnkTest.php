@@ -11,6 +11,9 @@ class ImageLnkTest extends PHPUnit_Framework_TestCase {
 
   private function check_response($url, $title, $imageurls, $referer = NULL, $backlink = NULL) {
     $response = ImageLnk::getImageInfo($url);
+    if (! $response) {
+      throw new Exception("response is null: $url");
+    }
 
     $expect = $title;
     $actual = $response->getTitle();
@@ -104,6 +107,25 @@ class ImageLnkTest extends PHPUnit_Framework_TestCase {
     foreach ($response->getImageURLs() as $imageurl) {
       $expect = 1;
       $actual = preg_match('/http:\/\/stat.*\.ameba\.jp\/user_images\/20110724\/19\/strawberry-ayana\/ac\/1e\/j\/o0480064011370958832\.jpg/', $imageurl);
+      $this->assertSame($expect, $actual);
+    }
+  }
+
+  function test_ameblo4() {
+    $url = 'http://ameblo.jp/mikakanai/image-11373664100-12221865559.html';
+    $response = ImageLnk::getImageInfo($url);
+
+    $title = 'でっか♪の画像 | かないみかオフィシャルブログ「ぴんくすけるとん」ｂｙ　アメブロ';
+    $actual = $response->getTitle();
+    $this->assertSame($title, $actual);
+
+    $referer = $url;
+    $actual = $response->getReferer();
+    $this->assertSame($referer, $actual);
+
+    foreach ($response->getImageURLs() as $imageurl) {
+      $expect = 1;
+      $actual = preg_match('%http://stat\d+\.ameba.jp/user_images/20121005/20/mikakanai/1c/1f/j/o0240032012221865559.jpg%', $imageurl);
       $this->assertSame($expect, $actual);
     }
   }
@@ -238,7 +260,7 @@ class ImageLnkTest extends PHPUnit_Framework_TestCase {
   // ======================================================================
   function test_nicovideo1() {
     $url = 'http://www.nicovideo.jp/watch/sm17606436';
-    $title = '【折り紙】バラを折ってみた ‐ ニコニコ動画(原宿)';
+    $title = '【折り紙】バラを折ってみた ‐ ニコニコ動画:Q';
     $imageurls = array(
       'http://tn-skr1.smilevideo.jp/smile?i=17606436',
       );
@@ -246,23 +268,23 @@ class ImageLnkTest extends PHPUnit_Framework_TestCase {
   }
 
   // ======================================================================
-  private $pixiv_author_ = '柴系＠くそねむおぢさん';
+  private $pixiv_author_ = '柴系＠ススメ！【C-08】';
 
   function test_pixiv1() {
-    $url = 'http://www.pixiv.net/member_illust.php?mode=medium&illust_id=10461576';
-    $title = "「凛として鼻血」/「{$this->pixiv_author_}」のイラスト [pixiv]";
+    $url = 'http://www.pixiv.net/member_illust.php?mode=medium&illust_id=23223613';
+    $title = "「【ゲスト参加】「ワルプルギスの夜」対策本部！【もう恐３】」/「{$this->pixiv_author_}」のイラスト [pixiv]";
     $imageurls = array(
-      'http://i1.pixiv.net/img11/img/taishi22/10461576.png',
+      'http://i1.pixiv.net/img11/img/taishi22/23223613.jpg',
       );
-    $referer = 'http://www.pixiv.net/member_illust.php?mode=big&illust_id=10461576';
+    $referer = 'http://www.pixiv.net/member_illust.php?mode=big&illust_id=23223613';
     $this->check_response($url, $title, $imageurls, $referer);
   }
 
   function test_pixiv2() {
-    $url = 'http://www.pixiv.net/member_illust.php?mode=big&illust_id=10461576';
-    $title = "「凛として鼻血」/「{$this->pixiv_author_}」のイラスト [pixiv]";
+    $url = 'http://www.pixiv.net/member_illust.php?mode=big&illust_id=23223613';
+    $title = "「【ゲスト参加】「ワルプルギスの夜」対策本部！【もう恐３】」/「{$this->pixiv_author_}」のイラスト [pixiv]";
     $imageurls = array(
-      'http://i1.pixiv.net/img11/img/taishi22/10461576.png',
+      'http://i1.pixiv.net/img11/img/taishi22/23223613.jpg',
       );
     $this->check_response($url, $title, $imageurls);
   }
@@ -378,7 +400,7 @@ class ImageLnkTest extends PHPUnit_Framework_TestCase {
   // ======================================================================
   function test_twipple1() {
     $url = 'http://p.twipple.jp/6FGRA';
-    $title = 'オレもマジでつぶやき内容に注意しよう&hellip;　今後はさわやかなつぶやきに終始しよう |エディ清正の投稿画像';
+    $title = 'オレもマジでつぶやき内容に注意しよう&hellip;　今後はさわやかなつぶやきに終始しよう |エディの投稿画像';
     $imageurls = array(
       'http://p.twpl.jp/show/orig/6FGRA',
       );
@@ -683,7 +705,7 @@ class ImageLnkTest extends PHPUnit_Framework_TestCase {
   }
 
   // ======================================================================
-  private $twitter_author_ = "すばらっ・みやびあーつ";
+  private $twitter_author_ = "ナチュラルみやびあーつ";
   function test_twitter1() {
     $url = 'http://twitter.com/#!/miyabiarts/status/112889718550691840';
     $title = "twitter: {$this->twitter_author_}: 定期的に貼っておこう。 http://t.co/rvCK9mr";
@@ -753,7 +775,7 @@ class ImageLnkTest extends PHPUnit_Framework_TestCase {
   // ======================================================================
   function test_cookpad1() {
     $url = 'http://cookpad.com/recipe/720203';
-    $title = '大根とツナとホタテのサラダ♪ by ともにゃんママ [クックパッド] 簡単おいしいみんなのレシピが130万品';
+    $title = '大根とツナとホタテのサラダ♪ by ともにゃんママ [クックパッド] 簡単おいしいみんなのレシピが133万品';
     $imageurls = array(
       'http://d3921.cpcdn.com/recipes/720203/280/24ece10f66b104ef0562b0b2f477d49f.jpg?u=887658&p=1232792798',
       );
