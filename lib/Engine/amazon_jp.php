@@ -20,7 +20,8 @@ class ImageLnkEngine_amazon_jp {
     $response->setTitle(ImageLnkHelper::getTitle($html));
 
     foreach (ImageLnkHelper::scanSingleTag('img', $html) as $img) {
-      if (preg_match('% id="prodImage"%s', $img)) {
+      if (preg_match('% id="prodImage"%s', $img) ||
+          preg_match('%\sid="original-main-image"%s', $img)) {
         if (preg_match('% src="(.+?)"%s', $img, $m)) {
           $response->addImageURL($m[1]);
         }

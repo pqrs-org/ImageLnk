@@ -66,6 +66,8 @@ class ImageLnkTest extends PHPUnit_Framework_TestCase {
     $actual = $response->getReferer();
     $this->assertSame($referer, $actual);
 
+    $this->assertSame(1, count($response->getImageURLs()));
+
     foreach ($response->getImageURLs() as $imageurl) {
       $expect = 1;
       $actual = preg_match('/http:\/\/stat.*\.ameba\.jp\/user_images\/20100109\/22\/hakasetoiu-ikimono\/5f\/c7\/j\/o0360050010370336976\.jpg/', $imageurl);
@@ -85,6 +87,8 @@ class ImageLnkTest extends PHPUnit_Framework_TestCase {
     $actual = $response->getReferer();
     $this->assertSame($referer, $actual);
 
+    $this->assertSame(1, count($response->getImageURLs()));
+
     foreach ($response->getImageURLs() as $imageurl) {
       $expect = 1;
       $actual = preg_match('/http:\/\/stat.*\.ameba\.jp\/user_images\/20100109\/22\/hakasetoiu-ikimono\/5f\/c7\/j\/o0360050010370336976\.jpg/', $imageurl);
@@ -103,6 +107,8 @@ class ImageLnkTest extends PHPUnit_Framework_TestCase {
     $referer = $url;
     $actual = $response->getReferer();
     $this->assertSame($referer, $actual);
+
+    $this->assertSame(1, count($response->getImageURLs()));
 
     foreach ($response->getImageURLs() as $imageurl) {
       $expect = 1;
@@ -705,7 +711,7 @@ class ImageLnkTest extends PHPUnit_Framework_TestCase {
   }
 
   // ======================================================================
-  private $twitter_author_ = "ナチュラルみやびあーつ";
+  private $twitter_author_ = "あんちあんちあんちべ・みやびあーつ";
   function test_twitter1() {
     $url = 'http://twitter.com/#!/miyabiarts/status/112889718550691840';
     $title = "twitter: {$this->twitter_author_}: 定期的に貼っておこう。 http://t.co/rvCK9mr";

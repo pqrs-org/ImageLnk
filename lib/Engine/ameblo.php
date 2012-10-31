@@ -21,6 +21,8 @@ class ImageLnkEngine_ameblo {
       $response->addImageURL($matches[1]);
     } elseif (preg_match('/<div id="imageMain">.*?<img .*?src="(.+?)"/s', $html, $matches)) {
       $response->addImageURL($matches[1]);
+    } elseif (preg_match('/"current": {.+?"imgUrl":"(.+?)"/s', $html, $matches)) {
+      $response->addImageURL('http://stat.ameba.jp' . $matches[1]);
     } else {
       foreach (ImageLnkHelper::scanSingleTag('img', $html) as $imgtag) {
         if (preg_match('/ id="imageMain"/', $imgtag) ||
