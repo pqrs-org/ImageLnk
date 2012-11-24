@@ -274,7 +274,7 @@ class ImageLnkTest extends PHPUnit_Framework_TestCase {
   }
 
   // ======================================================================
-  private $pixiv_author_ = '柴系＠ススメ！【C-08】';
+  private $pixiv_author_ = '柴系＠レイフレ【Ｈ２６】';
 
   function test_pixiv1() {
     $url = 'http://www.pixiv.net/member_illust.php?mode=medium&illust_id=23223613';
@@ -579,8 +579,8 @@ class ImageLnkTest extends PHPUnit_Framework_TestCase {
 
   // ======================================================================
   function test_engadget1() {
-    $url = 'http://www.engadget.com/photos/ubeam-wireless-power-demonstration-hands-on-at-d9/';
-    $title = 'uBeam wireless power demonstration hands-on at D9 - Engadget Galleries';
+    $url = 'http://www.engadget.com/gallery/ubeam-wireless-power-demonstration-hands-on-at-d9/';
+    $title = 'uBeam wireless power demonstration hands-on at D9';
     $imageurls = array(
       'http://www.blogcdn.com/www.engadget.com/media/2011/06/ubeam-demo-hands-on-d92888.jpg',
       );
@@ -588,8 +588,8 @@ class ImageLnkTest extends PHPUnit_Framework_TestCase {
   }
 
   function test_engadget2() {
-    $url = 'http://www.engadget.com/photos/intels-computex-2011-keynote/';
-    $title = "Intel's Computex 2011 keynote - Engadget Galleries";
+    $url = 'http://www.engadget.com/gallery/intels-computex-2011-keynote/';
+    $title = "Intel's Computex 2011 keynote";
     $imageurls = array(
       'http://www.blogcdn.com/www.engadget.com/media/2011/05/11a531403e6.jpg',
       );
@@ -711,7 +711,7 @@ class ImageLnkTest extends PHPUnit_Framework_TestCase {
   }
 
   // ======================================================================
-  private $twitter_author_ = "あんちあんちあんちべ・みやびあーつ";
+  private $twitter_author_ = "みやびあーつ";
   function test_twitter1() {
     $url = 'http://twitter.com/#!/miyabiarts/status/112889718550691840';
     $title = "twitter: {$this->twitter_author_}: 定期的に貼っておこう。 http://t.co/rvCK9mr";
@@ -781,7 +781,7 @@ class ImageLnkTest extends PHPUnit_Framework_TestCase {
   // ======================================================================
   function test_cookpad1() {
     $url = 'http://cookpad.com/recipe/720203';
-    $title = '大根とツナとホタテのサラダ♪ by ともにゃんママ [クックパッド] 簡単おいしいみんなのレシピが133万品';
+    $title = '大根とツナとホタテのサラダ♪ by ともにゃんママ [クックパッド] 簡単おいしいみんなのレシピが135万品';
     $imageurls = array(
       'http://d3921.cpcdn.com/recipes/720203/280/24ece10f66b104ef0562b0b2f477d49f.jpg?u=887658&p=1232792798',
       );

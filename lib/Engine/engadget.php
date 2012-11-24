@@ -5,7 +5,7 @@ class ImageLnkEngine_engadget {
   const sitename = 'http://www.engadget.com/galleries/';
 
   public static function handle($url) {
-    if (! preg_match('%^http://www\.engadget\.com/photos/%', $url)) {
+    if (! preg_match('%^http://www\.engadget\.com/gallery/%', $url)) {
       return FALSE;
     }
 
@@ -18,9 +18,9 @@ class ImageLnkEngine_engadget {
 
     $response->setTitle(ImageLnkHelper::getTitle($html));
 
-    if (preg_match('%<ul class="ad-thumb-list">(.*?)</ul>%s', $html, $matches)) {
-      foreach (ImageLnkHelper::scanSingleTag('a', $matches[1]) as $img) {
-        if (preg_match('/ href="(.+?)"/', $img, $m)) {
+    if (preg_match('%<!-- M:body-gallery-image -->(.+?)<!-- /M -->%s', $html, $matches)) {
+      foreach (ImageLnkHelper::scanSingleTag('img', $matches[1]) as $img) {
+        if (preg_match('/ src="(.+?)"/', $img, $m)) {
           $response->addImageURL($m[1]);
           break;
         }
