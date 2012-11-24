@@ -5,7 +5,7 @@ class ImageLnkEngine_youtube {
   const sitename = 'http://www.youtube.com/';
 
   public static function handle($url) {
-    if (! preg_match('/^http:\/\/www\.youtube\.com\/watch\?(.+)/', $url)) {
+    if (! preg_match('/^https?:\/\/www\.youtube\.com\/watch\?(.+)/', $url)) {
       return FALSE;
     }
 
