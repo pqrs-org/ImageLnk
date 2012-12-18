@@ -5,7 +5,7 @@ class ImageLnkEngine_itunes {
   const sitename = 'http://itunes.apple.com/';
 
   public static function handle($url) {
-    if (! preg_match('%^http://itunes\.apple\.com/%', $url)) {
+    if (! preg_match('%^https?://itunes\.apple\.com/%', $url)) {
       return FALSE;
     }
 
