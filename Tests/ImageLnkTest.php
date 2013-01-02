@@ -842,4 +842,14 @@ class ImageLnkTest extends PHPUnit_Framework_TestCase {
       );
     $this->check_response($url, $title, $imageurls);
   }
+
+  // ======================================================================
+  function test_loveplusphotoclub() {
+    $url = 'http://www.loveplusphotoclub.konami.jp/post/ja/9917/%E6%B8%A9%E6%B3%89%E5%8A%B9%E6%9E%9C.html';
+    $title = '温泉効果';
+    $imageurls = array(
+      'http://www.loveplusphotoclub.konami.jp/cgm/ecommerce/loveplus/images/large/049d1f6f9b3133ff8a3a1e4c95e8d34b.jpg?1356824235',
+      );
+    $this->check_response($url, $title, $imageurls);
+  }
 }
