@@ -16,8 +16,11 @@ class ImageLnkEngine_loveplusphotoclub {
     $response->setReferer($url);
 
     $response->setTitle(ImageLnkHelper::getTitle($html));
-    if (preg_match('%(http://www\.loveplusphotoclub\.konami\.jp/cgm/ecommerce/loveplus/images/large/.+?)"%', $html, $matches)) {
-      $response->addImageURL($matches[1]);
+    $regexp = '%(http://www\.loveplusphotoclub\.konami\.jp/cgm/ecommerce/loveplus/images/large/.+?)"%';
+    if (preg_match_all($regexp, $html, $matches)) {
+      foreach ($matches[1] as $imgurl) {
+        $response->addImageURL($imgurl);
+      }
     }
 
     return $response;

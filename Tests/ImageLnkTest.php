@@ -844,11 +844,22 @@ class ImageLnkTest extends PHPUnit_Framework_TestCase {
   }
 
   // ======================================================================
-  function test_loveplusphotoclub() {
+  function test_loveplusphotoclub1() {
     $url = 'http://www.loveplusphotoclub.konami.jp/post/ja/9917/%E6%B8%A9%E6%B3%89%E5%8A%B9%E6%9E%9C.html';
     $title = '温泉効果';
     $imageurls = array(
       'http://www.loveplusphotoclub.konami.jp/cgm/ecommerce/loveplus/images/large/049d1f6f9b3133ff8a3a1e4c95e8d34b.jpg?1356824235',
+      );
+    $this->check_response($url, $title, $imageurls);
+  }
+
+  function test_loveplusphotoclub2() {
+    $url = 'http://www.loveplusphotoclub.konami.jp/post/ja/9945/%E3%81%AA%E3%81%94%E3%81%BF.html';
+    $title = 'なごみ';
+    $imageurls = array(
+      'http://www.loveplusphotoclub.konami.jp/cgm/ecommerce/loveplus/images/large/22aa7c4a0d580bd43da40cd8dd9c2df3.jpg?1357084966',
+      'http://www.loveplusphotoclub.konami.jp/cgm/ecommerce/loveplus/images/large/7d8b7fb8a7d85c04d4d2a83164140ae7.jpg?1357085230',
+      'http://www.loveplusphotoclub.konami.jp/cgm/ecommerce/loveplus/images/large/b12633f7249052335add77a626127b28.jpg?1357085233',
       );
     $this->check_response($url, $title, $imageurls);
   }
