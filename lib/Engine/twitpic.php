@@ -24,10 +24,11 @@ class ImageLnkEngine_twitpic {
     $response->setReferer($url);
 
     $response->setTitle(ImageLnkHelper::getTitle($html));
-    foreach (ImageLnkHelper::scanSingleTag('img', $html) as $img) {
-      if (preg_match('% src="(.+?/full/.+?)"%s', $img, $m)) {
-        $response->addImageURL($m[1]);
-        break;
+    if (preg_match('%<div id="media-full">(.+?)</div>%s', $html, $matches)) {
+      foreach (ImageLnkHelper::scanSingleTag('img', $matches[1]) as $img) {
+        if (preg_match('/ src="(.+?)"/', $img, $m)) {
+          $response->addImageURL($m[1]);
+        }
       }
     }
 

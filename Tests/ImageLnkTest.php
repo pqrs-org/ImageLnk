@@ -233,11 +233,22 @@ class ImageLnkTest extends PHPUnit_Framework_TestCase {
     $actual = $response->getReferer();
     $this->assertSame($referer, $actual);
 
-    foreach ($response->getImageURLs() as $imageurl) {
-      $expect = 1;
-      $actual = preg_match('%/full/%', $imageurl);
-      $this->assertSame($expect, $actual);
-    }
+    $this->assertSame(1, count($response->getImageURLs()));
+  }
+
+  function test_twitpic2() {
+    $url = 'http://twitpic.com/c17ing';
+    $response = ImageLnk::getImageInfo($url);
+
+    $title = '総武線各駅停車、ホームに人が溢れ危険な状態だったので、諦めて総武線快速で東京に出ることにする。総武線快速乗ったらなぜか車内... on Twitpic';
+    $actual = $response->getTitle();
+    $this->assertSame($title, $actual);
+
+    $referer = 'http://twitpic.com/c17ing/full';
+    $actual = $response->getReferer();
+    $this->assertSame($referer, $actual);
+
+    $this->assertSame(1, count($response->getImageURLs()));
   }
 
   // ======================================================================
