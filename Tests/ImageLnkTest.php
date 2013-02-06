@@ -281,7 +281,7 @@ class ImageLnkTest extends PHPUnit_Framework_TestCase {
   }
 
   // ======================================================================
-  private $pixiv_author_ = '柴系＠1日目【ノ30ｂ】';
+  private $pixiv_author_ = 'しばけー';
 
   function test_pixiv1() {
     $url = 'http://www.pixiv.net/member_illust.php?mode=medium&illust_id=23223613';
@@ -558,7 +558,7 @@ class ImageLnkTest extends PHPUnit_Framework_TestCase {
   // ======================================================================
   function test_engadget_jp1() {
     $url = 'http://japanese.engadget.com/photos/asus-eee-pad-memo-3d-memic-hands-on/4173481/';
-    $title = 'Asus Eee Pad MeMO 3D / MeMIC hands on  - Engadget Japanese';
+    $title = 'Asus Eee Pad MeMO 3D / MeMIC hands on';
     $imageurls = array(
       'http://www.blogcdn.com/japanese.engadget.com/media/2011/05/asuseeepadmemohandsoncomputex1103-1306749954.jpg',
       );
@@ -567,7 +567,7 @@ class ImageLnkTest extends PHPUnit_Framework_TestCase {
 
   function test_engadget_jp2() {
     $url = 'http://japanese.engadget.com/photos/memorex-gaming-peripherals-e3-2011/4179706/';
-    $title = 'Memorex gaming Peripherals (E3 2011)  - Engadget Japanese';
+    $title = 'Memorex gaming Peripherals (E3 2011)';
     $imageurls = array(
       'http://www.blogcdn.com/japanese.engadget.com/media/2011/06/3dsgameselector.jpg',
       );

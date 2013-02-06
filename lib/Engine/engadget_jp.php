@@ -18,7 +18,7 @@ class ImageLnkEngine_engadget_jp {
 
     $response->setTitle(ImageLnkHelper::getTitle($html));
 
-    if (preg_match('%<div class="tbox_gallery_image">(.+?)</div>%s', $html, $matches)) {
+    if (preg_match('%<div class="gallery-image-dermis">(.+?)</div>%s', $html, $matches)) {
       foreach (ImageLnkHelper::scanSingleTag('img', $matches[1]) as $img) {
         if (preg_match('/ src="(.+?)"/', $img, $m)) {
           $response->addImageURL($m[1]);
