@@ -367,7 +367,7 @@ class ImageLnkTest extends PHPUnit_Framework_TestCase {
     $url = 'http://www.youtube.com/watch?v=Tlmho7SY-ic&feature=player_embedded';
     $title = 'YouTube Turns Five!';
     $imageurls = array(
-      'http://i1.ytimg.com/vi/Tlmho7SY-ic/mqdefault.jpg',
+      'http://i1.ytimg.com/vi/Tlmho7SY-ic/maxresdefault.jpg?feature=og',
       );
     $this->check_response($url, $title, $imageurls);
   }
@@ -424,7 +424,7 @@ class ImageLnkTest extends PHPUnit_Framework_TestCase {
   // ======================================================================
   function test_twipple1() {
     $url = 'http://p.twipple.jp/6FGRA';
-    $title = 'オレもマジでつぶやき内容に注意しよう&hellip;　今後はさわやかなつぶやきに終始しよう |エディの投稿画像';
+    $title = 'オレもマジでつぶやき内容に注意しよう&hellip;　今後はさわやかなつぶやきに終始しよう |ekoda_eddieの投稿画像';
     $imageurls = array(
       'http://p.twpl.jp/show/orig/6FGRA',
       );
@@ -522,7 +522,7 @@ class ImageLnkTest extends PHPUnit_Framework_TestCase {
     $url = 'http://instagram.com/p/E6VjC/';
     $title = 'おはよう';
     $imageurls = array(
-      'http://distillery.s3.amazonaws.com/media/2011/05/29/9c4d66f169a24764961977326e2fc1cf_7.jpg',
+      'http://images.ak.instagram.com/media/2011/05/29/9c4d66f169a24764961977326e2fc1cf_7.jpg',
       );
     $this->check_response($url, $title, $imageurls);
   }
@@ -531,7 +531,7 @@ class ImageLnkTest extends PHPUnit_Framework_TestCase {
     $url = 'http://instagr.am/p/E6VjC/';
     $title = 'おはよう';
     $imageurls = array(
-      'http://distillery.s3.amazonaws.com/media/2011/05/29/9c4d66f169a24764961977326e2fc1cf_7.jpg',
+      'http://images.ak.instagram.com/media/2011/05/29/9c4d66f169a24764961977326e2fc1cf_7.jpg',
       );
     $this->check_response($url, $title, $imageurls);
   }
@@ -653,10 +653,10 @@ class ImageLnkTest extends PHPUnit_Framework_TestCase {
   }
 
   function test_zakzak2() {
-    $url = 'http://www.zakzak.co.jp/sports/baseball/photos/20120915/bbl1209151444004-p1.htm';
-    $title = 'Ｇ坂本、悪夢の合コン“トラウマ”…知名度アップへ慢心なし  - スポーツ - ZAKZAK';
+    $url = 'http://www.zakzak.co.jp/sports/soccer/photos/20130419/soc1304190710001-p1.htm';
+    $title = '低迷インテル大粛清？　どうなる長友の去就　シーズン終了待たずに補強の準備  - スポーツ - ZAKZAK';
     $imageurls = array(
-      'http://www.zakzak.co.jp/sports/baseball/images/20120915/bbl1209151444004-p1.jpg',
+      'http://www.zakzak.co.jp/sports/soccer/images/20130419/soc1304190710001-p1.jpg',
       );
     $this->check_response($url, $title, $imageurls);
   }
@@ -754,7 +754,7 @@ class ImageLnkTest extends PHPUnit_Framework_TestCase {
     $url = 'https://itunes.apple.com/jp/app/daraiasubasutosp/id483504712';
     $title = 'iTunes App Store で見つかる iPhone、iPod touch、iPad 対応 ダライアスバーストSP';
     $imageurls = array(
-      'http://a5.mzstatic.com/us/r1000/107/Purple/75/b0/27/mzl.yuohdtwi.175x175-75.jpg',
+      'http://a5.mzstatic.com/us/r1000/074/Purple2/v4/85/c3/2c/85c32c14-14ac-b87f-f63e-b61e7e41ce4c/mzl.fkklobby.175x175-75.jpg',
       );
     $this->check_response($url, $title, $imageurls);
   }
