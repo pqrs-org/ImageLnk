@@ -819,7 +819,8 @@ class ImageLnkTest extends PHPUnit_Framework_TestCase {
     $url = 'http://www.amazon.com/gp/product/B005BE0BNQ/';
     $title = 'Amazon.com: Palm Pixi Plus GSM with WebOS, Touch Screen, 2 MP Camera and Wi-Fi - Unlocked Phone - US Warranty - Black: Cell Phones & Accessories';
     $imageurls = array(
-      'http://ecx.images-amazon.com/images/I/41XppCzaL6L._SL500_AA300_.jpg',
+      'http://ecx.images-amazon.com/images/I/81dGB9SsIML._SL1500_.jpg',
+      'http://ecx.images-amazon.com/images/I/81xDxSMf9DL._SL1500_.jpg',
       );
     $this->check_response($url, $title, $imageurls);
   }
