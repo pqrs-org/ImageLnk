@@ -192,25 +192,6 @@ class ImageLnkTest extends PHPUnit_Framework_TestCase {
   }
 
   // ======================================================================
-  function test_lockerz1() {
-    $url = 'http://lockerz.com/s/71921454';
-    $title = "Photo - noeynekojump | Lockerz";
-    $imageurls = array(
-      'http://c0013619.r32.cf1.rackcdn.com/x2_4496f2e',
-      );
-    $this->check_response($url, $title, $imageurls);
-  }
-
-  function test_lockerz2() {
-    $url = 'http://pics.lockerz.com/s/176075122';
-    $title = "まさかでじこのうまい棒がくるとは。 Photo - ほりい なおき | Lockerz";
-    $imageurls = array(
-      'http://c0014144.r32.cf1.rackcdn.com/x2_a7eb172',
-      );
-    $this->check_response($url, $title, $imageurls);
-  }
-
-  // ======================================================================
   function test_dengeki1() {
     $url = 'http://news.dengeki.com/elem/000/000/364/364901/img.html';
     $title = '【App通信】iPad 2が満を持して発売！ 美少女姉妹による萌え系紙芝居アプリも - 電撃オンライン';
