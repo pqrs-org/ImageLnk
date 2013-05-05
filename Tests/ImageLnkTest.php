@@ -1,6 +1,5 @@
 <?php //-*- Mode: php; indent-tabs-mode: nil; -*-
 
-require_once 'PHPUnit/Framework.php';
 require_once sprintf('%s/../lib/ImageLnk.php', dirname(__FILE__));
 
 class ImageLnkTest extends PHPUnit_Framework_TestCase {
@@ -53,7 +52,7 @@ class ImageLnkTest extends PHPUnit_Framework_TestCase {
   // ======================================================================
   function test_test1() {
     $url = 'test://malformed_utf8';
-    $title = 'あいうえおかき';
+    $title = 'あいうえおき';
     $imageurls = array(
       'malformed_utf8',
       );

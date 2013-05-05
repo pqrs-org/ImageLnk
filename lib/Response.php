@@ -7,7 +7,8 @@ class ImageLnkResponse {
   private $backlink_ = '';
 
   private static function normalize($string) {
-    return @iconv("UTF-8", "UTF-8//IGNORE", $string);
+    ini_set('mbstring.substitute_character', 'none');
+    return mb_convert_encoding($string, 'UTF-8', 'UTF-8');
   }
   private static function decode($string) {
     $string = self::normalize($string);
