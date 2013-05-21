@@ -5,7 +5,7 @@ class ImageLnk_Engine_yfrog {
   const sitename = 'http://yfrog.com/';
 
   public static function handle($url) {
-    if (! preg_match('/^http:\/\/yfrog\.com\//', $url)) {
+    if (! preg_match('/^http:\/\/(twitter\.)?yfrog\.com\//', $url)) {
       return FALSE;
     }
 
