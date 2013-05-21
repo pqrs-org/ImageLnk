@@ -5,21 +5,37 @@ error_reporting(E_ALL | E_STRICT);
 require_once 'HTTP/Request2.php';
 require_once 'SymfonyComponents/YAML/sfYaml.php';
 
-foreach (glob(sprintf('%s/*.php', dirname(__FILE__))) as $file) {
-  require_once $file;
-}
+// ------------------------------------------------------------
+function ImageLnk_autoload($className)
+{
+  $replaces = array(
+    '_'  => DIRECTORY_SEPARATOR,
+    '::' => DIRECTORY_SEPARATOR,
+    '.'  => '',
+    );
+  $classPath = str_replace(array_keys($replaces), array_values($replaces), $className);
+  $fileName = join(DIRECTORY_SEPARATOR,
+                   array(dirname(__FILE__), $classPath . '.php'));
 
-ImageLnkConfig::static_initialize();
+  if (is_file($fileName))
+  {
+    require_once $fileName;
+  }
+}
+spl_autoload_register('ImageLnk_autoload');
 
 // ------------------------------------------------------------
-foreach (glob(sprintf('%s/Engine/*.php', dirname(__FILE__))) as $file) {
+ImageLnk_Config::static_initialize();
+
+// ------------------------------------------------------------
+foreach (glob(sprintf('%s/ImageLnk/Engine/*.php', dirname(__FILE__))) as $file) {
   require_once $file;
 }
 
 // ------------------------------------------------------------
 class ImageLnk {
   public static function getImageInfo($url) {
-    foreach (ImageLnkEngine::getEngines() as $classname) {
+    foreach (ImageLnk_Engine::getEngines() as $classname) {
       try {
         $response = $classname::handle($url);
         if ($response !== FALSE) {
@@ -36,7 +52,7 @@ class ImageLnk {
   public static function getSites() {
     $sites_generic  = array();
     $sites_domestic = array();
-    foreach (ImageLnkEngine::getEngines() as $classname) {
+    foreach (ImageLnk_Engine::getEngines() as $classname) {
       if (! $classname::sitename) continue;
 
       if ($classname::language) {

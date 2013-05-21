@@ -4,7 +4,7 @@ require_once sprintf('%s/../lib/ImageLnk.php', dirname(__FILE__));
 
 class ImageLnkCLI_get {
   public function control() {
-    ImageLnkConfig::set('cache_directory', '/var/tmp/ImageLnkCLI');
+    ImageLnk_Config::set('cache_directory', '/var/tmp/ImageLnkCLI');
 
     if (! isset($_SERVER['argv'][1])) {
       print "Usage: {$_SERVER['argv'][0]} url\n";
