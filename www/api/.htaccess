@@ -1,3 +1,4 @@
+Options -MultiViews
 RewriteEngine on
 RewriteRule ^get$   get.php   [L]
 RewriteRule ^sites$ sites.php [L]
