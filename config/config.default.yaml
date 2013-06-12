@@ -5,3 +5,7 @@ cache_directory: /var/tmp/ImageLnk
 cache_expire_minutes: 5
 auth_pixiv_id: imagelnk
 auth_pixiv_password: XXXXXXXX
+twitter_consumer_key: XXXXXXXX
+twitter_consumer_secret: XXXXXXXX
+twitter_user_token: XXXXXXXX
+twitter_user_secret: XXXXXXXX

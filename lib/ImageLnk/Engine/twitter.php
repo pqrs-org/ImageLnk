@@ -1,5 +1,8 @@
 <?php //-*- Mode: php; indent-tabs-mode: nil; -*-
 
+require_once ImageLnk_Path::combine(dirname(__FILE__), '..', '..', '..', 'vendor', 'tmhOAuth', 'tmhOAuth.php');
+require_once ImageLnk_Path::combine(dirname(__FILE__), '..', '..', '..', 'vendor', 'tmhOAuth', 'tmhUtilities.php');
+
 class ImageLnk_Engine_twitter {
   const language = NULL;
   const sitename = 'http://twitter.com/';
@@ -12,18 +15,26 @@ class ImageLnk_Engine_twitter {
     $id   = $matches[3];
 
     // ----------------------------------------
-    $url = "http://api.twitter.com/1/statuses/show.json?id={$id}&include_entities=true&contributor_details=true";
-
-    $data = ImageLnk_Cache::get($url);
-    $html = $data['data'];
-    $info = json_decode($data['data']);
-
     $response = new ImageLnk_Response();
     $response->setReferer($url);
 
-    $response->setTitle('twitter: ' . $info->user->name . ': ' . $info->text);
-    foreach ($info->entities->media as $m) {
-      $response->addImageURL($m->media_url);
+    $tmhOAuth = new tmhOAuth(array(
+                               'consumer_key'    => ImageLnk_Config::v('twitter_consumer_key'),
+                               'consumer_secret' => ImageLnk_Config::v('twitter_consumer_secret'),
+                               'user_token'      => ImageLnk_Config::v('twitter_user_token'),
+                               'user_secret'     => ImageLnk_Config::v('twitter_user_secret'),
+                               ));
+    $code = $tmhOAuth->request('GET', $tmhOAuth->url('1.1/statuses/show.json'), array(
+                                 'id' => $id,
+                                 'include_entities' => '1',
+                                 ));
+    if ($code == 200) {
+      $info = json_decode($tmhOAuth->response['response']);
+
+      $response->setTitle('twitter: ' . $info->user->name . ': ' . $info->text);
+      foreach ($info->entities->media as $m) {
+        $response->addImageURL($m->media_url);
+      }
     }
 
     return $response;
