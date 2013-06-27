@@ -355,7 +355,7 @@ class ImageLnkTest extends PHPUnit_Framework_TestCase {
   // ======================================================================
   function test_yfrog1() {
     $url = 'http://yfrog.com/1xj3nvj';
-    $title = 'yfrog Photo : http://twitter.yfrog.com/1xj3nvj Shared by atty303';
+    $title = 'yfrog Photo : http://twitter.yfrog.com/1xj3nvj Shared by';
     $imageurls = array(
       'http://a.yfrog.com/img69/7185/j3nv.jpg',
       );
@@ -689,7 +689,7 @@ class ImageLnkTest extends PHPUnit_Framework_TestCase {
   }
 
   // ======================================================================
-  private $twitter_author_ = "みやびあーつ";
+  private $twitter_author_ = "焼肉の人みやびあーつ＼ﾊﾟﾘ-ﾝ／:";
   function test_twitter1() {
     $url = 'http://twitter.com/#!/miyabiarts/status/112889718550691840';
     $title = "twitter: {$this->twitter_author_}: 定期的に貼っておこう。 http://t.co/rvCK9mr";
@@ -852,6 +852,16 @@ class ImageLnkTest extends PHPUnit_Framework_TestCase {
       'http://www.loveplusphotoclub.konami.jp/cgm/ecommerce/loveplus/images/large/22aa7c4a0d580bd43da40cd8dd9c2df3.jpg?1357084966',
       'http://www.loveplusphotoclub.konami.jp/cgm/ecommerce/loveplus/images/large/7d8b7fb8a7d85c04d4d2a83164140ae7.jpg?1357085230',
       'http://www.loveplusphotoclub.konami.jp/cgm/ecommerce/loveplus/images/large/b12633f7249052335add77a626127b28.jpg?1357085233',
+      );
+    $this->check_response($url, $title, $imageurls);
+  }
+
+  // ======================================================================
+  function test_dropbox1() {
+    $url = 'https://www.dropbox.com/s/v80d9lfnff2zfq8/Screenshot_2013-06-27-14-55-12.png';
+    $title = 'Dropbox - Screenshot_2013-06-27-14-55-12.png';
+    $imageurls = array(
+      'https://photos-2.dropbox.com/t/0/AABdCEWEoHWdePverW57VnSLtHOt5FTELJTYsK61FuXuLw/12/315159/png/1024x768/3/1372323600/0/2/Screenshot_2013-06-27-14-55-12.png/OCeua3NNnz1Ua6dDq7w9IcDYRobI670U2nwYJxEuehc'
       );
     $this->check_response($url, $title, $imageurls);
   }
