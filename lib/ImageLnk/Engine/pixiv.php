@@ -45,7 +45,7 @@ class ImageLnk_Engine_pixiv {
 
     } elseif (preg_match('/member_illust\.php\?mode=manga/', $url)) {
       $response->setTitle(ImageLnk_Helper::getTitle($html));
-      if (preg_match_all("/unshift\('(.+?)'/", $html, $m)) {
+      if (preg_match_all("/pixiv.context.images\[\d\] = '(.+?)';/", $html, $m)) {
         foreach ($m[1] as $imgsrc) {
           $response->addImageURL($imgsrc);
         }
