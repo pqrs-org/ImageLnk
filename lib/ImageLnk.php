@@ -36,6 +36,7 @@ foreach (glob(sprintf('%s/ImageLnk/Engine/*.php', dirname(__FILE__))) as $file) 
 // ------------------------------------------------------------
 class ImageLnk {
   public static function getImageInfo($url) {
+    $url = ImageLnk_URL::getRedirectedURL($url);
     foreach (ImageLnk_Engine::getEngines() as $classname) {
       try {
         $response = $classname::handle($url);
