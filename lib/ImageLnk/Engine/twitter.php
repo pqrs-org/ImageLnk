@@ -32,7 +32,7 @@ class ImageLnk_Engine_twitter {
       $info = json_decode($tmhOAuth->response['response']);
 
       $response->setTitle('twitter: ' . $info->user->name . ': ' . $info->text);
-      foreach ($info->entities->media as $m) {
+      foreach ($info->extended_entities->media as $m) {
         $response->addImageURL($m->media_url . ':large');
       }
     }
