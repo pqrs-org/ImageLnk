@@ -1,5 +1,7 @@
 <?php //-*- Mode: php; indent-tabs-mode: nil; -*-
 
+use Sunra\PhpSimple\HtmlDomParser;
+
 class ImageLnk_Engine_itunes
 {
     const language = null;
@@ -15,21 +17,12 @@ class ImageLnk_Engine_itunes
         $data = ImageLnk_Cache::get($url);
         $html = $data['data'];
 
+        $dom = HtmlDomParser::str_get_html($html);
+
         $response = new ImageLnk_Response();
         $response->setReferer($url);
-
-        $response->setTitle(ImageLnk_Helper::getTitle($html));
-
-        if (preg_match('/<div id="left-stack">(.+)/s', $html, $matches)) {
-            foreach (ImageLnk_Helper::scanSingleTag('img', $matches[1]) as $img) {
-                if (preg_match('/ class="artwork"/', $img)) {
-                    if (preg_match('/ src="(.+?)"/', $img, $m)) {
-                        $response->addImageURL($m[1]);
-                        break;
-                    }
-                }
-            }
-        }
+        $response->setTitle($dom->find('meta[property=og:title]', 0)->content);
+        $response->addImageURL($dom->find('meta[property=og:image]', 0)->content);
 
         return $response;
     }
