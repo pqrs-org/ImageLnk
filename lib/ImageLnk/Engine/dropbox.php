@@ -1,5 +1,7 @@
 <?php //-*- Mode: php; indent-tabs-mode: nil; -*-
 
+use Sunra\PhpSimple\HtmlDomParser;
+
 class ImageLnk_Engine_dropbox
 {
     const language = null;
@@ -15,21 +17,13 @@ class ImageLnk_Engine_dropbox
         $data = ImageLnk_Cache::get($url);
         $html = $data['data'];
 
+        $dom = HtmlDomParser::str_get_html($html);
+
         $response = new ImageLnk_Response();
         $response->setReferer($url);
 
-        $response->setTitle(ImageLnk_Helper::getTitle($html));
-
-        foreach (ImageLnk_Helper::scanSingleTag('img', $html) as $img) {
-            if (preg_match('% class="content-shadow"%s', $img)) {
-                if (preg_match('% src="(.+?)"%s', $img, $m)) {
-                    $imageurl = $m[1];
-                    if (preg_match('%^https://photos-%', $imageurl)) {
-                        $response->addImageURL($imageurl);
-                    }
-                }
-            }
-        }
+        $response->setTitle($dom->find('meta[name=twitter:title]', 0)->content);
+        $response->addImageURL($dom->find('meta[name=twitter:image]', 0)->content);
 
         return $response;
     }
