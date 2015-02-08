@@ -298,7 +298,7 @@ class ImageLnkTest extends PHPUnit_Framework_TestCase
     function test_pixiv1()
     {
         $url = 'http://www.pixiv.net/member_illust.php?mode=medium&illust_id=23223613';
-        $title = "「【ゲスト参加】「ワルプルギスの夜」対策本部！【もう恐３】」/「{$this->pixiv_author_}」のイラスト [pixiv]";
+        $title = "「【ゲスト参加】「ワルプルギスの夜」対策本部！【もう恐３】」 / 「{$this->pixiv_author_}」のイラスト [pixiv]";
         $imageurls = array(
             'http://i1.pixiv.net/img11/img/taishi22/23223613.jpg',
         );
@@ -307,16 +307,6 @@ class ImageLnkTest extends PHPUnit_Framework_TestCase
     }
 
     function test_pixiv2()
-    {
-        $url = 'http://www.pixiv.net/member_illust.php?mode=big&illust_id=23223613';
-        $title = "「【ゲスト参加】「ワルプルギスの夜」対策本部！【もう恐３】」/「{$this->pixiv_author_}」のイラスト [pixiv]";
-        $imageurls = array(
-            'http://i1.pixiv.net/img11/img/taishi22/23223613.jpg',
-        );
-        $this->check_response($url, $title, $imageurls);
-    }
-
-    function test_pixiv3()
     {
         $url = 'http://www.pixiv.net/member_illust.php?mode=manga&illust_id=18741440';
         $title = 'ははのひとってもマミさん【まどか☆マギカ】';
@@ -327,20 +317,20 @@ class ImageLnkTest extends PHPUnit_Framework_TestCase
         $this->check_response($url, $title, $imageurls);
     }
 
-    function test_pixiv4()
+    function test_pixiv3()
     {
         $url = 'http://www.pixiv.net/member_illust.php?mode=manga_big&illust_id=18741440&page=1';
-        $title = "「ははのひとってもマミさん【まどか☆マギカ】」/「{$this->pixiv_author_}」の漫画 [pixiv]";
+        $title = "「ははのひとってもマミさん【まどか☆マギカ】」 / 「{$this->pixiv_author_}」の漫画 [pixiv]";
         $imageurls = array(
             'http://i1.pixiv.net/img11/img/taishi22/18741440_big_p1.png',
         );
         $this->check_response($url, $title, $imageurls);
     }
 
-    function test_pixiv5()
+    function test_pixiv4()
     {
         $url = 'http://www.pixiv.net/member_illust.php?mode=medium&illust_id=18741440';
-        $title = "「ははのひとってもマミさん【まどか☆マギカ】」/「{$this->pixiv_author_}」の漫画 [pixiv]";
+        $title = "「ははのひとってもマミさん【まどか☆マギカ】」 / 「{$this->pixiv_author_}」の漫画 [pixiv]";
         $imageurls = array(
             'http://i1.pixiv.net/img11/img/taishi22/18741440_big_p0.png',
         );
@@ -348,10 +338,10 @@ class ImageLnkTest extends PHPUnit_Framework_TestCase
         $this->check_response($url, $title, $imageurls, $referer);
     }
 
-    function test_pixiv6()
+    function test_pixiv5()
     {
         $url = 'http://touch.pixiv.net/member_illust.php?mode=medium&illust_id=18741440';
-        $title = "「ははのひとってもマミさん【まどか☆マギカ】」/「{$this->pixiv_author_}」の漫画 [pixiv]";
+        $title = "「ははのひとってもマミさん【まどか☆マギカ】」 / 「{$this->pixiv_author_}」の漫画 [pixiv]";
         $imageurls = array(
             'http://i1.pixiv.net/img11/img/taishi22/18741440_big_p0.png',
         );
@@ -531,7 +521,7 @@ class ImageLnkTest extends PHPUnit_Framework_TestCase
     function test_instagram1()
     {
         $url = 'http://instagram.com/p/E6VjC/';
-        $title = 'おはよう';
+        $title = 'CACUREMASU on Instagram: “おはよう”';
         $imageurls = array(
             'http://images.ak.instagram.com/media/2011/05/29/9c4d66f169a24764961977326e2fc1cf_7.jpg',
         );
@@ -541,7 +531,7 @@ class ImageLnkTest extends PHPUnit_Framework_TestCase
     function test_instagram2()
     {
         $url = 'http://instagr.am/p/E6VjC/';
-        $title = 'おはよう';
+        $title = 'CACUREMASU on Instagram: “おはよう”';
         $imageurls = array(
             'http://images.ak.instagram.com/media/2011/05/29/9c4d66f169a24764961977326e2fc1cf_7.jpg',
         );
