@@ -19,6 +19,8 @@ class ImageLnk_Engine_pixiv
         $data = ImageLnk_Cache::get($url);
         $html = $data['data'];
 
+        $dom = HtmlDomParser::str_get_html($html);
+
         // --------------------
         // If mode=medium, fetch large image page
         $url_info = parse_url($url);
@@ -33,18 +35,20 @@ class ImageLnk_Engine_pixiv
         }
 
         if ($query['mode'] == 'medium') {
-            if (preg_match('/<div class="works_display">(.*?)<\/div>/s', $html, $matches)) {
-                if (preg_match('/ href="(member_illust.php\?mode=manga&.*?)"/', $matches[1], $m)) {
-                    $newurl = preg_replace('/mode=manga/', 'mode=manga_big', $m[1]);
-                    $newurl = 'http://www.pixiv.net/' . html_entity_decode($newurl, ENT_QUOTES, 'UTF-8') . '&page=0';
+            foreach ($dom->find('div.works_display a') as $e) {
+                if (preg_match('/mode=big/', $e->href)) {
+                    $newurl = 'http://www.pixiv.net/' . $e->href;
+                    return self::handle($newurl);
+                }
+                if (preg_match('/mode=manga/', $e->href)) {
+                    $newurl = preg_replace('/mode=manga/', 'mode=manga_big', $e->href);
+                    $newurl = 'http://www.pixiv.net/' . $newurl . '&page=0';
                     return self::handle($newurl);
                 }
             }
         }
 
         // --------------------
-        $dom = HtmlDomParser::str_get_html($html);
-
         $response = new ImageLnk_Response();
         $response->setReferer($url);
         $response->setTitle(ImageLnk_Helper::getTitle($html));
@@ -54,6 +58,7 @@ class ImageLnk_Engine_pixiv
             $response->addImageURL($dom->find('img.original-image', 0)->getAttribute('data-src'));
             break;
 
+        case 'big':
         case 'manga_big':
             foreach (ImageLnk_Helper::scanSingleTag('img', $html) as $img) {
                 if (preg_match('/src="(.+?)"/', $img, $m)) {
