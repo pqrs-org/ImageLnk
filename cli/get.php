@@ -17,6 +17,7 @@ class ImageLnkCLI_get
         $response = ImageLnk::getImageInfo($url);
         print 'Title: ' . $response->getTitle() . "\n";
         print 'Referer: ' . $response->getReferer() . "\n";
+        print 'BackLink: ' . $response->getBackLink() . "\n";
         print 'ImageURLs: ' . "\n";
         foreach ($response->getImageURLs() as $imageurl) {
             print "$imageurl\n";
