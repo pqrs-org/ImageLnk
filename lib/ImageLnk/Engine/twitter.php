@@ -1,8 +1,5 @@
 <?php //-*- Mode: php; indent-tabs-mode: nil; -*-
 
-require_once ImageLnk_Path::combine(dirname(__FILE__), '..', '..', '..', 'vendor', 'tmhOAuth', 'tmhOAuth.php');
-require_once ImageLnk_Path::combine(dirname(__FILE__), '..', '..', '..', 'vendor', 'tmhOAuth', 'tmhUtilities.php');
-
 class ImageLnk_Engine_twitter
 {
     const language = null;
