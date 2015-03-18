@@ -5,12 +5,12 @@ use Sunra\PhpSimple\HtmlDomParser;
 class ImageLnk_Engine_instagram
 {
     const language = null;
-    const sitename = 'http://instagram.com/';
+    const sitename = 'https://instagram.com/';
 
     public static function handle($url)
     {
-        if (! preg_match('%^http://instagram\.com/%', $url)
-            && ! preg_match('%^http://instagr\.am/%', $url)
+        if (! preg_match('%^https?://instagram\.com/%', $url)
+            && ! preg_match('%^https?://instagr\.am/%', $url)
         ) {
             return false;
         }
