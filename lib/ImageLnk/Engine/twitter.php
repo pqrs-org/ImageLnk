@@ -3,7 +3,7 @@
 class ImageLnk_Engine_twitter
 {
     const language = null;
-    const sitename = 'http://twitter.com/';
+    const sitename = 'https://twitter.com/';
 
     public static function handle($url)
     {
