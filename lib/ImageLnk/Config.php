@@ -1,5 +1,7 @@
 <?php //-*- Mode: php; indent-tabs-mode: nil; Coding: utf-8; -*-
 
+use \Symfony\Component\Yaml\Yaml;
+
 class ImageLnk_Config
 {
     private static $default_ = null;
@@ -12,7 +14,7 @@ class ImageLnk_Config
     {
         try {
             // load default values
-            self::$data_    = sfYaml::load(
+            self::$data_    = Yaml::parse(
                 file_get_contents(
                     sprintf(
                         '%s/config/config.default.yaml',
@@ -25,7 +27,7 @@ class ImageLnk_Config
             // load customized values
             $filepath = sprintf('%s/config/config.yaml', dirname(dirname(dirname(__FILE__))));
             if (file_exists($filepath)) {
-                $newvalue = sfYaml::load(file_get_contents($filepath));
+                $newvalue = Yaml::parse(file_get_contents($filepath));
                 if ($newvalue) {
                     foreach ($newvalue as $k => $v) {
                         if (isset(self::$data_[$k])) {
