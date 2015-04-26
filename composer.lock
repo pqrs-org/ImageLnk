@@ -4,7 +4,7 @@
         "Read more about it at http://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file",
         "This file is @generated automatically"
     ],
-    "hash": "24b63a94c16c1eb36a5cc91b590da527",
+    "hash": "0a06c678032d15ce0ce5ed0a18380de9",
     "packages": [
         {
             "name": "sunra/php-simple-html-dom-parser",
@@ -50,21 +50,70 @@
             "time": "2013-05-04 14:32:03"
         },
         {
-            "name": "themattharris/tmhoauth",
-            "version": "0.8.4",
+            "name": "symfony/yaml",
+            "version": "v2.6.6",
+            "target-dir": "Symfony/Component/Yaml",
             "source": {
                 "type": "git",
-                "url": "https://github.com/themattharris/tmhOAuth.git",
-                "reference": "455552d6c57549632644b6c9ac9204766be2b5ee"
+                "url": "https://github.com/symfony/Yaml.git",
+                "reference": "174f009ed36379a801109955fc5a71a49fe62dd4"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/themattharris/tmhOAuth/zipball/455552d6c57549632644b6c9ac9204766be2b5ee",
-                "reference": "455552d6c57549632644b6c9ac9204766be2b5ee",
+                "url": "https://api.github.com/repos/symfony/Yaml/zipball/174f009ed36379a801109955fc5a71a49fe62dd4",
+                "reference": "174f009ed36379a801109955fc5a71a49fe62dd4",
                 "shasum": ""
             },
             "require": {
-                "ext-curl": "*",
+                "php": ">=5.3.3"
+            },
+            "require-dev": {
+                "symfony/phpunit-bridge": "~2.7"
+            },
+            "type": "library",
+            "extra": {
+                "branch-alias": {
+                    "dev-master": "2.6-dev"
+                }
+            },
+            "autoload": {
+                "psr-0": {
+                    "Symfony\\Component\\Yaml\\": ""
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Symfony Community",
+                    "homepage": "http://symfony.com/contributors"
+                },
+                {
+                    "name": "Fabien Potencier",
+                    "email": "fabien@symfony.com"
+                }
+            ],
+            "description": "Symfony Yaml Component",
+            "homepage": "http://symfony.com",
+            "time": "2015-03-30 15:54:10"
+        },
+        {
+            "name": "themattharris/tmhoauth",
+            "version": "0.7.4",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/themattharris/tmhOAuth.git",
+                "reference": "e79050c50f86e6eb8df0824235707a6ee7efd840"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/themattharris/tmhOAuth/zipball/e79050c50f86e6eb8df0824235707a6ee7efd840",
+                "reference": "e79050c50f86e6eb8df0824235707a6ee7efd840",
+                "shasum": ""
+            },
+            "require": {
                 "php": ">=5.3.0"
             },
             "type": "library",
@@ -84,12 +133,12 @@
                     "role": "Developer"
                 }
             ],
-            "description": "An OAuth library written in PHP by @themattharris",
+            "description": "An OAuth 1.0A library written in PHP by @themattharris, specifically for use with the Twitter API",
             "keywords": [
                 "oauth",
                 "twitter"
             ],
-            "time": "2014-08-06 22:29:35"
+            "time": "2013-02-20 04:49:36"
         }
     ],
     "packages-dev": [],
