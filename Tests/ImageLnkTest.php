@@ -154,10 +154,10 @@ class ImageLnkTest extends PHPUnit_Framework_TestCase
     // ======================================================================
     function test_ascii1()
     {
-        $url = 'http://ascii.jp/elem/000/000/581/581329/img.html';
-        $title = 'ジャストシステム、Office互換ソフト市場に参入';
+        $url = 'http://ascii.jp/elem/000/001/013/1013475/img.html';
+        $title = 'いよいよ来た！ Windows 10が「無償アップグレードの予約」を開始！';
         $imageurls = array(
-            'http://ascii.jp/elem/000/000/581/581329/06_c_800x531.jpg',
+            'http://ascii.jp/elem/000/001/013/1013475/01_814x528.png',
         );
         $this->check_response($url, $title, $imageurls);
     }
