@@ -12,7 +12,7 @@ class ImageLnk_Fetcher_Pixiv extends ImageLnk_Fetcher
             return false;
         }
 
-        $loginurl = 'http://www.pixiv.net/login.php';
+        $loginurl = 'https://www.secure.pixiv.net/login.php';
         $request = new HTTP_Request2($loginurl, HTTP_Request2::METHOD_POST, self::getConfig());
         self::setHeader($request);
         $request->setCookieJar(true);
@@ -27,7 +27,7 @@ class ImageLnk_Fetcher_Pixiv extends ImageLnk_Fetcher
         );
         $response = $request->send();
 
-        if ($response->getHeader('location') == 'http://www.pixiv.net/mypage.php') {
+        if ($response->getHeader('location') == 'http://www.pixiv.net/') {
             $jar = $request->getCookieJar();
             $jar->serializeSessionCookies(true);
             ImageLnk_Cache::writeToCacheFile(self::getCookieCacheFilePath("pixiv"), $jar->serialize());
