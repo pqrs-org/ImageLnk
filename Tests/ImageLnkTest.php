@@ -482,9 +482,10 @@ class ImageLnkTest extends PHPUnit_Framework_TestCase
         $url = 'http://titlebot.tumblr.com/post/5544499061';
         $title = 'titlebot: ネコと和解せよ';
         $imageurls = array(
-            'http://25.media.tumblr.com/tumblr_llal1ttZ7W1qfqa6no1_400.jpg',
+            'http://36.media.tumblr.com/tumblr_llal1ttZ7W1qfqa6no1_400.jpg',
         );
-        $this->check_response($url, $title, $imageurls);
+        $referer = 'http://titlebot.tumblr.com/post/5544499061/ネコと和解せよ#_=_';
+        $this->check_response($url, $title, $imageurls, $referer);
     }
 
     function test_tumblr2()
@@ -492,7 +493,7 @@ class ImageLnkTest extends PHPUnit_Framework_TestCase
         $url = 'http://maegamipattun.tumblr.com/post/7815975799';
         $title = '前髪ぱっつん専用タンブラー';
         $imageurls = array(
-            'http://25.media.tumblr.com/tumblr_l1n113Lyub1qaxrtko1_1280.jpg',
+            'http://40.media.tumblr.com/tumblr_l1n113Lyub1qaxrtko1_1280.jpg',
         );
         $this->check_response($url, $title, $imageurls);
     }
