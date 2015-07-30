@@ -293,59 +293,71 @@ class ImageLnkTest extends PHPUnit_Framework_TestCase
     }
 
     // ======================================================================
-    private $pixiv_author_ = 'しばけー';
-
     function test_pixiv1()
     {
-        $url = 'http://www.pixiv.net/member_illust.php?mode=medium&illust_id=23223613';
-        $title = "「【ゲスト参加】「ワルプルギスの夜」対策本部！【もう恐３】」 / 「{$this->pixiv_author_}」のイラスト [pixiv]";
+        // Image (medium)
+
+        $url = 'http://www.pixiv.net/member_illust.php?mode=medium&illust_id=51691307';
+        $title = "「Image Example」/「imagelnk」のイラスト [pixiv]";
         $imageurls = array(
-            'http://i1.pixiv.net/img11/img/taishi22/23223613.jpg',
+            'http://i4.pixiv.net/img-original/img/2015/07/30/22/16/27/51691307_p0.jpg',
         );
-        $referer = 'http://www.pixiv.net/member_illust.php?mode=big&illust_id=23223613';
+        $referer = 'http://www.pixiv.net/member_illust.php?mode=medium&illust_id=51691307';
         $this->check_response($url, $title, $imageurls, $referer);
     }
 
     function test_pixiv2()
     {
-        $url = 'http://www.pixiv.net/member_illust.php?mode=manga&illust_id=18741440';
-        $title = 'ははのひとってもマミさん【まどか☆マギカ】';
+        // Manga (medium)
+
+        $url = 'http://www.pixiv.net/member_illust.php?mode=medium&illust_id=51691357';
+        $title = "「Manga Example」/「imagelnk」の漫画 [pixiv]";
         $imageurls = array(
-            'http://i1.pixiv.net/img11/img/taishi22/18741440_p0.png',
-            'http://i1.pixiv.net/img11/img/taishi22/18741440_p1.png',
+            'http://i2.pixiv.net/img-original/img/2015/07/30/22/18/43/51691357_p0.jpg',
         );
-        $this->check_response($url, $title, $imageurls);
+        $referer = 'http://www.pixiv.net/member_illust.php?mode=manga_big&amp;illust_id=51691357&page=0';
+        $this->check_response($url, $title, $imageurls, $referer);
     }
 
     function test_pixiv3()
     {
-        $url = 'http://www.pixiv.net/member_illust.php?mode=manga_big&illust_id=18741440&page=1';
-        $title = "「ははのひとってもマミさん【まどか☆マギカ】」 / 「{$this->pixiv_author_}」の漫画 [pixiv]";
+        // Manga (manga_big)
+
+        $url = 'http://www.pixiv.net/member_illust.php?mode=manga_big&illust_id=51691357&page=1';
+        $title = "「Manga Example」/「imagelnk」の漫画 [pixiv]";
         $imageurls = array(
-            'http://i1.pixiv.net/img11/img/taishi22/18741440_big_p1.png',
+            'http://i2.pixiv.net/img-original/img/2015/07/30/22/18/43/51691357_p1.jpg',
         );
-        $this->check_response($url, $title, $imageurls);
+        $referer = 'http://www.pixiv.net/member_illust.php?mode=manga_big&illust_id=51691357&page=1';
+
+        $this->check_response($url, $title, $imageurls, $referer);
     }
 
     function test_pixiv4()
     {
-        $url = 'http://www.pixiv.net/member_illust.php?mode=medium&illust_id=18741440';
-        $title = "「ははのひとってもマミさん【まどか☆マギカ】」 / 「{$this->pixiv_author_}」の漫画 [pixiv]";
+        // Manga (all)
+
+        $url = 'http://www.pixiv.net/member_illust.php?mode=manga&illust_id=51691357';
+        $title = "Manga Example";
         $imageurls = array(
-            'http://i1.pixiv.net/img11/img/taishi22/18741440_big_p0.png',
+            'http://i2.pixiv.net/c/1200x1200/img-master/img/2015/07/30/22/18/43/51691357_p0_master1200.jpg',
+            'http://i2.pixiv.net/c/1200x1200/img-master/img/2015/07/30/22/18/43/51691357_p1_master1200.jpg',
         );
-        $referer = 'http://www.pixiv.net/member_illust.php?mode=manga_big&illust_id=18741440&page=0';
+        $referer = 'http://www.pixiv.net/member_illust.php?mode=manga&illust_id=51691357';
+
         $this->check_response($url, $title, $imageurls, $referer);
     }
 
     function test_pixiv5()
     {
-        $url = 'http://touch.pixiv.net/member_illust.php?mode=medium&illust_id=18741440';
-        $title = "「ははのひとってもマミさん【まどか☆マギカ】」 / 「{$this->pixiv_author_}」の漫画 [pixiv]";
+        // touch
+
+        $url = 'http://touch.pixiv.net/member_illust.php?mode=medium&illust_id=51691307';
+        $title = "「Image Example」/「imagelnk」のイラスト [pixiv]";
         $imageurls = array(
-            'http://i1.pixiv.net/img11/img/taishi22/18741440_big_p0.png',
+            'http://i4.pixiv.net/img-original/img/2015/07/30/22/16/27/51691307_p0.jpg',
         );
-        $referer = 'http://www.pixiv.net/member_illust.php?mode=manga_big&illust_id=18741440&page=0';
+        $referer = 'http://www.pixiv.net/member_illust.php?mode=medium&illust_id=51691307';
         $this->check_response($url, $title, $imageurls, $referer);
     }
 
