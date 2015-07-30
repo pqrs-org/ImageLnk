@@ -54,17 +54,6 @@ class ImageLnkTest extends PHPUnit_Framework_TestCase
     }
 
     // ======================================================================
-    function test_test1()
-    {
-        $url = 'test://malformed_utf8';
-        $title = 'あいうえおき';
-        $imageurls = array(
-            'malformed_utf8',
-        );
-        $this->check_response($url, $title, $imageurls);
-    }
-
-    // ======================================================================
     function test_ameblo1()
     {
         $url = 'http://ameblo.jp/hakasetoiu-ikimono/image-10430643614-10370336976.html';
@@ -96,7 +85,7 @@ class ImageLnkTest extends PHPUnit_Framework_TestCase
         $actual = $response->getTitle();
         $this->assertSame($title, $actual);
 
-        $referer = $url;
+        $referer = 'http://ameblo.jp/hakasetoiu-ikimono/image-10430643614-10370336976.html';
         $actual = $response->getReferer();
         $this->assertSame($referer, $actual);
 
@@ -127,26 +116,6 @@ class ImageLnkTest extends PHPUnit_Framework_TestCase
         foreach ($response->getImageURLs() as $imageurl) {
             $expect = 1;
             $actual = preg_match('/http:\/\/stat.*\.ameba\.jp\/user_images\/20110724\/19\/strawberry-ayana\/ac\/1e\/j\/o0480064011370958832\.jpg/', $imageurl);
-            $this->assertSame($expect, $actual);
-        }
-    }
-
-    function test_ameblo4()
-    {
-        $url = 'http://ameblo.jp/mikakanai/image-11373664100-12221865559.html';
-        $response = ImageLnk::getImageInfo($url);
-
-        $title = 'でっか♪の画像 | かないみかオフィシャルブログ「ぴんくすけるとん」ｂｙ　アメブロ';
-        $actual = $response->getTitle();
-        $this->assertSame($title, $actual);
-
-        $referer = $url;
-        $actual = $response->getReferer();
-        $this->assertSame($referer, $actual);
-
-        foreach ($response->getImageURLs() as $imageurl) {
-            $expect = 1;
-            $actual = preg_match('%http://stat\d+\.ameba.jp/user_images/20121005/20/mikakanai/1c/1f/j/o0240032012221865559.jpg%', $imageurl);
             $this->assertSame($expect, $actual);
         }
     }
