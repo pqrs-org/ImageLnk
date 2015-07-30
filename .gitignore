@@ -3,3 +3,4 @@ Tests/tmp/
 /vendor
 ,*
 *.bak
+*.tmp

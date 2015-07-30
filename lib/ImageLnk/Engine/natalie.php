@@ -23,7 +23,7 @@ class ImageLnk_Engine_natalie
             $response->setTitle($title);
         }
 
-        if (preg_match('/<p class="image-full">(.+?)<\/p>/s', $html, $matches)) {
+        if (preg_match('/<p class="NA_figure">(.+?)<\/p>/s', $html, $matches)) {
             foreach (ImageLnk_Helper::scanSingleTag('img', $matches[1]) as $img) {
                 if (preg_match('/ src="(.+?)"/', $img, $m)) {
                     $response->addImageURL('http://natalie.mu' . $m[1]);

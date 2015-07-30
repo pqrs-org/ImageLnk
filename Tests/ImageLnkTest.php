@@ -566,9 +566,9 @@ class ImageLnkTest extends PHPUnit_Framework_TestCase
     function test_natalie1()
     {
         $url = 'http://natalie.mu/comic/gallery/show/news_id/50403/image_id/77977';
-        $title = 'コミックナタリー - 全高75cmでゲソ！「イカ娘」超BIGぬいぐるみが登場';
+        $title = '全高75cmでゲソ！「イカ娘」超BIGぬいぐるみが登場 - コミックナタリー';
         $imageurls = array(
-            'http://natalie.mu/media/comic/1105/extra/news_large_ika_roke1.jpg',
+            'http://natalie.mu/media/comic/1105/extra/news_xlarge_ika_roke1.jpg',
         );
         $this->check_response($url, $title, $imageurls);
     }
@@ -576,9 +576,9 @@ class ImageLnkTest extends PHPUnit_Framework_TestCase
     function test_natalie2()
     {
         $url = 'http://natalie.mu/music/gallery/show/news_id/50476/image_id/78087';
-        $title = 'ナタリー - 怒髪天、5都市を回る自身初のホールツアー決定';
+        $title = '怒髪天、5都市を回る自身初のホールツアー決定 - 音楽ナタリー';
         $imageurls = array(
-            'http://natalie.mu/media/1106/0601/extra/news_large_dohatsuten_topB.jpg',
+            'http://natalie.mu/media/1106/0601/extra/news_xlarge_dohatsuten_topB.jpg',
         );
         $this->check_response($url, $title, $imageurls);
     }
