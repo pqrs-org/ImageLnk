@@ -34,4 +34,4 @@ auth_pixiv_id: 'your pixiv id'
 auth_pixiv_password: 'your pixiv password'
 ```
 
-Publish www directory by web server if you want to provide public web api.
+Publish `www` directory by web server if you want to provide public web api.
