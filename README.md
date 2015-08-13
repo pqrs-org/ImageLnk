@@ -33,3 +33,5 @@ Then create config/config.yaml and overwrite default values in config/config.def
 auth_pixiv_id: 'your pixiv id'
 auth_pixiv_password: 'your pixiv password'
 ```
+
+Publish www directory by web server if you want to provide public web api.
