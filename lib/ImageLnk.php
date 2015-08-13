@@ -2,8 +2,6 @@
 
 error_reporting(E_ALL | E_STRICT);
 
-require_once 'HTTP/Request2.php';
-require_once 'HTTP/Request2/CookieJar.php';
 require_once __DIR__ . '/../vendor/autoload.php';
 
 // ------------------------------------------------------------
