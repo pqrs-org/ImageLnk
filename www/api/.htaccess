@@ -4,7 +4,6 @@ RewriteRule ^get$   get.php   [L]
 RewriteRule ^sites$ sites.php [L]
 
 ##################################################
-php_value magic_quotes_gpc off
 php_flag  display_errors off
 php_flag  log_errors on
 
