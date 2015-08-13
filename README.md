@@ -1,5 +1,4 @@
-ImageLnk
-========
+# ImageLnk
 
 http://imagelnk.pqrs.org/
 
@@ -9,11 +8,28 @@ For example:
 
 <pre>
 submit:
-  url: http://yfrog.com/gyviz6j
+  url: https://twitter.com/ImageLnk/status/631948031873519616
 
 result:
-  pageurl:   http://yfrog.com/gyviz6j
-  title:     yfrog Photo : http://yfrog.com/gyviz6j Shared by ImageLnk
-  referer:   http://yfrog.com/gyviz6j
-  imageurls: http://a.yfrog.com/img610/5607/viz6.jpg
+  pageurl:   https://twitter.com/ImageLnk/status/631948031873519616
+  title:     twitter: ImageLnk: Penguins http://t.co/aQuSe9BGBD
+  referer:   https://twitter.com/ImageLnk/status/631948031873519616
+  imageurls: http://pbs.twimg.com/media/CMUhYqLVEAAOVT7.jpg:large
 </pre>
+
+# Installation
+
+```
+git clone https://github.com/tekezo/ImageLnk.git
+cd ImageLnk
+composer install
+```
+
+Then create config/config.yaml and overwrite default values in config/config.default.yaml.
+
+```
+# Example of config/config.yaml
+
+auth_pixiv_id: 'your pixiv id'
+auth_pixiv_password: 'your pixiv password'
+```
