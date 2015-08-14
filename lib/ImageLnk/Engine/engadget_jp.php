@@ -1,5 +1,7 @@
 <?php //-*- Mode: php; indent-tabs-mode: nil; -*-
 
+use Sunra\PhpSimple\HtmlDomParser;
+
 class ImageLnk_Engine_engadget_jp
 {
     const language = 'Japanese';
@@ -7,7 +9,7 @@ class ImageLnk_Engine_engadget_jp
 
     public static function handle($url)
     {
-        if (! preg_match('/^http:\/\/japanese\.engadget\.com\/photos\//', $url)) {
+        if (! preg_match('/^http:\/\/japanese\.engadget\.com\/gallery\//', $url)) {
             return false;
         }
 
@@ -15,18 +17,18 @@ class ImageLnk_Engine_engadget_jp
         $data = ImageLnk_Cache::get($url);
         $html = $data['data'];
 
+        $dom = HtmlDomParser::str_get_html($html);
+
         $response = new ImageLnk_Response();
         $response->setReferer($url);
 
         $response->setTitle(ImageLnk_Helper::getTitle($html));
-
-        if (preg_match('%<div class="gallery-image-dermis">(.+?)</div>%s', $html, $matches)) {
-            foreach (ImageLnk_Helper::scanSingleTag('img', $matches[1]) as $img) {
-                if (preg_match('/ src="(.+?)"/', $img, $m)) {
-                    $response->addImageURL($m[1]);
-                    break;
-                }
-            }
+        try {
+            $response->addImageURL($dom->find('meta[name=twitter:image0:src]', 0)->content);
+            $response->addImageURL($dom->find('meta[name=twitter:image1:src]', 0)->content);
+            $response->addImageURL($dom->find('meta[name=twitter:image2:src]', 0)->content);
+            $response->addImageURL($dom->find('meta[name=twitter:image3:src]', 0)->content);
+        } catch (Exception $ex) {
         }
 
         return $response;
