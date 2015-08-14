@@ -3,15 +3,18 @@
 class ImageLnk_Engine_dengeki
 {
     const language = 'Japanese';
-    const sitename = 'http://news.dengeki.com/';
+    const sitename = 'http://dengekionline.com/';
 
     public static function handle($url)
     {
-        if (! preg_match('/^http:\/\/news\.dengeki\.com(\/.+?\/)img.html/', $url, $matches)) {
+        if (! preg_match('#(http://dengekionline.com)(/.+?/)img.html#', $url, $matches)) {
             return false;
         }
 
-        $id = preg_quote($matches[1], '/');
+        $base = $matches[1];
+        $path = $matches[2];
+
+        $id = preg_quote($path, '/');
 
         // ----------------------------------------
         $data = ImageLnk_Cache::get($url);
@@ -23,7 +26,7 @@ class ImageLnk_Engine_dengeki
         $response->setTitle(ImageLnk_Helper::getTitle($html));
 
         if (preg_match("/src=\"({$id}.*?)\"/", $html, $matches)) {
-            $response->addImageURL('http://news.dengeki.com' . $matches[1]);
+            $response->addImageURL($base . $matches[1]);
         }
 
         return $response;
