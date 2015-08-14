@@ -9,7 +9,8 @@ class ImageLnk_Engine_amazon
 
     public static function handle($url)
     {
-        if (! preg_match('%^http://www\.amazon\.com/%', $url)) {
+        if (! preg_match('%^http://www\.amazon\.com/%', $url) &&
+            ! preg_match('%^http://www\.amazon\.co\.jp/%', $url)) {
             return false;
         }
 
@@ -23,7 +24,22 @@ class ImageLnk_Engine_amazon
         $response->setReferer($url);
 
         $response->setTitle(ImageLnk_Helper::getTitle($html));
-        $response->addImageURL($dom->find('img[data-old-hires]', 0)->getAttribute('data-old-hires'));
+
+        $img = $dom->find('img[data-old-hires]', 0);
+        if ($img) {
+            $data_old_hires = $img->getAttribute('data-old-hires');
+            if ($data_old_hires) {
+                $response->addImageURL($data_old_hires);
+            } else {
+                $data_a_dynamic_image = $img->getAttribute('data-a-dynamic-image');
+                if ($data_a_dynamic_image) {
+                    $urls = array_keys(json_decode(htmlspecialchars_decode($data_a_dynamic_image), true));
+                    if (count($urls) > 0) {
+                        $response->addImageURL($urls[0]);
+                    }
+                }
+            }
+        }
 
         return $response;
     }
