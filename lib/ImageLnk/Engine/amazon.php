@@ -1,5 +1,7 @@
 <?php //-*- Mode: php; indent-tabs-mode: nil; -*-
 
+use Sunra\PhpSimple\HtmlDomParser;
+
 class ImageLnk_Engine_amazon
 {
     const language = null;
@@ -15,21 +17,13 @@ class ImageLnk_Engine_amazon
         $data = ImageLnk_Cache::get($url);
         $html = $data['data'];
 
+        $dom = HtmlDomParser::str_get_html($html);
+
         $response = new ImageLnk_Response();
         $response->setReferer($url);
 
         $response->setTitle(ImageLnk_Helper::getTitle($html));
-
-        if (preg_match('%var colorImages = ({"initial":.+?);%', $html, $m)) {
-            $images = json_decode($m[1]);
-            foreach ($images->initial as $i) {
-                $response->addImageURL($i->hiRes);
-            }
-        }
-
-        if (count($response->getImageURLs()) == 0) {
-            return false;
-        }
+        $response->addImageURL($dom->find('img[data-old-hires]', 0)->getAttribute('data-old-hires'));
 
         return $response;
     }
