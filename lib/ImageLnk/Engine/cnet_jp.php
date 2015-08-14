@@ -1,70 +1,42 @@
 <?php //-*- Mode: php; indent-tabs-mode: nil; -*-
 
+use Sunra\PhpSimple\HtmlDomParser;
+
 class ImageLnk_Engine_cnet_jp
 {
     const language = 'Japanese';
     const sitename = 'http://japan.cnet.com/';
 
-    private static function handle_l_img_main($response, $html)
-    {
-        $matches = null;
-        if (! preg_match('%<div id="l_img_main">(.+)<!-- //block story -->%s', $html, $matches)) {
-            return false;
-        }
-
-        foreach (ImageLnk_Helper::scanSingleTag('img', $matches[1]) as $img) {
-            if (preg_match('/ src="(.+?)"/', $img, $m)) {
-                $response->addImageURL('http://japan.cnet.com' . $m[1]);
-            }
-        }
-
-        if (preg_match('%<div class="caption">(.+?)</div>%', $matches[1], $m)) {
-            $response->setTitle($response->getTitle() . ': ' . $m[1]);
-        }
-
-        return true;
-    }
-
-    private static function handle_story_photoreport($response, $html)
-    {
-        $matches = null;
-        if (! preg_match('%<div class="story_photoreport">(.+)<!--block_story-->%s', $html, $matches)) {
-            return false;
-        }
-
-        foreach (ImageLnk_Helper::scanSingleTag('img', $matches[1]) as $img) {
-            if (preg_match('/ src="(.+?)"/', $img, $m)) {
-                $response->addImageURL('http://japan.cnet.com' . $m[1]);
-            }
-            if (preg_match('/ alt="(.+?)"/', $img, $m)) {
-                $response->setTitle($response->getTitle() . ': ' . $m[1]);
-            }
-            break;
-        }
-
-        return true;
-    }
-
     public static function handle($url)
     {
-        if (! preg_match('%^http://japan\.cnet\.com/%', $url)) {
+        if (! preg_match('%^(http://japan\.cnet\.com)/%', $url, $matches)) {
             return false;
         }
+
+        $base = $matches[1];
 
         // ----------------------------------------
         $data = ImageLnk_Cache::get($url);
         $html = $data['data'];
+
+        $dom = HtmlDomParser::str_get_html($html);
 
         $response = new ImageLnk_Response();
         $response->setReferer($url);
 
         $response->setTitle(ImageLnk_Helper::getTitle($html));
 
-        if (self::handle_l_img_main($response, $html)) {
+        $mediaImg = $dom->find('#mediaImg', 0);
+        if ($mediaImg) {
+            $response->addImageURL($base . $mediaImg->src);
+            $response->setTitle($response->getTitle() . ': ' . $mediaImg->alt);
             return $response;
         }
 
-        if (self::handle_story_photoreport($response, $html)) {
+        $l_img_main = $dom->find('#l_img_main', 0);
+        if ($l_img_main) {
+            $response->addImageURL($base . $l_img_main->find('img', 0)->src);
+            $response->setTitle($response->getTitle() . ': ' . $l_img_main->find('div.caption', 0)->plaintext);
             return $response;
         }
 
