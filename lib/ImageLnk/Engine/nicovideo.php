@@ -18,17 +18,7 @@ class ImageLnk_Engine_nicovideo
         $response = new ImageLnk_Response();
         $response->setReferer($url);
 
-        $title = ImageLnk_Helper::getTitle($html);
-        if ($title !== false) {
-            $response->setTitle($title);
-        }
-
-        foreach (ImageLnk_Helper::scanSingleTag('img', $html) as $img) {
-            if (preg_match('/ src="(http:\/\/tn-skr\d+\.smilevideo\.jp\/smile\?i=\d+)" /', $img, $m)) {
-                $response->addImageURL($m[1]);
-                break;
-            }
-        }
+        ImageLnk_Helper::setResponseFromOpenGraph($response, $html);
 
         return $response;
     }

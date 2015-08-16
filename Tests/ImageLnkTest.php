@@ -255,9 +255,9 @@ class ImageLnkTest extends PHPUnit_Framework_TestCase
     function test_nicovideo1()
     {
         $url = 'http://www.nicovideo.jp/watch/sm17606436';
-        $title = '【折り紙】バラを折ってみた ‐ ニコニコ動画:Q';
+        $title = '【折り紙】バラを折ってみた';
         $imageurls = array(
-            'http://tn-skr2.smilevideo.jp/smile?i=18758121',
+            'http://tn-skr1.smilevideo.jp/smile?i=17606436.L',
         );
         $this->check_response($url, $title, $imageurls);
     }
@@ -744,7 +744,7 @@ class ImageLnkTest extends PHPUnit_Framework_TestCase
         $url = 'https://itunes.apple.com/jp/app/daraiasubasutosp/id483504712';
         $title = 'ダライアスバーストSP';
         $imageurls = array(
-            'http://a3.mzstatic.com/jp/r30/Purple2/v4/8a/4f/9b/8a4f9b7d-010e-103e-ed8b-1e74c17203f7/icon320x320.png',
+            'http://a3.mzstatic.com/jp/r30/Purple2/v4/8a/4f/9b/8a4f9b7d-010e-103e-ed8b-1e74c17203f7/icon320x320.jpeg',
         );
         $this->check_response($url, $title, $imageurls);
     }
