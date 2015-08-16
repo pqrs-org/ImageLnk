@@ -168,7 +168,7 @@ class ImageLnkTest extends PHPUnit_Framework_TestCase
         $url = 'http://f.hatena.ne.jp/tekezo/20090625215759';
         $title = 'タイトルです。';
         $imageurls = array(
-            'http://cdn-ak.f.st-hatena.com/images/fotolife/t/tekezo/20090625/20090625215759.jpg',
+            'http://f.st-hatena.com/images/fotolife/t/tekezo/20090625/20090625215759.jpg',
         );
         $this->check_response($url, $title, $imageurls);
     }
@@ -177,7 +177,7 @@ class ImageLnkTest extends PHPUnit_Framework_TestCase
     function test_dengeki1()
     {
         $url = 'http://news.dengeki.com/elem/000/000/364/364901/img.html';
-        $title = '【App通信】iPad 2が満を持して発売！ 美少女姉妹による萌え系紙芝居アプリも - 電撃オンライン';
+        $title = '電撃 - 【App通信】iPad 2が満を持して発売！ 美少女姉妹による萌え系紙芝居 アプリも';
         $imageurls = array(
             'http://news.dengeki.com/elem/000/000/364/364901/c20110502_app_18_cs1w1_347x720.jpg',
         );
@@ -491,10 +491,10 @@ class ImageLnkTest extends PHPUnit_Framework_TestCase
     // ======================================================================
     function test_wikipedia1()
     {
-        $url = 'http://en.wikipedia.org/wiki/File:PANSDeinonychus.JPG';
+        $url = 'https://en.wikipedia.org/wiki/File:PANSDeinonychus.JPG';
         $title = 'English: Deinonychus antirrhopus skeleton, Philadelphia Academy of Natural Sciences';
         $imageurls = array(
-            'http://upload.wikimedia.org/wikipedia/commons/e/e6/PANSDeinonychus.JPG',
+            'https://upload.wikimedia.org/wikipedia/commons/e/e6/PANSDeinonychus.JPG',
         );
         $this->check_response($url, $title, $imageurls);
     }
@@ -502,20 +502,10 @@ class ImageLnkTest extends PHPUnit_Framework_TestCase
     // ======================================================================
     function test_instagram1()
     {
-        $url = 'http://instagram.com/p/E6VjC/';
-        $title = 'CACUREMASU on Instagram: “おはよう”';
+        $url = 'https://instagram.com/p/6XQ5nTTdjq/';
+        $title = '@imagelnk on Instagram: “pepper”';
         $imageurls = array(
-            'http://images.ak.instagram.com/media/2011/05/29/9c4d66f169a24764961977326e2fc1cf_7.jpg',
-        );
-        $this->check_response($url, $title, $imageurls);
-    }
-
-    function test_instagram2()
-    {
-        $url = 'http://instagr.am/p/E6VjC/';
-        $title = 'CACUREMASU on Instagram: “おはよう”';
-        $imageurls = array(
-            'http://images.ak.instagram.com/media/2011/05/29/9c4d66f169a24764961977326e2fc1cf_7.jpg',
+            'https://igcdn-photos-e-a.akamaihd.net/hphotos-ak-xaf1/t51.2885-15/11356624_508726059287524_1160649839_n.jpg',
         );
         $this->check_response($url, $title, $imageurls);
     }
@@ -556,20 +546,26 @@ class ImageLnkTest extends PHPUnit_Framework_TestCase
     // ======================================================================
     function test_engadget_jp1()
     {
-        $url = 'http://japanese.engadget.com/photos/asus-eee-pad-memo-3d-memic-hands-on/4173481/';
+        $url = 'http://japanese.engadget.com/gallery/asus-eee-pad-memo-3d-memic-hands-on/4173481/';
         $title = 'Asus Eee Pad MeMO 3D / MeMIC hands on';
         $imageurls = array(
+            'http://www.blogcdn.com/japanese.engadget.com/media/2011/05/asuseeepadmemohandsoncomputex1101-1306749949.jpg',
+            'http://www.blogcdn.com/japanese.engadget.com/media/2011/05/asuseeepadmemohandsoncomputex1102-1306749952.jpg',
             'http://www.blogcdn.com/japanese.engadget.com/media/2011/05/asuseeepadmemohandsoncomputex1103-1306749954.jpg',
+            'http://www.blogcdn.com/japanese.engadget.com/media/2011/05/asuseeepadmemohandsoncomputex1104-1306749957.jpg',
         );
         $this->check_response($url, $title, $imageurls);
     }
 
     function test_engadget_jp2()
     {
-        $url = 'http://japanese.engadget.com/photos/memorex-gaming-peripherals-e3-2011/4179706/';
+        $url = 'http://japanese.engadget.com/gallery/memorex-gaming-peripherals-e3-2011/4179706/';
         $title = 'Memorex gaming Peripherals (E3 2011)';
         $imageurls = array(
+            'http://www.blogcdn.com/japanese.engadget.com/media/2011/06/game-selector-case.jpg',
+            'http://www.blogcdn.com/japanese.engadget.com/media/2011/06/3dsgameselector3-1.jpg',
             'http://www.blogcdn.com/japanese.engadget.com/media/2011/06/3dsgameselector.jpg',
+            'http://www.blogcdn.com/japanese.engadget.com/media/2011/06/3dsgameselector2.jpg',
         );
         $this->check_response($url, $title, $imageurls);
     }
@@ -711,7 +707,6 @@ class ImageLnkTest extends PHPUnit_Framework_TestCase
     }
 
     // ======================================================================
-    private $twitter_author_ = "焼肉の人みやびあーつ＼ﾊﾟﾘ-ﾝ／:";
     function test_twitter1()
     {
         $url = 'https://twitter.com/tekezo/status/474587873925017600';
@@ -799,7 +794,7 @@ class ImageLnkTest extends PHPUnit_Framework_TestCase
         $url = 'http://news.mynavi.jp/photo/news/2011/11/08/008/images/005l.jpg';
         $title = '拡大画像 005 | サイボウズ、クラウド基盤「cybozu.com」の運用を開始しPaaSを提供 | マイナビニュース';
         $imageurls = array(
-            'http://news.mynavi.jp/news/2011/11/08/008/images/005l.jpg',
+            'http://n.mynv.jp/news/2011/11/08/008/images/005l.jpg',
         );
         $this->check_response($url, $title, $imageurls);
     }
@@ -809,7 +804,7 @@ class ImageLnkTest extends PHPUnit_Framework_TestCase
         $url = 'http://news.mynavi.jp/photo/articles/2011/03/07/appinventor/images/006l.jpg';
         $title = '拡大画像 006 | 【ハウツー】経験ゼロでも大丈夫!? App Inventorで始めるAndroidアプリ開…… | マイナビニュース';
         $imageurls = array(
-            'http://news.mynavi.jp/articles/2011/03/07/appinventor/images/006l.jpg',
+            'http://n.mynv.jp/articles/2011/03/07/appinventor/images/006l.jpg',
         );
         $this->check_response($url, $title, $imageurls);
     }
@@ -821,14 +816,13 @@ class ImageLnkTest extends PHPUnit_Framework_TestCase
         $title = 'Amazon.com: Palm Pixi Plus GSM with WebOS, Touch Screen, 2 MP Camera and Wi-Fi - Unlocked Phone - US Warranty - Black: Cell Phones & Accessories';
         $imageurls = array(
             'http://ecx.images-amazon.com/images/I/81dGB9SsIML._SL1500_.jpg',
-            'http://ecx.images-amazon.com/images/I/81xDxSMf9DL._SL1500_.jpg',
         );
         $this->check_response($url, $title, $imageurls);
     }
 
     function test_amazon2()
     {
-        $url = 'http://ecx.images-amazon.com/images/I/41XppCzaL6L._SL500_AA300_.jpg';
+        $url = 'http://ecx.images-amazon.com/images/I/81dGB9SsIML._SL1500_.jpg';
         $this->expect_false($url);
     }
 
@@ -836,51 +830,17 @@ class ImageLnkTest extends PHPUnit_Framework_TestCase
     function test_amazon_jp1()
     {
         $url = 'http://www.amazon.co.jp/gp/product/B006FCG96G/';
-        $title = 'Amazon.co.jp： ピュアニーモキャラクターシリーズ 魔法少女まどか☆マギカ 暁美ほむら 制服Ver.: ホビー';
+        $title = 'Amazon.co.jp | ピュアニーモキャラクターシリーズ 魔法少女まどか☆マギカ 暁美ほむら 制服Ver. | ホビー 通販';
         $imageurls = array(
-            'http://ec2.images-amazon.com/images/I/41PpQnkCaoL._SL500_AA300_.jpg',
+            'http://ecx.images-amazon.com/images/I/41PpQnkCaoL.jpg',
         );
         $this->check_response($url, $title, $imageurls);
     }
 
     function test_amazon_jp2()
     {
-        $url = 'http://ec2.images-amazon.com/images/I/41PpQnkCaoL._SL500_AA300_.jpg';
+        $url = 'http://ecx.images-amazon.com/images/I/41PpQnkCaoL.jpg';
         $this->expect_false($url);
-    }
-
-    // ======================================================================
-    function test_viame1()
-    {
-        $url = 'http://via.me/-1h54j0g';
-        $title = 'fslasht(えふてぃ) (fslasht) : 今日のお昼はロースカツカレーが100円引きということでゴーゴー...';
-        $imageurls = array(
-            'http://viametest.s3.amazonaws.com/34fa6110-8ab0-012f-e191-12313d140e53',
-        );
-        $this->check_response($url, $title, $imageurls);
-    }
-
-    // ======================================================================
-    function test_loveplusphotoclub1()
-    {
-        $url = 'http://www.loveplusphotoclub.konami.jp/post/ja/9917/%E6%B8%A9%E6%B3%89%E5%8A%B9%E6%9E%9C.html';
-        $title = '温泉効果';
-        $imageurls = array(
-            'http://www.loveplusphotoclub.konami.jp/cgm/ecommerce/loveplus/images/large/049d1f6f9b3133ff8a3a1e4c95e8d34b.jpg?1356824235',
-        );
-        $this->check_response($url, $title, $imageurls);
-    }
-
-    function test_loveplusphotoclub2()
-    {
-        $url = 'http://www.loveplusphotoclub.konami.jp/post/ja/9945/%E3%81%AA%E3%81%94%E3%81%BF.html';
-        $title = 'なごみ';
-        $imageurls = array(
-            'http://www.loveplusphotoclub.konami.jp/cgm/ecommerce/loveplus/images/large/22aa7c4a0d580bd43da40cd8dd9c2df3.jpg?1357084966',
-            'http://www.loveplusphotoclub.konami.jp/cgm/ecommerce/loveplus/images/large/7d8b7fb8a7d85c04d4d2a83164140ae7.jpg?1357085230',
-            'http://www.loveplusphotoclub.konami.jp/cgm/ecommerce/loveplus/images/large/b12633f7249052335add77a626127b28.jpg?1357085233',
-        );
-        $this->check_response($url, $title, $imageurls);
     }
 
     // ======================================================================
@@ -889,7 +849,7 @@ class ImageLnkTest extends PHPUnit_Framework_TestCase
         $url = 'https://www.dropbox.com/s/wkq0b9126koq3ky/130911-0001.png?dl=0';
         $title = '130911-0001.png';
         $imageurls = array(
-            'https://photos-5.dropbox.com/t/2/AADE9FTsoH7wR3SmX08sn-5y4IuxGF4ut8E9UlSnC_3YQA/12/14480761/png/1024x768/2/_/0/4/130911-0001.png/CPnq8wYgASACIAMoASgC/wkq0b9126koq3ky/AAAJOkCa_pv3gfGYZNLNPvrqa/130911-0001.png',
+            'https://photos-1.dropbox.com/t/2/AABGB1xfv4CxJLHk3Ef9MueqSa7cz9zmfXDe6pEnuUy7-w/12/14480761/png/1024x768/2/_/0/4/130911-0001.png/CPnq8wYgASACIAMgBCAFIAYgBygBKAI/wkq0b9126koq3ky/AAAJOkCa_pv3gfGYZNLNPvrqa/130911-0001.png',
         );
         $this->check_response($url, $title, $imageurls);
     }
