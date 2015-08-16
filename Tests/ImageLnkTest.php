@@ -1,6 +1,7 @@
 <?php //-*- Mode: php; indent-tabs-mode: nil; -*-
 
 require_once sprintf('%s/../lib/ImageLnk.php', dirname(__FILE__));
+require_once 'HTTP/Request2.php';
 
 class ImageLnkTest extends PHPUnit_Framework_TestCase
 {
@@ -176,10 +177,10 @@ class ImageLnkTest extends PHPUnit_Framework_TestCase
     // ======================================================================
     function test_dengeki1()
     {
-        $url = 'http://news.dengeki.com/elem/000/000/364/364901/img.html';
+        $url = 'http://dengekionline.com/elem/000/000/364/364901/img.html';
         $title = '電撃 - 【App通信】iPad 2が満を持して発売！ 美少女姉妹による萌え系紙芝居 アプリも';
         $imageurls = array(
-            'http://news.dengeki.com/elem/000/000/364/364901/c20110502_app_18_cs1w1_347x720.jpg',
+            'http://dengekionline.com/elem/000/000/364/364901/c20110502_app_18_cs1w1_347x720.jpg',
         );
         $this->check_response($url, $title, $imageurls);
     }
@@ -194,7 +195,7 @@ class ImageLnkTest extends PHPUnit_Framework_TestCase
         $actual = $response->getTitle();
         $this->assertSame($title, $actual);
 
-        $referer = 'http://twitpic.com/1yggai/full';
+        $referer = 'http://twitpic.com/1yggai';
         $actual = $response->getReferer();
         $this->assertSame($referer, $actual);
 
@@ -210,7 +211,7 @@ class ImageLnkTest extends PHPUnit_Framework_TestCase
         $actual = $response->getTitle();
         $this->assertSame($title, $actual);
 
-        $referer = 'http://twitpic.com/c17ing/full';
+        $referer = 'http://twitpic.com/c17ing';
         $actual = $response->getReferer();
         $this->assertSame($referer, $actual);
 
@@ -256,7 +257,7 @@ class ImageLnkTest extends PHPUnit_Framework_TestCase
         $url = 'http://www.nicovideo.jp/watch/sm17606436';
         $title = '【折り紙】バラを折ってみた ‐ ニコニコ動画:Q';
         $imageurls = array(
-            'http://tn-skr1.smilevideo.jp/smile?i=17606436',
+            'http://tn-skr2.smilevideo.jp/smile?i=18758121',
         );
         $this->check_response($url, $title, $imageurls);
     }
@@ -344,7 +345,7 @@ class ImageLnkTest extends PHPUnit_Framework_TestCase
     // ======================================================================
     function test_youtube1()
     {
-        $url = 'http://www.youtube.com/watch?v=Tlmho7SY-ic&feature=player_embedded';
+        $url = 'https://www.youtube.com/watch?v=Tlmho7SY-ic&feature=player_embedded';
         $title = 'YouTube Turns Five!';
         $imageurls = array(
             'https://i.ytimg.com/vi/Tlmho7SY-ic/maxresdefault.jpg',
@@ -473,7 +474,7 @@ class ImageLnkTest extends PHPUnit_Framework_TestCase
         $url = 'https://plus.google.com/photos/100474803495183280561/albums/5466144754327282337/5516583424278584290?banner=pwa&pid=5516583424278584290&oid=100474803495183280561';
         $title = 'Cat Magic';
         $imageurls = array(
-            'https://lh6.googleusercontent.com/-aLmbGb0QF3k/TI7XZXHu2-I/AAAAAAAAAFY/KVW0kHhTe44/s0-d/002.jpg',
+            'https://lh3.googleusercontent.com/-aLmbGb0QF3k/TI7XZXHu2-I/AAAAAAAAAFY/KVW0kHhTe44/s0-d/002.jpg',
         );
         $this->check_response($url, $title, $imageurls);
     }
@@ -483,7 +484,7 @@ class ImageLnkTest extends PHPUnit_Framework_TestCase
         $url = 'https://plus.google.com/photos/100474803495183280561/albums/5466144754327282337/5516583538243902706?banner=pwa&pid=5516583538243902706&oid=100474803495183280561';
         $title = 'Cat Magic';
         $imageurls = array(
-            'https://lh5.googleusercontent.com/-Areqbvkmj2E/TI7Xf_rLnPI/AAAAAAAAAF0/b4D3iONjfEw/s0-d/009.jpg',
+            'https://lh3.googleusercontent.com/-Areqbvkmj2E/TI7Xf_rLnPI/AAAAAAAAAF0/b4D3iONjfEw/s0-d/009.jpg',
         );
         $this->check_response($url, $title, $imageurls);
     }
@@ -646,10 +647,10 @@ class ImageLnkTest extends PHPUnit_Framework_TestCase
 
     function test_zakzak2()
     {
-        $url = 'http://www.zakzak.co.jp/sports/soccer/photos/20130419/soc1304190710001-p1.htm';
-        $title = '低迷インテル大粛清？　どうなる長友の去就　シーズン終了待たずに補強の準備  - スポーツ - ZAKZAK';
+        $url = 'http://www.zakzak.co.jp/sports/etc_sports/photos/20150808/spo1508081531009-p1.htm';
+        $title = '松山、４９位に後退　池ポチャ２度の大乱調　ブリヂストン招待  - スポーツ - ZAKZAK';
         $imageurls = array(
-            'http://www.zakzak.co.jp/sports/soccer/images/20130419/soc1304190710001-p1.jpg',
+            'http://www.zakzak.co.jp/sports/etc_sports/images/20150808/spo1508081531009-p1.jpg',
         );
         $this->check_response($url, $title, $imageurls);
     }
@@ -689,7 +690,7 @@ class ImageLnkTest extends PHPUnit_Framework_TestCase
     function test_news_livedoor_com1()
     {
         $url = 'http://news.livedoor.com/article/image_detail/5786423/?img_id=2118390';
-        $title = '【画像】【こんにちは！ナマな人々】露出度高めなコスプレ娘・知羽音さん - 写真 (週プレNEWS) - livedoor ニュース';
+        $title = '【画像】【こんにちは！ナマな人々】露出度高めなコスプレ娘・知羽音さん 1/2 - ライブドアニュース';
         $imageurls = array(
             'http://image.news.livedoor.com/newsimage/c/0/c08fd40e8bba4eee8ed91b72707e0378.jpg',
         );
@@ -699,7 +700,7 @@ class ImageLnkTest extends PHPUnit_Framework_TestCase
     function test_news_livedoor_com2()
     {
         $url = 'http://news.livedoor.com/article/image_detail/5460430/?img_id=1848550';
-        $title = '【画像】美少女時計に人気モデル 前田希美 黒田瑞貴 志田友美が登場 ウェブ版もスタート - 17枚目の写真 (Girls News) - livedoor ニュース';
+        $title = '【画像】美少女時計に人気モデル 前田希美 黒田瑞貴 志田友美が登場 ウェブ版もスタート 17/18 - ライブドアニュース';
         $imageurls = array(
             'http://image.news.livedoor.com/newsimage/0/1/01e1a_756_b0853.jpg',
         );
@@ -730,7 +731,7 @@ class ImageLnkTest extends PHPUnit_Framework_TestCase
     // ======================================================================
     function test_itunes1()
     {
-        $url = 'http://itunes.apple.com/jp/album/muscle-march-original-soundtrack/id455935658?l=en';
+        $url = 'https://itunes.apple.com/jp/album/muscle-march-original-soundtrack/id455935658?l=en';
         $title = 'Muscle March Original Soundtrack by Namco Sounds';
         $imageurls = array(
             'http://a3.mzstatic.com/jp/r30/Music/v4/b3/88/7c/b3887c0f-95fb-23f1-daae-ee9ac3ff7237/cover326x326.jpeg',
@@ -743,7 +744,7 @@ class ImageLnkTest extends PHPUnit_Framework_TestCase
         $url = 'https://itunes.apple.com/jp/app/daraiasubasutosp/id483504712';
         $title = 'ダライアスバーストSP';
         $imageurls = array(
-            'http://a3.mzstatic.com/jp/r30/Purple2/v4/8a/4f/9b/8a4f9b7d-010e-103e-ed8b-1e74c17203f7/icon320x320.jpeg',
+            'http://a3.mzstatic.com/jp/r30/Purple2/v4/8a/4f/9b/8a4f9b7d-010e-103e-ed8b-1e74c17203f7/icon320x320.png',
         );
         $this->check_response($url, $title, $imageurls);
     }
@@ -783,7 +784,7 @@ class ImageLnkTest extends PHPUnit_Framework_TestCase
         $url = 'http://cookpad.com/recipe/720203';
         $title = '大根とツナとホタテのサラダ♪ by ともにゃんママ [クックパッド] 簡単おいしいみんなのレシピが136万品';
         $imageurls = array(
-            'http://d3921.cpcdn.com/recipes/720203/280/24ece10f66b104ef0562b0b2f477d49f.jpg?u=887658&p=1232792798',
+            'http://img.cpcdn.com/recipes/720203/280/24ece10f66b104ef0562b0b2f477d49f.jpg?u=887658&p=1232792798',
         );
         $this->check_response($url, $title, $imageurls);
     }
