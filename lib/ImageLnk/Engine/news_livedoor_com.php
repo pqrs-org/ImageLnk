@@ -19,16 +19,7 @@ class ImageLnk_Engine_news_livedoor_com
         $response = new ImageLnk_Response();
         $response->setReferer($url);
 
-        $response->setTitle(ImageLnk_Helper::getTitle($html));
-
-        if (preg_match('%<div id="photo-detail">(.+?)</div>%', $html, $matches)) {
-            foreach (ImageLnk_Helper::scanSingleTag('img', $matches[1]) as $img) {
-                if (preg_match('/ src="(.+?)"/', $img, $m)) {
-                    $response->addImageURL($m[1]);
-                    break;
-                }
-            }
-        }
+        ImageLnk_Helper::setResponseFromOpenGraph($response, $html);
 
         return $response;
     }
