@@ -739,16 +739,6 @@ class ImageLnkTest extends PHPUnit_Framework_TestCase
         $this->check_response($url, $title, $imageurls);
     }
 
-    function test_itunes2()
-    {
-        $url = 'https://itunes.apple.com/jp/app/daraiasubasutosp/id483504712';
-        $title = 'ダライアスバーストSP';
-        $imageurls = array(
-            'http://a3.mzstatic.com/jp/r30/Purple2/v4/8a/4f/9b/8a4f9b7d-010e-103e-ed8b-1e74c17203f7/icon320x320.jpeg',
-        );
-        $this->check_response($url, $title, $imageurls);
-    }
-
     // ======================================================================
     function test_cnet_jp1()
     {
