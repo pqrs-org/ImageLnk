@@ -24,9 +24,14 @@ class ImageLnk_Engine_engadget
 
         $response->setTitle(ImageLnk_Helper::getTitle($html));
 
-        $meta = $dom->find('meta[name=twitter:image]', 0);
-        if ($meta) {
-            $response->addImageURL(trim($meta->content));
+        $gallery_title = $dom->find('h1.gallery-title', 0);
+        if ($gallery_title) {
+            $response->setTitle($gallery_title->plaintext);
+        }
+
+        $element = $dom->find('.knot-slideshow-data > li > a', 0);
+        if ($element) {
+            $response->addImageURL(trim($element->getAttribute('href')));
         }
 
         return $response;
