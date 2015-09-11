@@ -732,7 +732,7 @@ class ImageLnkTest extends PHPUnit_Framework_TestCase
     function test_itunes1()
     {
         $url = 'https://itunes.apple.com/jp/album/muscle-march-original-soundtrack/id455935658?l=en';
-        $title = 'Muscle March Original Soundtrack by Namco Sounds';
+        $title = 'Muscle March Original Soundtrack by Namco Sounds on iTunes';
         $imageurls = array(
             'http://a3.mzstatic.com/jp/r30/Music/v4/b3/88/7c/b3887c0f-95fb-23f1-daae-ee9ac3ff7237/cover326x326.jpeg',
         );
