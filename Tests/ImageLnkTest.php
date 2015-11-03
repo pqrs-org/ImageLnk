@@ -506,7 +506,7 @@ class ImageLnkTest extends PHPUnit_Framework_TestCase
         $url = 'https://instagram.com/p/6XQ5nTTdjq/';
         $title = '@imagelnk on Instagram: “pepper”';
         $imageurls = array(
-            'https://scontent-nrt1-1.cdninstagram.com/hphotos-xaf1/t51.2885-15/e35/11356624_508726059287524_1160649839_n.jpg',
+            'https://scontent-nrt1-1.cdninstagram.com/hphotos-xfa1/t51.2885-15/e35/11356624_508726059287524_1160649839_n.jpg',
         );
         $this->check_response($url, $title, $imageurls);
     }
