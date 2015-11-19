@@ -774,7 +774,7 @@ class ImageLnkTest extends PHPUnit_Framework_TestCase
         $url = 'http://cookpad.com/recipe/720203';
         $title = '大根とツナとホタテのサラダ♪ by ともにゃんママ [クックパッド] 簡単おいしいみんなのレシピが136万品';
         $imageurls = array(
-            'http://img.cpcdn.com/recipes/720203/280/24ece10f66b104ef0562b0b2f477d49f.jpg?u=887658&p=1232792798',
+            'https://img.cpcdn.com/recipes/720203/280/24ece10f66b104ef0562b0b2f477d49f.jpg?u=887658&p=1232792798',
         );
         $this->check_response($url, $title, $imageurls);
     }
@@ -840,7 +840,7 @@ class ImageLnkTest extends PHPUnit_Framework_TestCase
         $url = 'https://www.dropbox.com/s/wkq0b9126koq3ky/130911-0001.png?dl=0';
         $title = '130911-0001.png';
         $imageurls = array(
-            'https://photos-1.dropbox.com/t/2/AAAUeJsUqS9U5tYEFf5fMEQcGNEE3DxV2DbEK1zLUNIVog/12/14480761/png/1024x768/2/_/0/4/130911-0001.png/CPnq8wYgASACIAMgBCAFIAcoAigH/wkq0b9126koq3ky/AAAJOkCa_pv3gfGYZNLNPvrqa/130911-0001.png',
+            'https://photos-1.dropbox.com/t/2/AACld-EiQ2PeX8m2rvU5era4kXAoCFpRu_HBjEzH433NQw/12/14480761/png/1024x768/2/_/0/4/130911-0001.png/CPnq8wYgASACIAQgBSAHKAIoBw/wkq0b9126koq3ky/AAAJOkCa_pv3gfGYZNLNPvrqa/130911-0001.png',
         );
         $this->check_response($url, $title, $imageurls);
     }
