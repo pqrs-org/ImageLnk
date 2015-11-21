@@ -449,7 +449,7 @@ class ImageLnkTest extends PHPUnit_Framework_TestCase
     // ======================================================================
     function test_tumblr1()
     {
-        $url = 'http://titlebot.tumblr.com/post/5544499061';
+        $url = 'http://titlebot.tumblr.com/post/5544499061/%E3%83%8D%E3%82%B3%E3%81%A8%E5%92%8C%E8%A7%A3%E3%81%9B%E3%82%88';
         $title = 'titlebot: ネコと和解せよ';
         $imageurls = array(
             'http://36.media.tumblr.com/tumblr_llal1ttZ7W1qfqa6no1_400.jpg',
