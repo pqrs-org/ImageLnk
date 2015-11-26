@@ -9,8 +9,8 @@ class ImageLnk_Engine_instagram
 
     public static function handle($url)
     {
-        if (! preg_match('%^https?://instagram\.com/%', $url)
-            && ! preg_match('%^https?://instagr\.am/%', $url)
+        if (! preg_match('%^https?://(www\.)?instagram\.com/%', $url)
+            && ! preg_match('%^https?://(www\.)?instagr\.am/%', $url)
         ) {
             return false;
         }
