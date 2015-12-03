@@ -506,7 +506,7 @@ class ImageLnkTest extends PHPUnit_Framework_TestCase
         $url = 'https://www.instagram.com/p/6XQ5nTTdjq/';
         $title = '@imagelnk on Instagram: “pepper”';
         $imageurls = array(
-            'https://scontent-nrt1-1.cdninstagram.com/hphotos-xfa1/t51.2885-15/e35/11356624_508726059287524_1160649839_n.jpg',
+            'https://scontent-nrt1-1.cdninstagram.com/hphotos-xft1/t51.2885-15/e35/11356624_508726059287524_1160649839_n.jpg',
         );
         $this->check_response($url, $title, $imageurls);
     }
@@ -516,7 +516,7 @@ class ImageLnkTest extends PHPUnit_Framework_TestCase
         $url = 'https://instagram.com/p/6XQ5nTTdjq/';
         $title = '@imagelnk on Instagram: “pepper”';
         $imageurls = array(
-            'https://scontent-nrt1-1.cdninstagram.com/hphotos-xfa1/t51.2885-15/e35/11356624_508726059287524_1160649839_n.jpg',
+            'https://scontent-nrt1-1.cdninstagram.com/hphotos-xft1/t51.2885-15/e35/11356624_508726059287524_1160649839_n.jpg',
         );
         $referer = 'https://www.instagram.com/p/6XQ5nTTdjq/';
         $this->check_response($url, $title, $imageurls, $referer);
@@ -578,27 +578,6 @@ class ImageLnkTest extends PHPUnit_Framework_TestCase
             'http://www.blogcdn.com/japanese.engadget.com/media/2011/06/3dsgameselector3-1.jpg',
             'http://www.blogcdn.com/japanese.engadget.com/media/2011/06/3dsgameselector.jpg',
             'http://www.blogcdn.com/japanese.engadget.com/media/2011/06/3dsgameselector2.jpg',
-        );
-        $this->check_response($url, $title, $imageurls);
-    }
-
-    // ======================================================================
-    function test_engadget1()
-    {
-        $url = 'http://www.engadget.com/gallery/ubeam-wireless-power-demonstration-hands-on-at-d9/';
-        $title = 'uBeam wireless power demonstration hands-on at D9';
-        $imageurls = array(
-            'http://www.blogcdn.com/www.engadget.com/media/2011/06/ubeam-demo-hands-on-d92888.jpg',
-        );
-        $this->check_response($url, $title, $imageurls);
-    }
-
-    function test_engadget2()
-    {
-        $url = 'http://www.engadget.com/gallery/intels-computex-2011-keynote/';
-        $title = "Intel's Computex 2011 keynote";
-        $imageurls = array(
-            'http://www.blogcdn.com/www.engadget.com/media/2011/05/11a531403e6.jpg',
         );
         $this->check_response($url, $title, $imageurls);
     }

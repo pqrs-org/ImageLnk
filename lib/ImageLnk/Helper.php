@@ -1,5 +1,7 @@
 <?php //-*- Mode: php; indent-tabs-mode: nil; -*-
 
+use Sunra\PhpSimple\HtmlDomParser;
+
 class ImageLnk_Helper
 {
     public static function scanSingleTag($name, $html, $regexpoption = 's')
@@ -26,25 +28,23 @@ class ImageLnk_Helper
 
     public static function setResponseFromOpenGraph($response, $html)
     {
-        foreach (self::scanSingleTag('meta', $html) as $meta) {
-            if (preg_match('/ property=[\'"]og:title[\'"]/', $meta)) {
-                if (preg_match('/ content=[\'"](.+?)[\'"]/is', $meta, $matches)) {
-                    $response->setTitle($matches[1]);
-                }
-            }
+        $dom = HtmlDomParser::str_get_html($html);
 
-            if (preg_match('/ property=[\'"]og:image[\'"]/', $meta)) {
-                if (preg_match('/ content=[\'"](.+?)[\'"]/is', $meta, $matches)) {
-                    $response->addImageURL($matches[1]);
-                }
-            }
+        $title = $dom->find('meta[property=og:title]', 0);
+        if ($title) {
+            $response->setTitle($title->content);
+        }
+
+        $image = $dom->find('meta[property=og:image]', 0);
+        if ($image) {
+            $response->addImageURL($image->content);
         }
 
         if (! $response->getTitle()) {
             // fall-back
-            $title = self::getTitle($html);
+            $title = $dom->find('title', 0);
             if ($title) {
-                $response->setTitle($title);
+                $response->setTitle($title->content);
             }
         }
     }

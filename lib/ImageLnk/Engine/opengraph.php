@@ -1,17 +1,12 @@
 <?php //-*- Mode: php; indent-tabs-mode: nil; -*-
 
-class ImageLnk_Engine_youtube
+class ImageLnk_Engine_opengraph
 {
     const language = null;
-    const sitename = 'http://www.youtube.com/';
+    const sitename = 'any site which has og:image';
 
     public static function handle($url)
     {
-        if (! preg_match('/^https?:\/\/www\.youtube\.com\/watch\?(.+)/', $url)) {
-            return false;
-        }
-
-        // ----------------------------------------
         $data = ImageLnk_Cache::get($url);
         $html = $data['data'];
 
@@ -20,7 +15,11 @@ class ImageLnk_Engine_youtube
 
         ImageLnk_Helper::setResponseFromOpenGraph($response, $html);
 
+        if (empty($response->getImageURLs())) {
+            return false;
+        }
+
         return $response;
     }
 }
-ImageLnk_Engine::push('ImageLnk_Engine_youtube');
+// Do not call ImageLnk_Engine::push here for opengraph

@@ -31,6 +31,7 @@ ImageLnk_Config::static_initialize();
 foreach (glob(sprintf('%s/ImageLnk/Engine/*.php', dirname(__FILE__))) as $file) {
     include_once $file;
 }
+ImageLnk_Engine::push('ImageLnk_Engine_opengraph');
 
 // ------------------------------------------------------------
 class ImageLnk
