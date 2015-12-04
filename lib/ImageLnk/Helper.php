@@ -39,6 +39,7 @@ class ImageLnk_Helper
         if ($image) {
             // blacklist
             if ($image->content != 'http://www.yomiuri.co.jp/img/yol_icon.jpg' &&
+                ! preg_match('/apple-touch-icon@2.png/', $image->content) /* stackoverflow.com */ &&
                 true) {
                 $response->addImageURL($image->content);
             }
