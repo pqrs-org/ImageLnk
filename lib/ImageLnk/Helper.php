@@ -39,6 +39,9 @@ class ImageLnk_Helper
         if ($image) {
             // blacklist
             if ($image->content != 'http://www.yomiuri.co.jp/img/yol_icon.jpg' &&
+                $image->content != 'http://www3.nhk.or.jp/news/img/fb_futa_600px.png' &&
+                $image->content != 'http://image.itmedia.co.jp/images/logo/1200x630_500x500_pcuser.gif' &&
+                $image->content != 'https://chosei.gnavi.co.jp/img/pc/90x90_line.png' &&
                 ! preg_match('/\/apple-touch-icon@2.png/', $image->content) /* stackoverflow.com */ &&
                 true) {
                 $response->addImageURL($image->content);
