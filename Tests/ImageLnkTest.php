@@ -31,7 +31,22 @@ class ImageLnkTest extends PHPUnit_Framework_TestCase
 
         $expect = $imageurls;
         $actual = $response->getImageURLs();
-        $this->assertSame($expect, $actual);
+        foreach ($expect as $e) {
+            $similar = 0;
+            foreach ($actual as $a) {
+                $s = 0;
+                similar_text($e, $a, $s);
+                if ($s > $similar) {
+                    $similar = $s;
+                }
+            }
+            if ($similar < 95) {
+                print "\n";
+                print "expect: $expect\n";
+                print "actual: $actual\n";
+                $this->fail();
+            }
+        }
 
         if ($referer == null) {
             $referer = $url;
