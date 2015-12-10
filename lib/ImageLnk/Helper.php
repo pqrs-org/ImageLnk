@@ -42,8 +42,10 @@ class ImageLnk_Helper
                 $image->content != 'http://www3.nhk.or.jp/news/img/fb_futa_600px.png' &&
                 $image->content != 'http://image.itmedia.co.jp/images/logo/1200x630_500x500_pcuser.gif' &&
                 $image->content != 'https://chosei.gnavi.co.jp/img/pc/90x90_line.png' &&
+                ! preg_match('#//www.facebook.com/images/fb_icon_#', $image->content) &&
                 ! preg_match('#//cdn.qiita.com/assets/#', $image->content) &&
                 ! preg_match('#//images\.srad\.jp/topics/#', $image->content) &&
+                ! preg_match('#//static.osdn.jp/magazine/osdnmag_#', $image->content) &&
                 ! preg_match('/\/apple-touch-icon@2.png/', $image->content) /* stackoverflow.com */ &&
                 true) {
                 $response->addImageURL($image->content);
