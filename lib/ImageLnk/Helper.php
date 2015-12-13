@@ -45,7 +45,8 @@ class ImageLnk_Helper
                 ! preg_match('#//www.facebook.com/images/fb_icon_#', $image->content) &&
                 ! preg_match('#//cdn.qiita.com/assets/#', $image->content) &&
                 ! preg_match('#//images\.srad\.jp/topics/#', $image->content) &&
-                ! preg_match('#//static.osdn.jp/magazine/osdnmag_#', $image->content) &&
+                ! preg_match('#//static\.osdn\.jp/magazine/osdnmag_#', $image->content) &&
+                ! preg_match('#//image\.gihyo\.co\.jp/assets/images/ICON/#', $image->content) &&
                 ! preg_match('/\/apple-touch-icon@2.png/', $image->content) /* stackoverflow.com */ &&
                 true) {
                 $response->addImageURL($image->content);
