@@ -26,9 +26,29 @@ class ImageLnk_Helper
         return preg_replace("/[\t\r\n ]+/", ' ', $text);
     }
 
-    public static function setResponseFromOpenGraph($response, $html)
+    public static function dom($html)
     {
         $dom = HtmlDomParser::str_get_html($html);
+
+        $content_type = $dom->find('meta[http-equiv=content-type]', 0);
+        if ($content_type) {
+            if (preg_match('/charset=shift_jis/i', $content_type->getAttribute('content'))) {
+                $html = @iconv("SHIFT_JIS", "UTF-8//IGNORE", $html);
+                return HtmlDomParser::str_get_html($html);
+            }
+        }
+
+        if ($dom->find('meta[charset=EUC-JP]', 0)) {
+            $html = @iconv("EUC-JP", "UTF-8//IGNORE", $html);
+            return HtmlDomParser::str_get_html($html);
+        }
+
+        return $dom;
+    }
+
+    public static function setResponseFromOpenGraph($response, $html)
+    {
+        $dom = self::dom($html);
 
         $title = $dom->find('meta[property=og:title]', 0);
         if ($title) {
