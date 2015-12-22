@@ -77,7 +77,7 @@ class ImageLnk_Helper
             // fall-back
             $title = $dom->find('title', 0);
             if ($title) {
-                $response->setTitle($title->content);
+                $response->setTitle($title->plaintext);
             }
         }
     }
