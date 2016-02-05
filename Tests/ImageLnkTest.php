@@ -1,7 +1,6 @@
 <?php //-*- Mode: php; indent-tabs-mode: nil; -*-
 
 require_once sprintf('%s/../lib/ImageLnk.php', dirname(__FILE__));
-require_once 'HTTP/Request2.php';
 
 class ImageLnkTest extends PHPUnit_Framework_TestCase
 {

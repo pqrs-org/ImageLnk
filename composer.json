@@ -4,5 +4,9 @@
         "themattharris/tmhoauth": "*",
         "symfony/yaml": "*",
         "pear/http_request2": "*"
-    }
+    },
+    "include-path": [
+        "vendor/pear/net_url2",
+        "vendor/pear/http_request2"
+    ]
 }
