@@ -844,7 +844,7 @@ class ImageLnkTest extends PHPUnit_Framework_TestCase
         $url = 'https://www.dropbox.com/s/wkq0b9126koq3ky/130911-0001.png?dl=0';
         $title = '130911-0001.png';
         $imageurls = array(
-            'https://photos-1.dropbox.com/t/2/AACld-EiQ2PeX8m2rvU5era4kXAoCFpRu_HBjEzH433NQw/12/14480761/png/1024x768/2/_/0/4/130911-0001.png/CPnq8wYgASACIAQgBSAHKAIoBw/wkq0b9126koq3ky/AAAJOkCa_pv3gfGYZNLNPvrqa/130911-0001.png',
+            'https://photos-1.dropbox.com/t/2/AAA56QcU7xodWCQYaPVq6UHPyKfTtw8hku14FLe5-q-agQ/12/14480761/png/1024x768/2/_/0/4/130911-0001.png/CPnq8wYgAiAEIAUgBygCKAc/wkq0b9126koq3ky/AAAJOkCa_pv3gfGYZNLNPvrqa/130911-0001.png',
         );
         $this->check_response($url, $title, $imageurls);
     }
