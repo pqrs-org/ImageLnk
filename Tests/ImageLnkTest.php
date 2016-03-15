@@ -30,20 +30,18 @@ class ImageLnkTest extends PHPUnit_Framework_TestCase
 
         $expect = $imageurls;
         $actual = $response->getImageURLs();
-        foreach ($expect as $e) {
-            $similar = 0;
-            foreach ($actual as $a) {
-                $s = 0;
-                similar_text($e, $a, $s);
-                if ($s > $similar) {
-                    $similar = $s;
+        $this->assertSame(count($expect), count($actual));
+        for ($i = 0; $i < count($expect); ++$i) {
+            if (preg_match('/^regex:(.+)/', $expect[$i], $matches)) {
+                $regex = $matches[1];
+                if (!preg_match($regex, $actual[$i])) {
+                    print "\n";
+                    print "expect: $regex\n";
+                    print "actual: $actual\n";
+                    $this->fail();
                 }
-            }
-            if ($similar < 95) {
-                print "\n";
-                print "expect: $expect\n";
-                print "actual: $actual\n";
-                $this->fail();
+            } else {
+                $this->assertSame($expect[$i], $actual[$i]);
             }
         }
 
@@ -738,7 +736,7 @@ class ImageLnkTest extends PHPUnit_Framework_TestCase
         $url = 'https://itunes.apple.com/jp/album/muscle-march-original-soundtrack/id455935658?l=en';
         $title = 'Muscle March Original Soundtrack by Namco Sounds on iTunes';
         $imageurls = array(
-            'http://is4.mzstatic.com/image/thumb/Music/v4/b3/88/7c/b3887c0f-95fb-23f1-daae-ee9ac3ff7237/source/600x600sr.jpg',
+            'regex:#http://is4.mzstatic.com/image/thumb/Music/v4/b3/88/7c/b3887c0f-95fb-23f1-daae-ee9ac3ff7237/source/.+.jpg#',
         );
         $this->check_response($url, $title, $imageurls);
     }
@@ -844,7 +842,7 @@ class ImageLnkTest extends PHPUnit_Framework_TestCase
         $url = 'https://www.dropbox.com/s/wkq0b9126koq3ky/130911-0001.png?dl=0';
         $title = '130911-0001.png';
         $imageurls = array(
-            'https://photos-1.dropbox.com/t/2/AAA56QcU7xodWCQYaPVq6UHPyKfTtw8hku14FLe5-q-agQ/12/14480761/png/1024x768/2/_/0/4/130911-0001.png/CPnq8wYgAiAEIAUgBygCKAc/wkq0b9126koq3ky/AAAJOkCa_pv3gfGYZNLNPvrqa/130911-0001.png',
+            'regex:#https://photos-\d.dropbox.com/t/2/.+/130911-0001.png#',
         );
         $this->check_response($url, $title, $imageurls);
     }
