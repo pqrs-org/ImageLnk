@@ -12,7 +12,7 @@ class ImageLnk_Fetcher_Pixiv extends ImageLnk_Fetcher
             return false;
         }
 
-        $loginurl = 'https://www.secure.pixiv.net/login.php';
+        $loginurl = 'https://www.pixiv.net/login.php';
         $request = new HTTP_Request2($loginurl, HTTP_Request2::METHOD_POST, self::getConfig());
         self::setHeader($request);
         $request->setCookieJar(true);
