@@ -518,7 +518,7 @@ class ImageLnkTest extends PHPUnit_Framework_TestCase
         $url = 'https://www.instagram.com/p/6XQ5nTTdjq/';
         $title = '@imagelnk on Instagram: “pepper”';
         $imageurls = array(
-            'https://scontent-nrt1-1.cdninstagram.com/t51.2885-15/e35/11356624_508726059287524_1160649839_n.jpg?ig_cache_key=MTA1MTM4MzM2NTk2ODQ1MTgxOA%3D%3D.2',
+            'regex:#https://.+.cdninstagram.com/t51.2885-15/e35/11356624_508726059287524_1160649839_n.jpg#',
         );
         $this->check_response($url, $title, $imageurls);
     }
@@ -528,7 +528,7 @@ class ImageLnkTest extends PHPUnit_Framework_TestCase
         $url = 'https://instagram.com/p/6XQ5nTTdjq/';
         $title = '@imagelnk on Instagram: “pepper”';
         $imageurls = array(
-            'https://scontent-nrt1-1.cdninstagram.com/t51.2885-15/e35/11356624_508726059287524_1160649839_n.jpg?ig_cache_key=MTA1MTM4MzM2NTk2ODQ1MTgxOA%3D%3D.2',
+            'regex:#https://.+.cdninstagram.com/t51.2885-15/e35/11356624_508726059287524_1160649839_n.jpg#',
         );
         $referer = 'https://www.instagram.com/p/6XQ5nTTdjq/';
         $this->check_response($url, $title, $imageurls, $referer);
