@@ -486,7 +486,7 @@ class ImageLnkTest extends PHPUnit_Framework_TestCase
         $url = 'https://plus.google.com/photos/100474803495183280561/albums/5466144754327282337/5516583424278584290?banner=pwa&pid=5516583424278584290&oid=100474803495183280561';
         $title = 'Cat Magic';
         $imageurls = array(
-            'https://lh3.googleusercontent.com/-aLmbGb0QF3k/TI7XZXHu2-I/AAAAAAAAAFY/KVW0kHhTe44J7-QtrQJwUShOokwDcIaDA/s0-d/002.jpg',
+            'regex:#https://lh3.googleusercontent.com/-aLmbGb0QF3k/TI7XZXHu2-I/AAAAAAAAAFY/.+/s0-d/002.jpg#',
         );
         $this->check_response($url, $title, $imageurls);
     }
@@ -496,7 +496,7 @@ class ImageLnkTest extends PHPUnit_Framework_TestCase
         $url = 'https://plus.google.com/photos/100474803495183280561/albums/5466144754327282337/5516583538243902706?banner=pwa&pid=5516583538243902706&oid=100474803495183280561';
         $title = 'Cat Magic';
         $imageurls = array(
-            'https://lh3.googleusercontent.com/-Areqbvkmj2E/TI7Xf_rLnPI/AAAAAAAAAF0/b4D3iONjfEwK-t8d_ynG1KQK555wGoZuA/s0-d/009.jpg',
+            'regex:#https://lh3.googleusercontent.com/-Areqbvkmj2E/TI7Xf_rLnPI/AAAAAAAAAF0/.+/s0-d/009.jpg#',
         );
         $this->check_response($url, $title, $imageurls);
     }
