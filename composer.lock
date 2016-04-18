@@ -8,21 +8,21 @@
     "packages": [
         {
             "name": "pear/http_request2",
-            "version": "v2.2.1",
+            "version": "v2.3.0",
             "source": {
                 "type": "git",
                 "url": "https://github.com/pear/HTTP_Request2.git",
-                "reference": "d6c81670c504045248c1afdf896bb9a3288158de"
+                "reference": "3599cf0fe455a4e281da464f6510bfc5c2ce54c4"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/pear/HTTP_Request2/zipball/d6c81670c504045248c1afdf896bb9a3288158de",
-                "reference": "d6c81670c504045248c1afdf896bb9a3288158de",
+                "url": "https://api.github.com/repos/pear/HTTP_Request2/zipball/3599cf0fe455a4e281da464f6510bfc5c2ce54c4",
+                "reference": "3599cf0fe455a4e281da464f6510bfc5c2ce54c4",
                 "shasum": ""
             },
             "require": {
-                "pear/net_url2": ">=2.0.0",
-                "pear/pear_exception": "*",
+                "pear/net_url2": "^2.2.0",
+                "pear/pear_exception": "^1.0.0",
                 "php": ">=5.2.0"
             },
             "suggest": {
@@ -32,20 +32,27 @@
                 "lib-openssl": "Allows handling SSL requests when not using cURL."
             },
             "type": "library",
+            "extra": {
+                "branch-alias": {
+                    "dev-trunk": "2.2-dev"
+                }
+            },
             "autoload": {
                 "psr-0": {
                     "HTTP_Request2": ""
                 }
             },
             "notification-url": "https://packagist.org/downloads/",
+            "include-path": [
+                "./"
+            ],
             "license": [
                 "BSD-3-Clause"
             ],
             "authors": [
                 {
                     "name": "Alexey Borzov",
-                    "email": "avb@php.net",
-                    "role": "Developer HTML_Common2"
+                    "email": "avb@php.net"
                 }
             ],
             "description": "Provides an easy way to perform HTTP requests.",
@@ -56,7 +63,7 @@
                 "http",
                 "request"
             ],
-            "time": "2014-01-16 17:27:21"
+            "time": "2016-02-13 20:20:39"
         },
         {
             "name": "pear/net_url2",
@@ -219,16 +226,16 @@
         },
         {
             "name": "symfony/yaml",
-            "version": "v3.0.2",
+            "version": "v3.0.4",
             "source": {
                 "type": "git",
                 "url": "https://github.com/symfony/yaml.git",
-                "reference": "3cf0709d7fe936e97bee9e954382e449003f1d9a"
+                "reference": "0047c8366744a16de7516622c5b7355336afae96"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/symfony/yaml/zipball/3cf0709d7fe936e97bee9e954382e449003f1d9a",
-                "reference": "3cf0709d7fe936e97bee9e954382e449003f1d9a",
+                "url": "https://api.github.com/repos/symfony/yaml/zipball/0047c8366744a16de7516622c5b7355336afae96",
+                "reference": "0047c8366744a16de7516622c5b7355336afae96",
                 "shasum": ""
             },
             "require": {
@@ -264,7 +271,7 @@
             ],
             "description": "Symfony Yaml Component",
             "homepage": "https://symfony.com",
-            "time": "2016-02-02 13:44:19"
+            "time": "2016-03-04 07:55:57"
         },
         {
             "name": "themattharris/tmhoauth",
