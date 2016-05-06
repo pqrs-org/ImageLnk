@@ -29,6 +29,9 @@ class ImageLnk_Helper
     public static function dom($html)
     {
         $dom = HtmlDomParser::str_get_html($html);
+        if (!$dom) {
+            return false;
+        }
 
         $content_type = $dom->find('meta[http-equiv=content-type]', 0);
         if ($content_type) {
@@ -49,6 +52,9 @@ class ImageLnk_Helper
     public static function setResponseFromOpenGraph($response, $html)
     {
         $dom = self::dom($html);
+        if (!$dom) {
+            return;
+        }
 
         $title = $dom->find('meta[property=og:title]', 0);
         if ($title) {
