@@ -806,7 +806,7 @@ class ImageLnkTest extends PHPUnit_Framework_TestCase
     function test_amazon_jp1()
     {
         $url = 'http://www.amazon.co.jp/gp/product/B006FCG96G/';
-        $ittle = 'Amazon | ピュアニーモキャラクターシリーズ 魔法少女まどか☆マギカ 暁美ほむら 制服Ver. | アニメ・萌えグッズ 通販';
+        $title = 'Amazon | ピュアニーモキャラクターシリーズ 魔法少女まどか☆マギカ 暁美ほむら 制服Ver. | アニメ・萌えグッズ 通販';
         $imageurls = array(
             'http://ecx.images-amazon.com/images/I/41PpQnkCaoL.jpg',
         );
