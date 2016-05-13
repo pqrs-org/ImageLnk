@@ -39,6 +39,10 @@ class ImageLnk_Helper
                 $html = @iconv("SHIFT_JIS", "UTF-8//IGNORE", $html);
                 return HtmlDomParser::str_get_html($html);
             }
+            if (preg_match('/charset=euc-jp/i', $content_type->getAttribute('content'))) {
+                $html = @iconv("EUC-JP", "UTF-8//IGNORE", $html);
+                return HtmlDomParser::str_get_html($html);
+            }
         }
 
         if ($dom->find('meta[charset=EUC-JP]', 0)) {
