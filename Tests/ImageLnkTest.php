@@ -431,7 +431,7 @@ class ImageLnkTest extends PHPUnit_Framework_TestCase
     function test_impress2()
     {
         $url = 'http://dc.watch.impress.co.jp/img/dcw/docs/422/882/html/009.jpg.html';
-        $title = '写真で見るカシオ「TRYX」（β機） - デジカメWatch';
+        $title = '[画像] 写真で見る写真で見るカシオ「TRYX」（β機）(9/31) - デジカメ Watch Watch';
         $imageurls = array(
             'http://dc.watch.impress.co.jp/img/dcw/docs/422/882/009.jpg',
         );
@@ -440,10 +440,10 @@ class ImageLnkTest extends PHPUnit_Framework_TestCase
 
     function test_impress3()
     {
-        $url = 'http://k-tai.impress.co.jp/img/ktw/docs/460/236/html/sanzo.jpg.html';
-        $title = 'ケータイ-[拡大画像]サンヨーホームズ、Android採用のロボットを搭載した住宅';
+        $url = 'http://k-tai.watch.impress.co.jp/img/ktw/docs/460/236/html/sanzo.jpg.html';
+        $title = '[拡大画像]サンヨーホームズ、Android採用のロボットを搭載した住宅(1/2) -  ケータイ Watch';
         $imageurls = array(
-            'http://k-tai.impress.co.jp/img/ktw/docs/460/236/sanzo.jpg',
+            'http://k-tai.watch.impress.co.jp/img/ktw/docs/460/236/sanzo.jpg',
         );
         $this->check_response($url, $title, $imageurls);
     }

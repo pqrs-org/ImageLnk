@@ -17,7 +17,6 @@ class ImageLnk_Engine_impress
         // ----------------------------------------
         $data = ImageLnk_Cache::get($url);
         $html = $data['data'];
-        $html = @iconv("SHIFT_JIS", "UTF-8//IGNORE", $html);
 
         $response = new ImageLnk_Response();
         $response->setReferer($url);
@@ -44,18 +43,15 @@ class ImageLnk_Engine_impress
         // ----------------------------------------
         $data = ImageLnk_Cache::get($url);
         $html = $data['data'];
-        $html = @iconv("SHIFT_JIS", "UTF-8//IGNORE", $html);
 
         $response = new ImageLnk_Response();
         $response->setReferer($url);
 
         $response->setTitle(ImageLnk_Helper::getTitle($html));
 
-        if (preg_match('|<!--image-->(.+?)<!--/image-->|', $html, $matches)) {
-            foreach (ImageLnk_Helper::scanSingleTag('img', $matches[1]) as $imgtag) {
-                if (preg_match('/ src="(.+?)"/', $imgtag, $m)) {
-                    $response->addImageURL($baseurl . $m[1]);
-                }
+        foreach (ImageLnk_Helper::scanSingleTag('img', $html) as $imgtag) {
+            if (preg_match('/ src="(.+?)" style="border: 0px;"/', $imgtag, $m)) {
+                $response->addImageURL($baseurl . $m[1]);
             }
         }
 
