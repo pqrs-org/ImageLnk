@@ -820,17 +820,6 @@ class ImageLnkTest extends PHPUnit_Framework_TestCase
     }
 
     // ======================================================================
-    function test_dropbox1()
-    {
-        $url = 'https://www.dropbox.com/s/wkq0b9126koq3ky/130911-0001.png?dl=0';
-        $title = '130911-0001.png';
-        $imageurls = array(
-            'regex:#https://photos-\d.dropbox.com/t/2/.+/130911-0001.png#',
-        );
-        $this->check_response($url, $title, $imageurls);
-    }
-
-    // ======================================================================
     function test_stocks_finance_yahoo_co_jp()
     {
         $url = 'http://stocks.finance.yahoo.co.jp/stocks/detail/?code=3656.T&d=1m';
