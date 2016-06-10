@@ -5,12 +5,12 @@ use Sunra\PhpSimple\HtmlDomParser;
 class ImageLnk_Engine_amazon
 {
     const language = null;
-    const sitename = 'http://www.amazon.com/';
+    const sitename = 'https://www.amazon.com/';
 
     public static function handle($url)
     {
-        if (! preg_match('%^http://www\.amazon\.com/%', $url) &&
-            ! preg_match('%^http://www\.amazon\.co\.jp/%', $url)) {
+        if (! preg_match('%^https://www\.amazon\.com/%', $url) &&
+            ! preg_match('%^https://www\.amazon\.co\.jp/%', $url)) {
             return false;
         }
 
