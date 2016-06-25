@@ -803,24 +803,6 @@ class ImageLnkTest extends PHPUnit_Framework_TestCase
     }
 
     // ======================================================================
-    function test_amazon_jp1()
-    {
-        $url = 'https://www.amazon.co.jp/gp/product/B006FCG96G/';
-        $title = 'Amazon | ピュアニーモキャラクターシリーズ 魔法少女まどか☆マギカ 暁美ほむら 制服Ver. | アニメ・萌えグッズ 通販';
-        $imageurls = array(
-            'https://images-na.ssl-images-amazon.com/images/I/41PpQnkCaoL._SY445_.jpg',
-        );
-        $referer = 'https://www.amazon.co.jp/%E3%82%A2%E3%82%BE%E3%83%B3%E3%82%A4%E3%83%B3%E3%82%BF%E3%83%BC%E3%83%8A%E3%82%B7%E3%83%A7%E3%83%8A%E3%83%AB-PND050-HOM-%E3%83%94%E3%83%A5%E3%82%A2%E3%83%8B%E3%83%BC%E3%83%A2%E3%82%AD%E3%83%A3%E3%83%A9%E3%82%AF%E3%82%BF%E3%83%BC%E3%82%B7%E3%83%AA%E3%83%BC%E3%82%BA-%E9%AD%94%E6%B3%95%E5%B0%91%E5%A5%B3%E3%81%BE%E3%81%A9%E3%81%8B%E2%98%86%E3%83%9E%E3%82%AE%E3%82%AB-%E5%88%B6%E6%9C%8DVer/dp/B006FCG96G/378-4528428-4022659?ie=UTF8&*Version*=1&*entries*=0';
-        $this->check_response($url, $title, $imageurls);
-    }
-
-    function test_amazon_jp2()
-    {
-        $url = 'http://ecx.images-amazon.com/images/I/41PpQnkCaoL.jpg';
-        $this->expect_false($url);
-    }
-
-    // ======================================================================
     function test_stocks_finance_yahoo_co_jp()
     {
         $url = 'http://stocks.finance.yahoo.co.jp/stocks/detail/?code=3656.T&d=1m';
