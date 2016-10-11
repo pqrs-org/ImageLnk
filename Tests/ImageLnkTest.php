@@ -795,7 +795,7 @@ class ImageLnkTest extends PHPUnit_Framework_TestCase
     function test_mynavi2()
     {
         $url = 'http://news.mynavi.jp/photo/articles/2011/03/07/appinventor/images/006l.jpg';
-        $title = '拡大画像 006 | 【ハウツー】経験ゼロでも大丈夫!? App Inventorで始めるAndroidアプリ開…… | マイナビニュース';
+        $title = '拡大画像 006 | 【ハウツー】経験ゼロでも大丈夫!? App Inventorで始めるAndroidアプリ開発 (1) まずは稼働環境を整備 | マイナビニュース';
         $imageurls = array(
             'http://n.mynv.jp/articles/2011/03/07/appinventor/images/006l.jpg',
         );
