@@ -9,6 +9,21 @@ class ImageLnk_Engine_pixiv
 
     public static function handle($url)
     {
+        $response = self::handle_whitecube($url);
+        if ($response) {
+            return $response;
+        }
+
+        $response = self::handle_old($url);
+        if ($response) {
+            return $response;
+        }
+
+        return false;
+    }
+
+    public static function handle_old($url)
+    {
         if (! preg_match('/^http:\/\/(www|touch)\.pixiv\.net\/member_illust\.php/', $url)) {
             return false;
         }
@@ -54,28 +69,61 @@ class ImageLnk_Engine_pixiv
         $response->setTitle(ImageLnk_Helper::getTitle($html));
 
         switch ($query['mode']) {
-        case 'medium':
-            $response->addImageURL($dom->find('img.original-image', 0)->getAttribute('data-src'));
-            break;
+            case 'medium':
+                $response->addImageURL($dom->find('img.original-image', 0)->getAttribute('data-src'));
+                break;
 
-        case 'big':
-        case 'manga_big':
-            foreach (ImageLnk_Helper::scanSingleTag('img', $html) as $img) {
-                if (preg_match('/src="(.+?)"/', $img, $m)) {
-                    $response->addImageURL($m[1]);
+            case 'big':
+            case 'manga_big':
+                foreach (ImageLnk_Helper::scanSingleTag('img', $html) as $img) {
+                    if (preg_match('/src="(.+?)"/', $img, $m)) {
+                        $response->addImageURL($m[1]);
+                    }
                 }
-            }
-            break;
+                break;
 
-        case 'manga':
-            foreach ($dom->find('img[data-filter=manga-image]') as $e) {
-                $response->addImageURL($e->getAttribute('data-src'));
-            }
-            break;
+            case 'manga':
+                foreach ($dom->find('img[data-filter=manga-image]') as $e) {
+                    $response->addImageURL($e->getAttribute('data-src'));
+                }
+                break;
 
-        default:
-            $response->addImageURL($dom->find('meta[property=og:image]', 0)->content);
-            break;
+            default:
+                $response->addImageURL($dom->find('meta[property=og:image]', 0)->content);
+                break;
+        }
+
+        return $response;
+    }
+
+    public static function handle_whitecube($url)
+    {
+        if (! preg_match('#https?://www.pixiv.net/whitecube/user/(\d+)/illust/(\d+)#', $url)) {
+            return false;
+        }
+
+        // ----------------------------------------
+        $data = ImageLnk_Cache::get($url);
+        $html = $data['data'];
+
+        $dom = HtmlDomParser::str_get_html($html);
+        if (!$dom) {
+            return false;
+        }
+
+        $response = new ImageLnk_Response();
+        $response->setReferer($url);
+
+        $title = $dom->find('meta[property=og:title]', 0);
+        if ($title) {
+            $response->setTitle($title->content);
+        }
+
+        $image = $dom->find('meta[property=og:image]', 0);
+        if ($image) {
+            if (preg_match('#(/img-master/.+)$#', $image->content, $matches)) {
+                $response->addImageURL('https://i.pximg.net' . $matches[1]);
+            }
         }
 
         return $response;
