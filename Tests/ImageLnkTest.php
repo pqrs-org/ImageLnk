@@ -579,33 +579,6 @@ class ImageLnkTest extends PHPUnit_Framework_TestCase
     }
 
     // ======================================================================
-    function test_engadget_jp1()
-    {
-        $url = 'http://japanese.engadget.com/gallery/asus-eee-pad-memo-3d-memic-hands-on/4173481/';
-        $title = 'Asus Eee Pad MeMO 3D / MeMIC hands on';
-        $imageurls = array(
-            'http://www.blogcdn.com/japanese.engadget.com/media/2011/05/asuseeepadmemohandsoncomputex1101-1306749949.jpg',
-            'http://www.blogcdn.com/japanese.engadget.com/media/2011/05/asuseeepadmemohandsoncomputex1102-1306749952.jpg',
-            'http://www.blogcdn.com/japanese.engadget.com/media/2011/05/asuseeepadmemohandsoncomputex1103-1306749954.jpg',
-            'http://www.blogcdn.com/japanese.engadget.com/media/2011/05/asuseeepadmemohandsoncomputex1104-1306749957.jpg',
-        );
-        $this->check_response($url, $title, $imageurls);
-    }
-
-    function test_engadget_jp2()
-    {
-        $url = 'http://japanese.engadget.com/gallery/memorex-gaming-peripherals-e3-2011/4179706/';
-        $title = 'Memorex gaming Peripherals (E3 2011)';
-        $imageurls = array(
-            'http://www.blogcdn.com/japanese.engadget.com/media/2011/06/game-selector-case.jpg',
-            'http://www.blogcdn.com/japanese.engadget.com/media/2011/06/3dsgameselector3-1.jpg',
-            'http://www.blogcdn.com/japanese.engadget.com/media/2011/06/3dsgameselector.jpg',
-            'http://www.blogcdn.com/japanese.engadget.com/media/2011/06/3dsgameselector2.jpg',
-        );
-        $this->check_response($url, $title, $imageurls);
-    }
-
-    // ======================================================================
     function test_4gamer1()
     {
         $url = 'http://www.4gamer.net/games/044/G004471/20110616072/screenshot.html?num=003';
