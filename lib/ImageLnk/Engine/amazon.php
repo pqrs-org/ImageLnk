@@ -18,6 +18,10 @@ class ImageLnk_Engine_amazon
         $data = ImageLnk_Cache::get($url);
         $html = $data['data'];
 
+        // strip huge <style>, <script>
+        $html = preg_replace('#<style(.+?)</style>#s', '', $html);
+        $html = preg_replace('#<script(.+?)</script>#s', '', $html);
+
         $dom = HtmlDomParser::str_get_html($html);
 
         $response = new ImageLnk_Response();
