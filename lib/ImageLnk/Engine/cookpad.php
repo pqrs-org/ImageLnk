@@ -7,7 +7,7 @@ class ImageLnk_Engine_cookpad
 
     public static function handle($url)
     {
-        if (! preg_match('%^http://cookpad\.com/recipe/\d+%', $url)) {
+        if (! preg_match('%^https?://cookpad\.com/recipe/\d+%', $url)) {
             return false;
         }
 

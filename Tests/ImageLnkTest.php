@@ -757,8 +757,8 @@ class ImageLnkTest extends PHPUnit_Framework_TestCase
     // ======================================================================
     function test_cookpad1()
     {
-        $url = 'http://cookpad.com/recipe/720203';
-        $title = '大根とツナとホタテのサラダ♪ by ともにゃんママ [クックパッド] 簡単おいしいみんなのレシピが136万品';
+        $url = 'https://cookpad.com/recipe/720203';
+        $title = '大根とツナとホタテのサラダ♪ by ともにゃんママ [クックパッド] 簡単おい  いみんなのレシピが256万品';
         $imageurls = array(
             'https://img.cpcdn.com/recipes/720203/280/24ece10f66b104ef0562b0b2f477d49f.jpg?u=887658&p=1232792798',
         );
