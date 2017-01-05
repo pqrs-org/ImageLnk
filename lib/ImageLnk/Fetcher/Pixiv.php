@@ -1,5 +1,7 @@
 <?php //-*- Mode: php; indent-tabs-mode: nil; -*-
 
+use Sunra\PhpSimple\HtmlDomParser;
+
 class ImageLnk_Fetcher_Pixiv extends ImageLnk_Fetcher
 {
     private static function login()
@@ -12,22 +14,45 @@ class ImageLnk_Fetcher_Pixiv extends ImageLnk_Fetcher
             return false;
         }
 
-        $loginurl = 'https://www.pixiv.net/login.php';
-        $request = new HTTP_Request2($loginurl, HTTP_Request2::METHOD_POST, self::getConfig());
+        // ----------------------------------------
+        $url = 'https://accounts.pixiv.net/login?lang=en&source=pc&view_type=page&ref=wwwtop_accounts_index';
+        $request = new HTTP_Request2($url, HTTP_Request2::METHOD_GET, self::getConfig());
         self::setHeader($request);
         $request->setCookieJar(true);
 
+        $response = $request->send();
+
+        $jar = $request->getCookieJar();
+        $jar->serializeSessionCookies(true);
+        ImageLnk_Cache::writeToCacheFile(self::getCookieCacheFilePath("pixiv"), $jar->serialize());
+
+        $dom = HtmlDomParser::str_get_html($response->getBody());
+        $post_key = $dom->find('input[name=post_key]', 0);
+        if ($post_key) {
+            $post_key = $post_key->getAttribute('value');
+        }
+
+        // ----------------------------------------
+        $loginurl = 'https://accounts.pixiv.net/api/login?lang=en';
+        $request = new HTTP_Request2($loginurl, HTTP_Request2::METHOD_POST, self::getConfig());
+        self::setHeader($request);
+        $request->setCookieJar($jar);
+
         $request->addPostParameter(
             array(
-                'mode' => 'login',
-                'pixiv_id' => ImageLnk_Config::v('auth_pixiv_id'),
-                'pass'     => ImageLnk_Config::v('auth_pixiv_password'),
-                'skip'     => '1',
+                'pixiv_id'             => ImageLnk_Config::v('auth_pixiv_id'),
+                'password'             => ImageLnk_Config::v('auth_pixiv_password'),
+                'captcha'              => '',
+                'g_recaptcha_response' => '',
+                'post_key'             => $post_key,
+                'return_to'            => 'http://www.pixiv.net/',
+                'ref'                  => 'wwwtop_accounts_index',
+                'source'               => 'pc',
             )
         );
         $response = $request->send();
 
-        if ($response->getHeader('location') == 'http://www.pixiv.net/') {
+        if ($response->getHeader('P3P')) {
             $jar = $request->getCookieJar();
             $jar->serializeSessionCookies(true);
             ImageLnk_Cache::writeToCacheFile(self::getCookieCacheFilePath("pixiv"), $jar->serialize());
