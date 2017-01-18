@@ -792,7 +792,7 @@ class ImageLnkTest extends PHPUnit_Framework_TestCase
         $url = 'http://stocks.finance.yahoo.co.jp/stocks/detail/?code=3656.T&d=1m';
         $title = 'ＫＬａｂ(株)【3656】：株式/株価 - Yahoo!ファイナンス';
         $imageurls = array(
-            'http://chart.yahoo.co.jp/?code=3656.T&tm=1m&size=e',
+            'https://chart.yahoo.co.jp/?code=3656.T&tm=1m&size=e',
         );
         $this->check_response($url, $title, $imageurls);
     }
