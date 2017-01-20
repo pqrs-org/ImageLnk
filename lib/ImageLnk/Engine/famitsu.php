@@ -3,11 +3,11 @@
 class ImageLnk_Engine_famitsu
 {
     const language = 'Japanese';
-    const sitename = 'http://www.famitsu.com/';
+    const sitename = 'https://www.famitsu.com/';
 
     public static function handle($url)
     {
-        if (! preg_match('/^(http:\/\/www\.famitsu\.com\/news\/\d+\/images\/\d+\/)(.+\.)html$/', $url, $matches)) {
+        if (! preg_match('/^(https:\/\/www\.famitsu\.com\/news\/\d+\/images\/\d+\/)(.+\.)html$/', $url, $matches)) {
             return false;
         }
 
