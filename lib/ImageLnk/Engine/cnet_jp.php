@@ -5,11 +5,11 @@ use Sunra\PhpSimple\HtmlDomParser;
 class ImageLnk_Engine_cnet_jp
 {
     const language = 'Japanese';
-    const sitename = 'http://japan.cnet.com/';
+    const sitename = 'https://japan.cnet.com/';
 
     public static function handle($url)
     {
-        if (! preg_match('%^(http://japan\.cnet\.com)/%', $url, $matches)) {
+        if (! preg_match('%^(https://japan\.cnet\.com)/%', $url, $matches)) {
             return false;
         }
 
