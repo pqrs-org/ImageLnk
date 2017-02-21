@@ -65,7 +65,10 @@ class ImageLnk_Helper
             $response->setTitle($title->content);
         }
 
-        $image = $dom->find('meta[property=og:image]', 0);
+        $image = $dom->find('meta[property=og:image:secure_url]', 0);
+        if (!$image) {
+            $image = $dom->find('meta[property=og:image]', 0);
+        }
         if ($image) {
             // blacklist
             if ($image->content != 'http://www.yomiuri.co.jp/img/yol_icon.jpg' &&

@@ -37,7 +37,7 @@ class ImageLnkTest extends PHPUnit_Framework_TestCase
                 if (!preg_match($regex, $actual[$i])) {
                     print "\n";
                     print "expect: $regex\n";
-                    print "actual: $actual\n";
+                    print 'actual: ' . $actual[$i] . "\n";
                     $this->fail();
                 }
             } else {
@@ -720,7 +720,7 @@ class ImageLnkTest extends PHPUnit_Framework_TestCase
         $url = 'https://itunes.apple.com/jp/album/muscle-march-original-soundtrack/id455935658?l=en';
         $title = 'Muscle March Original Soundtrack by Namco Sounds on iTunes';
         $imageurls = array(
-            'regex:#http://is4.mzstatic.com/image/thumb/Music/v4/b3/88/7c/b3887c0f-95fb-23f1-daae-ee9ac3ff7237/source/.+.jpg#',
+            'regex:#https://is.-ssl.mzstatic.com/image/thumb/Music/v4/b3/88/7c/b3887c0f-95fb-23f1-daae-ee9ac3ff7237/source/.+.jpg#',
         );
         $this->check_response($url, $title, $imageurls);
     }
