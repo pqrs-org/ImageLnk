@@ -295,7 +295,7 @@ class ImageLnkTest extends PHPUnit_Framework_TestCase
         $url = 'http://www.pixiv.net/member_illust.php?mode=medium&illust_id=51691357';
         $title = "「Manga Example」/「imagelnk」の漫画 [pixiv]";
         $imageurls = array(
-            'http://i2.pixiv.net/img-original/img/2015/07/30/22/18/43/51691357_p0.jpg',
+            'https://i2.pixiv.net/img-original/img/2015/07/30/22/18/43/51691357_p0.jpg',
         );
         $referer = 'http://www.pixiv.net/member_illust.php?mode=manga_big&amp;illust_id=51691357&page=0';
         $this->check_response($url, $title, $imageurls, $referer);
