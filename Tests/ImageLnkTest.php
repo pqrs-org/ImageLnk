@@ -282,7 +282,7 @@ class ImageLnkTest extends PHPUnit_Framework_TestCase
         $url = 'http://www.pixiv.net/member_illust.php?mode=medium&illust_id=51691307';
         $title = "「Image Example」/「imagelnk」のイラスト [pixiv]";
         $imageurls = array(
-            'regex:#https?://i4.pixiv.net/img-original/img/2015/07/30/22/16/27/51691307_p0.jpg#',
+            'https://i.pximg.net/img-original/img/2015/07/30/22/16/27/51691307_p0.jpg',
         );
         $referer = 'http://www.pixiv.net/member_illust.php?mode=medium&illust_id=51691307';
         $this->check_response($url, $title, $imageurls, $referer);
@@ -295,7 +295,7 @@ class ImageLnkTest extends PHPUnit_Framework_TestCase
         $url = 'http://www.pixiv.net/member_illust.php?mode=medium&illust_id=51691357';
         $title = "「Manga Example」/「imagelnk」の漫画 [pixiv]";
         $imageurls = array(
-            'regex:#https?://i2.pixiv.net/img-original/img/2015/07/30/22/18/43/51691357_p0.jpg#',
+            'https://i.pximg.net/img-original/img/2015/07/30/22/18/43/51691357_p0.jpg',
         );
         $referer = 'http://www.pixiv.net/member_illust.php?mode=manga_big&amp;illust_id=51691357&page=0';
         $this->check_response($url, $title, $imageurls, $referer);
@@ -308,7 +308,7 @@ class ImageLnkTest extends PHPUnit_Framework_TestCase
         $url = 'http://www.pixiv.net/member_illust.php?mode=manga_big&illust_id=51691357&page=1';
         $title = "「Manga Example」/「imagelnk」の漫画 [pixiv]";
         $imageurls = array(
-            'regex:#https?://i2.pixiv.net/img-original/img/2015/07/30/22/18/43/51691357_p1.jpg#',
+            'https://i.pximg.net/img-original/img/2015/07/30/22/18/43/51691357_p1.jpg',
         );
         $referer = 'http://www.pixiv.net/member_illust.php?mode=manga_big&illust_id=51691357&page=1';
 
@@ -322,8 +322,8 @@ class ImageLnkTest extends PHPUnit_Framework_TestCase
         $url = 'http://www.pixiv.net/member_illust.php?mode=manga&illust_id=51691357';
         $title = "Manga Example";
         $imageurls = array(
-            'regex:#https?://i2.pixiv.net/c/1200x1200/img-master/img/2015/07/30/22/18/43/51691357_p0_master1200.jpg#',
-            'regex:#https?://i2.pixiv.net/c/1200x1200/img-master/img/2015/07/30/22/18/43/51691357_p1_master1200.jpg#',
+            'https://i.pximg.net/img-master/img/2015/07/30/22/18/43/51691357_p0_master1200.jpg',
+            'https://i.pximg.net/img-master/img/2015/07/30/22/18/43/51691357_p1_master1200.jpg',
         );
         $referer = 'http://www.pixiv.net/member_illust.php?mode=manga&illust_id=51691357';
 
@@ -337,7 +337,7 @@ class ImageLnkTest extends PHPUnit_Framework_TestCase
         $url = 'http://touch.pixiv.net/member_illust.php?mode=medium&illust_id=51691307';
         $title = "「Image Example」/「imagelnk」のイラスト [pixiv]";
         $imageurls = array(
-            'regex:#https?://i4.pixiv.net/img-original/img/2015/07/30/22/16/27/51691307_p0.jpg#',
+            'https://i.pximg.net/img-original/img/2015/07/30/22/16/27/51691307_p0.jpg',
         );
         $referer = 'http://www.pixiv.net/member_illust.php?mode=medium&illust_id=51691307';
         $this->check_response($url, $title, $imageurls, $referer);
