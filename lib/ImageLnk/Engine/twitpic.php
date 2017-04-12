@@ -26,7 +26,7 @@ class ImageLnk_Engine_twitpic
 
         $response->setTitle(ImageLnk_Helper::getTitle($html));
 
-        $img = $dom->find('#media > img', 0);
+        $img = $dom->find('body > img', 0);
         if ($img) {
             $response->addImageURL($img->src);
         }

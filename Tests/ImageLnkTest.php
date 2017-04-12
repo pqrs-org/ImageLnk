@@ -203,7 +203,7 @@ class ImageLnkTest extends PHPUnit_Framework_TestCase
         $url = 'http://twitpic.com/1yggai';
         $response = ImageLnk::getImageInfo($url);
 
-        $title = '良くお休みのようで on Twitpic';
+        $title = '良くお休みのようで';
         $actual = $response->getTitle();
         $this->assertSame($title, $actual);
 
@@ -219,7 +219,7 @@ class ImageLnkTest extends PHPUnit_Framework_TestCase
         $url = 'http://twitpic.com/c17ing';
         $response = ImageLnk::getImageInfo($url);
 
-        $title = '総武線各駅停車、ホームに人が溢れ危険な状態だったので、諦めて総武線快速で東京に出ることにする。総武線快速乗ったらなぜか車内... on Twitpic';
+        $title = '総武線各駅停車、ホームに人が溢れ危険な状態だったので、諦めて総武線快速で東京に出ることにする。総武線快速乗ったらなぜか車内に鳥が……';
         $actual = $response->getTitle();
         $this->assertSame($title, $actual);
 
