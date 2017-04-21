@@ -28,9 +28,9 @@ class ImageLnk_Engine_instagram
             if (preg_match('/^window._sharedData = (.+);/', $script->innertext, $matches)) {
                 $sharedData = json_decode($matches[1]);
 
-                $caption = $sharedData->entry_data->PostPage[0]->media->caption;
-                $username = $sharedData->entry_data->PostPage[0]->media->owner->username;
-                $src = $sharedData->entry_data->PostPage[0]->media->display_src;
+                $caption = $sharedData->entry_data->PostPage[0]->graphql->shortcode_media->edge_media_to_caption->edges[0]->node->text;
+                $username = $sharedData->entry_data->PostPage[0]->graphql->shortcode_media->owner->username;
+                $src = $sharedData->entry_data->PostPage[0]->graphql->shortcode_media->display_url;
 
                 $response->setTitle(sprintf('@%s on Instagram: “%s”', $username, $caption));
                 $response->addImageURL($src);
