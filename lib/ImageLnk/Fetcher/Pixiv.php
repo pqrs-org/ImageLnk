@@ -33,7 +33,7 @@ class ImageLnk_Fetcher_Pixiv extends ImageLnk_Fetcher
         }
 
         // ----------------------------------------
-        $loginurl = 'https://accounts.pixiv.net/api/login?lang=en';
+        $loginurl = 'https://accounts.pixiv.net/login';
         $request = new HTTP_Request2($loginurl, HTTP_Request2::METHOD_POST, self::getConfig());
         self::setHeader($request);
         $request->setCookieJar($jar);
@@ -45,7 +45,7 @@ class ImageLnk_Fetcher_Pixiv extends ImageLnk_Fetcher
                 'captcha'              => '',
                 'g_recaptcha_response' => '',
                 'post_key'             => $post_key,
-                'return_to'            => 'http://www.pixiv.net/',
+                'return_to'            => 'https://www.pixiv.net/',
                 'ref'                  => 'wwwtop_accounts_index',
                 'source'               => 'pc',
             )

@@ -5,7 +5,7 @@ use Sunra\PhpSimple\HtmlDomParser;
 class ImageLnk_Engine_pixiv
 {
     const language = null;
-    const sitename = 'http://www.pixiv.net/';
+    const sitename = 'https://www.pixiv.net/';
 
     public static function handle($url)
     {
@@ -24,11 +24,12 @@ class ImageLnk_Engine_pixiv
 
     public static function handle_old($url)
     {
-        if (! preg_match('/^http:\/\/(www|touch)\.pixiv\.net\/member_illust\.php/', $url)) {
+        if (! preg_match('/^https?:\/\/(www|touch)\.pixiv\.net\/member_illust\.php/', $url)) {
             return false;
         }
 
         $url = preg_replace('/^http:\/\/touch\.pixiv\.net/', 'http://www.pixiv.net', $url);
+        $url = preg_replace('/^https:\/\/touch\.pixiv\.net/', 'https://www.pixiv.net', $url);
 
         // ----------------------------------------
         $data = ImageLnk_Cache::get($url);

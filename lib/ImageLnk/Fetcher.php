@@ -31,7 +31,7 @@ class ImageLnk_Fetcher
     // ======================================================================
     public static function fetch($url, $referer = null)
     {
-        if (preg_match('/^http:\/\/[^\/]*pixiv\.net\//', $url)) {
+        if (preg_match('/^https?:\/\/[^\/]*pixiv\.net\//', $url)) {
             return ImageLnk_Fetcher_Pixiv::fetch($url, $referer);
         }
 
