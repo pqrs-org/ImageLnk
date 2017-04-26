@@ -28,8 +28,7 @@ class ImageLnk_Engine_pixiv
             return false;
         }
 
-        $url = preg_replace('/^http:\/\/touch\.pixiv\.net/', 'http://www.pixiv.net', $url);
-        $url = preg_replace('/^https:\/\/touch\.pixiv\.net/', 'https://www.pixiv.net', $url);
+        $url = preg_replace('/^http:\/\//', 'https://', $url);
 
         // ----------------------------------------
         $data = ImageLnk_Cache::get($url);

@@ -297,7 +297,7 @@ class ImageLnkTest extends PHPUnit_Framework_TestCase
         $imageurls = array(
             'https://i.pximg.net/img-original/img/2015/07/30/22/18/43/51691357_p0.jpg',
         );
-        $referer = 'http://www.pixiv.net/member_illust.php?mode=manga_big&amp;illust_id=51691357&page=0';
+        $referer = 'https://www.pixiv.net/member_illust.php?mode=manga_big&amp;illust_id=51691357&page=0';
         $this->check_response($url, $title, $imageurls, $referer);
     }
 
@@ -310,7 +310,7 @@ class ImageLnkTest extends PHPUnit_Framework_TestCase
         $imageurls = array(
             'https://i.pximg.net/img-original/img/2015/07/30/22/18/43/51691357_p1.jpg',
         );
-        $referer = 'http://www.pixiv.net/member_illust.php?mode=manga_big&illust_id=51691357&page=1';
+        $referer = 'https://www.pixiv.net/member_illust.php?mode=manga_big&illust_id=51691357&page=1';
 
         $this->check_response($url, $title, $imageurls, $referer);
     }
@@ -325,7 +325,7 @@ class ImageLnkTest extends PHPUnit_Framework_TestCase
             'https://i.pximg.net/img-master/img/2015/07/30/22/18/43/51691357_p0_master1200.jpg',
             'https://i.pximg.net/img-master/img/2015/07/30/22/18/43/51691357_p1_master1200.jpg',
         );
-        $referer = 'http://www.pixiv.net/member_illust.php?mode=manga&illust_id=51691357';
+        $referer = 'https://www.pixiv.net/member_illust.php?mode=manga&illust_id=51691357';
 
         $this->check_response($url, $title, $imageurls, $referer);
     }
@@ -350,7 +350,7 @@ class ImageLnkTest extends PHPUnit_Framework_TestCase
         $imageurls = array(
             'regex:#https?://i.pximg.net/img-master/img/2015/07/30/22/16/27/51691307_p0_master1200.jpg#',
         );
-        $referer = 'http://www.pixiv.net/whitecube/user/3188124/illust/51691307';
+        $referer = 'https://www.pixiv.net/whitecube/user/3188124/illust/51691307';
         $this->check_response($url, $title, $imageurls, $referer);
     }
 
