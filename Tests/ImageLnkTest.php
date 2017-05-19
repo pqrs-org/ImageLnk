@@ -343,17 +343,6 @@ class ImageLnkTest extends PHPUnit_Framework_TestCase
         $this->check_response($url, $title, $imageurls, $referer);
     }
 
-    function test_pixiv6()
-    {
-        $url = 'http://www.pixiv.net/whitecube/user/3188124/illust/51691307';
-        $title = "「Image Example」/「imagelnk」 [pixiv]";
-        $imageurls = array(
-            'regex:#https?://i.pximg.net/img-master/img/2015/07/30/22/16/27/51691307_p0_master1200.jpg#',
-        );
-        $referer = 'https://www.pixiv.net/whitecube/user/3188124/illust/51691307';
-        $this->check_response($url, $title, $imageurls, $referer);
-    }
-
     // ======================================================================
     function test_yaplog1()
     {
