@@ -481,27 +481,6 @@ class ImageLnkTest extends PHPUnit_Framework_TestCase
     }
 
     // ======================================================================
-    function test_plus_google_com1()
-    {
-        $url = 'https://plus.google.com/photos/100474803495183280561/albums/5466144754327282337/5516583424278584290?banner=pwa&pid=5516583424278584290&oid=100474803495183280561';
-        $title = 'Cat Magic';
-        $imageurls = array(
-            'regex:#https://lh3.googleusercontent.com/-aLmbGb0QF3k/TI7XZXHu2-I/AAAAAAAAAFY/.+/s0-d/002.jpg#',
-        );
-        $this->check_response($url, $title, $imageurls);
-    }
-
-    function test_plus_google_com2()
-    {
-        $url = 'https://plus.google.com/photos/100474803495183280561/albums/5466144754327282337/5516583538243902706?banner=pwa&pid=5516583538243902706&oid=100474803495183280561';
-        $title = 'Cat Magic';
-        $imageurls = array(
-            'regex:#https://lh3.googleusercontent.com/-Areqbvkmj2E/TI7Xf_rLnPI/AAAAAAAAAF0/.+/s0-d/009.jpg#',
-        );
-        $this->check_response($url, $title, $imageurls);
-    }
-
-    // ======================================================================
     function test_wikipedia1()
     {
         $url = 'https://en.wikipedia.org/wiki/File:PANSDeinonychus.JPG';
@@ -550,7 +529,7 @@ class ImageLnkTest extends PHPUnit_Framework_TestCase
     function test_natalie1()
     {
         $url = 'http://natalie.mu/comic/gallery/show/news_id/50403/image_id/77977';
-        $title = '全高75cmでゲソ！「イカ娘」超BIGぬいぐるみが登場';
+        $title = '物語の舞台である、由比ヶ浜へ連れ出してみるのも一興。(C)安部真弘（週刊少 年チャンピオン）／海の家れもん [画像ギャラリー 3/6] - コミックナタリー';
         $imageurls = array(
             'http://cdn2.natalie.mu/media/comic/1105/extra/news_xlarge_ika_roke1.jpg',
         );
@@ -560,7 +539,7 @@ class ImageLnkTest extends PHPUnit_Framework_TestCase
     function test_natalie2()
     {
         $url = 'http://natalie.mu/music/gallery/show/news_id/50476/image_id/78087';
-        $title = '怒髪天、5都市を回る自身初のホールツアー決定';
+        $title = '新しくなった怒髪天のロゴ。 [画像ギャラリー 1/2] - 音楽ナタリー';
         $imageurls = array(
             'http://cdn2.natalie.mu/media/1106/0601/extra/news_xlarge_dohatsuten_topB.jpg',
         );
