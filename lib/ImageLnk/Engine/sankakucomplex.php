@@ -9,7 +9,7 @@ class ImageLnk_Engine_sankakucomplex
 
     public static function handle($url)
     {
-        if (! preg_match('%^https://chan\.sankakucomplex\.com/post/show/(\d+)/%', $url, $matches)) {
+        if (! preg_match('%^https://chan\.sankakucomplex\.com/post/show/(\d+)%', $url, $matches)) {
             return false;
         }
 
@@ -20,6 +20,7 @@ class ImageLnk_Engine_sankakucomplex
         $dom = HtmlDomParser::str_get_html($html);
 
         $response = new ImageLnk_Response();
+        $response->setReferer($url);
 
         $title = $dom->find('meta[property=og:title]', 0);
         if ($title) {
