@@ -764,4 +764,15 @@ class ImageLnkTest extends PHPUnit_Framework_TestCase
         );
         $this->check_response($url, $title, $imageurls);
     }
+
+    // ======================================================================
+    function test_sankakucomplex1()
+    {
+        $url = 'https://chan.sankakucomplex.com/post/show/5949839/';
+        $title = 'Post 5949839';
+        $imageurls = array(
+            'https://cs.sankakucomplex.com/data/2e/54/2e540481ae41d3b9d652f1ac92a82b5c.png?5949839',
+        );
+        $this->check_response($url, $title, $imageurls);
+    }
 }
