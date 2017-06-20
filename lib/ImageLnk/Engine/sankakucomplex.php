@@ -9,7 +9,7 @@ class ImageLnk_Engine_sankakucomplex
 
     public static function handle($url)
     {
-        if (! preg_match('%^https://chan\.sankakucomplex\.com/post/show/(\d+)%', $url, $matches)) {
+        if (! preg_match('%^https://chan\.sankakucomplex\.com/(ja/)?post/show/(\d+)%', $url, $matches)) {
             return false;
         }
 
