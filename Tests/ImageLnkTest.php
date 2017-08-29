@@ -69,68 +69,33 @@ class ImageLnkTest extends PHPUnit_Framework_TestCase
     // ======================================================================
     function test_ameblo1()
     {
-        $url = 'http://ameblo.jp/hakasetoiu-ikimono/image-10430643614-10370336976.html';
-        $response = ImageLnk::getImageInfo($url);
-
+        $url = 'https://ameblo.jp/hakasetoiu-ikimono/image-10430643614-10370336976.html';
         $title = '第４話：Beautiful nameの画像 | 研究者マンガ「ハカセといふ生物」';
-        $actual = $response->getTitle();
-        $this->assertSame($title, $actual);
-
-        $referer = $url;
-        $actual = $response->getReferer();
-        $this->assertSame($referer, $actual);
-
-        $this->assertSame(1, count($response->getImageURLs()));
-
-        foreach ($response->getImageURLs() as $imageurl) {
-            $expect = 1;
-            $actual = preg_match('/http:\/\/stat.*\.ameba\.jp\/user_images\/20100109\/22\/hakasetoiu-ikimono\/5f\/c7\/j\/o0360050010370336976\.jpg/', $imageurl);
-            $this->assertSame($expect, $actual);
-        }
+        $imageurls = [
+            'https://stat.ameba.jp/user_images/20100109/22/hakasetoiu-ikimono/5f/c7/j/o0360050010370336976.jpg',
+        ];
+        $this->check_response($url, $title, $imageurls);
     }
 
     function test_ameblo2()
     {
-        $url = 'http://s.ameblo.jp/hakasetoiu-ikimono/image-10430643614-10370336976.html';
-        $response = ImageLnk::getImageInfo($url);
-
+        $url = 'https://s.ameblo.jp/hakasetoiu-ikimono/image-10430643614-10370336976.html';
         $title = '第４話：Beautiful nameの画像 | 研究者マンガ「ハカセといふ生物」';
-        $actual = $response->getTitle();
-        $this->assertSame($title, $actual);
-
-        $referer = 'http://ameblo.jp/hakasetoiu-ikimono/image-10430643614-10370336976.html';
-        $actual = $response->getReferer();
-        $this->assertSame($referer, $actual);
-
-        $this->assertSame(1, count($response->getImageURLs()));
-
-        foreach ($response->getImageURLs() as $imageurl) {
-            $expect = 1;
-            $actual = preg_match('/http:\/\/stat.*\.ameba\.jp\/user_images\/20100109\/22\/hakasetoiu-ikimono\/5f\/c7\/j\/o0360050010370336976\.jpg/', $imageurl);
-            $this->assertSame($expect, $actual);
-        }
+        $imageurls = [
+            'https://stat.ameba.jp/user_images/20100109/22/hakasetoiu-ikimono/5f/c7/j/o0360050010370336976.jpg',
+        ];
+        $referer = 'https://ameblo.jp/hakasetoiu-ikimono/image-10430643614-10370336976.html';
+        $this->check_response($url, $title, $imageurls, $referer);
     }
 
     function test_ameblo3()
     {
-        $url = 'http://ameblo.jp/strawberry-ayana/image-10963873926-11370958832.html';
-        $response = ImageLnk::getImageInfo($url);
-
+        $url = 'https://ameblo.jp/strawberry-ayana/image-10963873926-11370958832.html';
         $title = 'わんふぇす2の画像 | 竹達彩奈オフィシャルブログ「Strawberry Candy」Powe…';
-        $actual = $response->getTitle();
-        $this->assertSame($title, $actual);
-
-        $referer = $url;
-        $actual = $response->getReferer();
-        $this->assertSame($referer, $actual);
-
-        $this->assertSame(1, count($response->getImageURLs()));
-
-        foreach ($response->getImageURLs() as $imageurl) {
-            $expect = 1;
-            $actual = preg_match('/http:\/\/stat.*\.ameba\.jp\/user_images\/20110724\/19\/strawberry-ayana\/ac\/1e\/j\/o0480064011370958832\.jpg/', $imageurl);
-            $this->assertSame($expect, $actual);
-        }
+        $imageurls = [
+            'https://stat.ameba.jp/user_images/20110724/19/strawberry-ayana/ac/1e/j/o0480064011370958832.jpg',
+        ];
+        $this->check_response($url, $title, $imageurls);
     }
 
     // ======================================================================
