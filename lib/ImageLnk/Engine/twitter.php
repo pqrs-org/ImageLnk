@@ -29,6 +29,8 @@ class ImageLnk_Engine_twitter
             'GET', $tmhOAuth->url('1.1/statuses/show.json'), array(
                 'id' => $id,
                 'include_entities' => '1',
+                'trim_user' => 'true',
+                'tweet_mode' => 'extended',
             )
         );
         if ($code == 200) {
