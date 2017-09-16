@@ -691,7 +691,7 @@ class ImageLnkTest extends PHPUnit_Framework_TestCase
     function test_cookpad1()
     {
         $url = 'https://cookpad.com/recipe/720203';
-        $title = '大根とツナとホタテのサラダ♪ by ともにゃんママ [クックパッド] 簡単おい  いみんなのレシピが256万品';
+        $title = '大根とツナとホタテのサラダ♪ by ともにゃんママ [クックパッド] 簡単おいしいみんなのレシピが256万品';
         $imageurls = array(
             'https://img.cpcdn.com/recipes/720203/280/24ece10f66b104ef0562b0b2f477d49f.jpg?u=887658&p=1232792798',
         );
@@ -736,7 +736,7 @@ class ImageLnkTest extends PHPUnit_Framework_TestCase
         $url = 'https://chan.sankakucomplex.com/post/show/5949839/';
         $title = 'Post 5949839';
         $imageurls = array(
-            'https://cs.sankakucomplex.com/data/2e/54/2e540481ae41d3b9d652f1ac92a82b5c.png?5949839',
+            'regex:#https://cs\.sankakucomplex\.com/data/2e/54/2e540481ae41d3b9d652f1ac92a82b5c\.png\?.*#',
         );
         $this->check_response($url, $title, $imageurls);
     }
@@ -746,7 +746,7 @@ class ImageLnkTest extends PHPUnit_Framework_TestCase
         $url = 'https://chan.sankakucomplex.com/ja/post/show/6135230';
         $title = 'Post 6135230';
         $imageurls = array(
-            'https://cs.sankakucomplex.com/data/sample/7b/44/sample-7b44e9025158c4e7fc0ca1cbaafa3e9d.jpg?6135230',
+            'regex:#https://cs\.sankakucomplex\.com/data/sample/7b/44/sample-7b44e9025158c4e7fc0ca1cbaafa3e9d\.jpg\?.*#',
         );
         $this->check_response($url, $title, $imageurls);
     }
