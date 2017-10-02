@@ -653,7 +653,7 @@ class ImageLnkTest extends PHPUnit_Framework_TestCase
         $url = 'https://itunes.apple.com/jp/album/muscle-march-original-soundtrack/id455935658?l=en';
         $title = 'Muscle March Original Soundtrack by Namco Sounds on iTunes';
         $imageurls = array(
-            'regex:#https://is.-ssl.mzstatic.com/image/thumb/Music/v4/b3/88/7c/b3887c0f-95fb-23f1-daae-ee9ac3ff7237/source/.+.jpg#',
+            'regex:#https://is.-ssl.mzstatic.com/image/thumb/Music/87/7a/56/mzi.vzoqpscv.jpg/1200x630bb.jpg#',
         );
         $this->check_response($url, $title, $imageurls);
     }
@@ -672,7 +672,7 @@ class ImageLnkTest extends PHPUnit_Framework_TestCase
     function test_cnet_jp2()
     {
         $url = 'https://japan.cnet.com/image/l/storage/35004965/storage/2011/07/07/6158a520ae3ce67be4959c9b8cf62e72/20110707_casio_06.jpg';
-        $title = '関連画像 - CNET Japan: レンズ部を中心にフレームは360度回転し、モニタも270度回転する';
+        $title = 'CNET Japan: レンズ部を中心にフレームは360度回転し、モニタも270度回転する';
         $imageurls = array(
             'https://japan.cnet.com/storage/2011/07/07/6158a520ae3ce67be4959c9b8cf62e72/20110707_casio_06.jpg',
         );
@@ -746,7 +746,7 @@ class ImageLnkTest extends PHPUnit_Framework_TestCase
         $url = 'https://chan.sankakucomplex.com/ja/post/show/6135230';
         $title = 'Post 6135230';
         $imageurls = array(
-            'regex:#https://cs\.sankakucomplex\.com/data/sample/7b/44/sample-7b44e9025158c4e7fc0ca1cbaafa3e9d\.jpg\?.*#',
+            'regex:#https://c\.sankakucomplex\.com/sample/7b/44/sample-7b44e9025158c4e7fc0ca1cbaafa3e9d\.jpg\?.*#',
         );
         $this->check_response($url, $title, $imageurls);
     }
