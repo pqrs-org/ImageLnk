@@ -3,11 +3,11 @@
 class ImageLnk_Engine_impress
 {
     const language = 'Japanese';
-    const sitename = 'http://watch.impress.co.jp/';
+    const sitename = 'https://watch.impress.co.jp/';
 
     public static function handle_common($url)
     {
-        if (! preg_match('/^(http:\/\/([^\/]+\.)?impress\.co\.jp)(\/img\/.+).html/', $url, $matches)) {
+        if (! preg_match('/^(https?:\/\/([^\/]+\.)?impress\.co\.jp)(\/img\/.+).html/', $url, $matches)) {
             return false;
         }
 
@@ -34,7 +34,7 @@ class ImageLnk_Engine_impress
 
     public static function handle_akiba($url)
     {
-        if (! preg_match('|^(http://akiba-pc.watch.impress.co.jp/hotline/.+?/image/)|', $url, $matches)) {
+        if (! preg_match('|^(https?://akiba-pc.watch.impress.co.jp/hotline/.+?/image/)|', $url, $matches)) {
             return false;
         }
 

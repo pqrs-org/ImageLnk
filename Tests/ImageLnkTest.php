@@ -385,40 +385,40 @@ class ImageLnkTest extends PHPUnit_Framework_TestCase
     // ======================================================================
     function test_impress1()
     {
-        $url = 'http://game.watch.impress.co.jp/img/gmw/docs/448/930/html/psn01.jpg.html';
+        $url = 'https://game.watch.impress.co.jp/img/gmw/docs/448/930/html/psn01.jpg.html';
         $title = '[拡大画像] SCEJ、PlayStation NetworkとQriocityのサービスを5月28日から再開。安全管理措置を導入し、ゲームコンテンツの無償提供も';
         $imageurls = array(
-            'http://game.watch.impress.co.jp/img/gmw/docs/448/930/psn01.jpg',
+            'https://game.watch.impress.co.jp/img/gmw/docs/448/930/psn01.jpg',
         );
         $this->check_response($url, $title, $imageurls);
     }
 
     function test_impress2()
     {
-        $url = 'http://dc.watch.impress.co.jp/img/dcw/docs/422/882/html/009.jpg.html';
+        $url = 'https://dc.watch.impress.co.jp/img/dcw/docs/422/882/html/009.jpg.html';
         $title = '[画像] 写真で見る写真で見るカシオ「TRYX」（β機）(9/31) - デジカメ Watch Watch';
         $imageurls = array(
-            'http://dc.watch.impress.co.jp/img/dcw/docs/422/882/009.jpg',
+            'https://dc.watch.impress.co.jp/img/dcw/docs/422/882/009.jpg',
         );
         $this->check_response($url, $title, $imageurls);
     }
 
     function test_impress3()
     {
-        $url = 'http://k-tai.watch.impress.co.jp/img/ktw/docs/460/236/html/sanzo.jpg.html';
+        $url = 'https://k-tai.watch.impress.co.jp/img/ktw/docs/460/236/html/sanzo.jpg.html';
         $title = '[拡大画像]サンヨーホームズ、Android採用のロボットを搭載した住宅(1/2) -  ケータイ Watch';
         $imageurls = array(
-            'http://k-tai.watch.impress.co.jp/img/ktw/docs/460/236/sanzo.jpg',
+            'https://k-tai.watch.impress.co.jp/img/ktw/docs/460/236/sanzo.jpg',
         );
         $this->check_response($url, $title, $imageurls);
     }
 
     function test_impress4()
     {
-        $url = 'http://akiba-pc.watch.impress.co.jp/hotline/20110806/image/kfrety4.html';
+        $url = 'https://akiba-pc.watch.impress.co.jp/hotline/20110806/image/kfrety4.html';
         $title = '[拡大画像]お買い得価格情報 - AKIBA PC Hotline!';
         $imageurls = array(
-            'http://akiba-pc.watch.impress.co.jp/hotline/20110806/image/kfrety4.jpg',
+            'https://akiba-pc.watch.impress.co.jp/hotline/20110806/image/kfrety4.jpg',
         );
         $this->check_response($url, $title, $imageurls);
     }
