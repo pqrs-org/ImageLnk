@@ -84,7 +84,7 @@ class ImageLnkTest extends PHPUnit_Framework_TestCase
         $imageurls = [
             'https://stat.ameba.jp/user_images/20100109/22/hakasetoiu-ikimono/5f/c7/j/o0360050010370336976.jpg',
         ];
-        $referer = 'https://ameblo.jp/hakasetoiu-ikimono/image-10430643614-10370336976.html';
+        $referer = 'http://ameblo.jp/hakasetoiu-ikimono/image-10430643614-10370336976.html';
         $this->check_response($url, $title, $imageurls, $referer);
     }
 
@@ -234,7 +234,7 @@ class ImageLnkTest extends PHPUnit_Framework_TestCase
         $url = 'http://www.nicovideo.jp/watch/sm17606436';
         $title = '【折り紙】バラを折ってみた';
         $imageurls = array(
-            'http://tn-skr1.smilevideo.jp/smile?i=17606436.L',
+            'http://tn.smilevideo.jp/smile?i=17606436.L',
         );
         $this->check_response($url, $title, $imageurls);
     }
