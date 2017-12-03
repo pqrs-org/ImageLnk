@@ -372,17 +372,6 @@ class ImageLnkTest extends PHPUnit_Framework_TestCase
     }
 
     // ======================================================================
-    function test_twipple1()
-    {
-        $url = 'http://p.twipple.jp/6FGRA';
-        $title = 'オレもマジでつぶやき内容に注意しよう&hellip;　今後はさわやかなつぶやきに終始しよう |ekoda_eddieの投稿画像';
-        $imageurls = array(
-            'http://p.twpl.jp/show/orig/6FGRA',
-        );
-        $this->check_response($url, $title, $imageurls);
-    }
-
-    // ======================================================================
     function test_impress1()
     {
         $url = 'https://game.watch.impress.co.jp/img/gmw/docs/448/930/html/psn01.jpg.html';
