@@ -5,11 +5,11 @@ use Sunra\PhpSimple\HtmlDomParser;
 class ImageLnk_Engine_mynavi
 {
     const language = 'Japanese';
-    const sitename = 'http://news.mynavi.jp/';
+    const sitename = 'https?://news.mynavi.jp/';
 
     public static function handle($url)
     {
-        if (! preg_match('%http://news\.mynavi\.jp/photo/%', $url)) {
+        if (! preg_match('%https?://news\.mynavi\.jp/photo/%', $url)) {
             return false;
         }
 
@@ -24,7 +24,7 @@ class ImageLnk_Engine_mynavi
 
         $response->setTitle(ImageLnk_Helper::getTitle($html));
 
-        $img = $dom->find('#photo-link > img', 0);
+        $img = $dom->find('.magnify-main img', 0);
         if ($img) {
             $response->addImageURL($img->src);
         }

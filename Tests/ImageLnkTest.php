@@ -701,20 +701,20 @@ class ImageLnkTest extends PHPUnit_Framework_TestCase
     // ======================================================================
     function test_mynavi1()
     {
-        $url = 'http://news.mynavi.jp/photo/news/2011/11/08/008/images/005l.jpg';
+        $url = 'https://news.mynavi.jp/photo/article/20111108-a008/images/005l.jpg';
         $title = '拡大画像 005 | サイボウズ、クラウド基盤「cybozu.com」の運用を開始しPaaSを提供 | マイナビニュース';
         $imageurls = array(
-            'http://n.mynv.jp/news/2011/11/08/008/images/005l.jpg',
+            'https://news.mynavi.jp/article/20111108-a008/images/005l.jpg',
         );
         $this->check_response($url, $title, $imageurls);
     }
 
     function test_mynavi2()
     {
-        $url = 'http://news.mynavi.jp/photo/articles/2011/03/07/appinventor/images/006l.jpg';
-        $title = '拡大画像 006 | 【ハウツー】経験ゼロでも大丈夫!? App Inventorで始めるAndroidアプリ開発 (1) まずは稼働環境を整備 | マイナビニュース';
+        $url = 'https://news.mynavi.jp/photo/article/20110307-appinventor/images/006l.jpg';
+        $title = '拡大画像 006l | 経験ゼロでも大丈夫!? App Inventorで始めるAndroidアプリ開発 (1) まずは稼働環境を整備 | マイナビニュース';
         $imageurls = array(
-            'http://n.mynv.jp/articles/2011/03/07/appinventor/images/006l.jpg',
+            'https://news.mynavi.jp/article/20110307-appinventor/images/006l.jpg',
         );
         $this->check_response($url, $title, $imageurls);
     }
