@@ -482,20 +482,20 @@ class ImageLnkTest extends PHPUnit_Framework_TestCase
     // ======================================================================
     function test_natalie1()
     {
-        $url = 'http://natalie.mu/comic/gallery/show/news_id/50403/image_id/77977';
+        $url = 'https://natalie.mu/comic/gallery/news/50403/80332';
         $title = '物語の舞台である、由比ヶ浜へ連れ出してみるのも一興。(C)安部真弘（週刊少 年チャンピオン）／海の家れもん [画像ギャラリー 3/6] - コミックナタリー';
         $imageurls = array(
-            'http://cdn2.natalie.mu/media/comic/1105/extra/news_xlarge_ika_roke1.jpg',
+            'https://cdnx.natalie.mu/media/news/comic/2011/0531/ika_roke1_fixw_640_hq.jpg',
         );
         $this->check_response($url, $title, $imageurls);
     }
 
     function test_natalie2()
     {
-        $url = 'http://natalie.mu/music/gallery/show/news_id/50476/image_id/78087';
+        $url = 'https://natalie.mu/music/gallery/news/50476/80357';
         $title = '新しくなった怒髪天のロゴ。 [画像ギャラリー 1/2] - 音楽ナタリー';
         $imageurls = array(
-            'http://cdn2.natalie.mu/media/1106/0601/extra/news_xlarge_dohatsuten_topB.jpg',
+            'https://cdnx.natalie.mu/media/news/music/2011/0601/dohatsuten_topB_fixw_640_hq.jpg',
         );
         $this->check_response($url, $title, $imageurls);
     }
@@ -735,7 +735,7 @@ class ImageLnkTest extends PHPUnit_Framework_TestCase
         $url = 'https://chan.sankakucomplex.com/ja/post/show/6135230';
         $title = 'Post 6135230';
         $imageurls = array(
-            'regex:#https://c\.sankakucomplex\.com/sample/7b/44/sample-7b44e9025158c4e7fc0ca1cbaafa3e9d\.jpg\?.*#',
+            'regex:#https://cs\.sankakucomplex\.com/data/sample/7b/44/sample-7b44e9025158c4e7fc0ca1cbaafa3e9d.jpg\?.*#',
         );
         $this->check_response($url, $title, $imageurls);
     }
