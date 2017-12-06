@@ -569,7 +569,7 @@ class ImageLnkTest extends PHPUnit_Framework_TestCase
         $url = 'http://ja.uncyclopedia.info/wiki/%E3%83%95%E3%82%A1%E3%82%A4%E3%83%AB:CaesiumSan_01.jpg';
         $title = 'ファイル:CaesiumSan 01.jpg - アンサイクロペディア';
         $imageurls = array(
-            'http://images.uncyc.org/ja/2/25/CaesiumSan_01.jpg',
+            'https://images.uncyc.org/ja/2/25/CaesiumSan_01.jpg',
         );
         $this->check_response($url, $title, $imageurls);
     }
@@ -579,7 +579,7 @@ class ImageLnkTest extends PHPUnit_Framework_TestCase
         $url = 'http://ja.uncyclopedia.info/wiki/%E3%83%95%E3%82%A1%E3%82%A4%E3%83%AB:Sigeru.jpg';
         $title = 'ファイル:Sigeru.jpg - アンサイクロペディア';
         $imageurls = array(
-            'http://images.uncyc.org/ja/1/11/Sigeru.jpg',
+            'https://images.uncyc.org/ja/1/11/Sigeru.jpg',
         );
         $this->check_response($url, $title, $imageurls);
     }
