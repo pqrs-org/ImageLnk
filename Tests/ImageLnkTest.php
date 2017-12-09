@@ -84,7 +84,7 @@ class ImageLnkTest extends PHPUnit_Framework_TestCase
         $imageurls = [
             'https://stat.ameba.jp/user_images/20100109/22/hakasetoiu-ikimono/5f/c7/j/o0360050010370336976.jpg',
         ];
-        $referer = 'http://ameblo.jp/hakasetoiu-ikimono/image-10430643614-10370336976.html';
+        $referer = 'https://ameblo.jp/hakasetoiu-ikimono/image-10430643614-10370336976.html';
         $this->check_response($url, $title, $imageurls, $referer);
     }
 
