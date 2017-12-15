@@ -566,7 +566,7 @@ class ImageLnkTest extends PHPUnit_Framework_TestCase
     // ======================================================================
     function test_uncyclopedia_ja1()
     {
-        $url = 'http://ja.uncyclopedia.info/wiki/%E3%83%95%E3%82%A1%E3%82%A4%E3%83%AB:CaesiumSan_01.jpg';
+        $url = 'https://ja.uncyclopedia.info/wiki/%E3%83%95%E3%82%A1%E3%82%A4%E3%83%AB:CaesiumSan_01.jpg';
         $title = 'ファイル:CaesiumSan 01.jpg - アンサイクロペディア';
         $imageurls = array(
             'https://images.uncyc.org/ja/2/25/CaesiumSan_01.jpg',
@@ -576,7 +576,7 @@ class ImageLnkTest extends PHPUnit_Framework_TestCase
 
     function test_uncyclopedia_ja2()
     {
-        $url = 'http://ja.uncyclopedia.info/wiki/%E3%83%95%E3%82%A1%E3%82%A4%E3%83%AB:Sigeru.jpg';
+        $url = 'https://ja.uncyclopedia.info/wiki/%E3%83%95%E3%82%A1%E3%82%A4%E3%83%AB:Sigeru.jpg';
         $title = 'ファイル:Sigeru.jpg - アンサイクロペディア';
         $imageurls = array(
             'https://images.uncyc.org/ja/1/11/Sigeru.jpg',
@@ -586,10 +586,10 @@ class ImageLnkTest extends PHPUnit_Framework_TestCase
 
     function test_uncyclopedia_ja3()
     {
-        $url = 'http://ansaikuropedia.org/wiki/%E3%83%95%E3%82%A1%E3%82%A4%E3%83%AB:GRP_0258.JPG';
+        $url = 'https://ansaikuropedia.org/wiki/%E3%83%95%E3%82%A1%E3%82%A4%E3%83%AB:GRP_0258.JPG';
         $title = 'ファイル:GRP 0258.JPG - アンサイクロペディア';
         $imageurls = array(
-            'http://images.uncyc.org/ja/f/f4/GRP_0258.JPG',
+            'https://images.uncyc.org/ja/f/f4/GRP_0258.JPG',
         );
         $this->check_response($url, $title, $imageurls);
     }

@@ -7,8 +7,8 @@ class ImageLnk_Engine_uncyclopedia_ja
 
     public static function handle($url)
     {
-        if (! preg_match('|^http://ja.uncyclopedia.info/wiki/.+|', $url, $matches)
-            && ! preg_match('|^http://ansaikuropedia.org/wiki/.+|', $url, $matches)
+        if (! preg_match('|^https?://ja.uncyclopedia.info/wiki/.+|', $url, $matches)
+            && ! preg_match('|^https?://ansaikuropedia.org/wiki/.+|', $url, $matches)
         ) {
             return false;
         }
