@@ -3,7 +3,11 @@
         "sunra/php-simple-html-dom-parser": "v1.5.0",
         "themattharris/tmhoauth": "*",
         "symfony/yaml": "*",
-        "pear/http_request2": "*"
+        "pear/http_request2": "*",
+        "guzzlehttp/guzzle": "^6.3",
+        "slim/slim": "^3.0",
+        "twig/twig": "^2.0",
+        "slim/twig-view": "~2.0"
     },
     "include-path": [
         "vendor/pear/net_url2",

@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+        <link rel="stylesheet" href="css/common.css" type="text/css" media="all" />
+        <link rel="shortcut icon" href="/favicon.ico" />
+        <title>ImageLnk - Get image URLs from image page HTML</title>
+    </head>
+    <body>
+        <h1>ImageLnk</h1>
+        <div class="small" style="color: #444; margin: 0 0 20px 0">
+            You can get image URLs from image page HTML.<br />
+        </div>
+
+        <div id="showinfo_form">
+            Enter the URL of image page.<br />
+            (For example: https://twitter.com/xxx/status/yyy)
+
+            <div style="margin: 20px 0">
+                URL: <input name="url" id="url" type="text" style="width: 400px; font-size: 26px;" placeholder="https://example.com" value="https://twitter.com/ImageLnk/status/631948031873519616" />
+            </div>
+
+            <div>
+                <div style="margin: 10px 0">
+                    <input type="button" id="showinfo" value="Get image information" />
+                </div>
+
+                <div id="showinfo_result">
+                    <table><tbody>
+                            <tr>
+                                <th>ImageURLs:</th>
+                                <td id="showinfo_result_imageurls"></td>
+                            </tr>
+                            <tr>
+                                <th>Title:</th>
+                                <td id="showinfo_result_title"></td>
+                            </tr>
+                            <tr>
+                                <th>Referrer:</th>
+                                <td id="showinfo_result_referer"></td>
+                            </tr>
+                            <tr>
+                                <th>PageURL:</th>
+                                <td id="showinfo_result_pageurl"></td>
+                            </tr>
+                            <tr>
+                                <th>BackLink:</th>
+                                <td id="showinfo_result_backlink"></td>
+                            </tr>
+                    </tbody></table>
+                </div>
+            </div>
+        </div>
+
+        <div style="margin-top: 20px;">
+            <a href="api">ImageLnk API</a>
+        </div>
+
+        <div style="width: 100%; margin-top: 40px;">
+            Sites
+
+            <div class="small" style="width: 50%; height: 200px; overflow: auto; border: 1px solid gray; margin: 10px auto;">
+                {% for s in sites %}
+                    {{ s }}<br />
+                {% endfor %}
+            </div>
+        </div>
+
+        <div id="footer">
+            <div>
+                <a href="https://github.com/tekezo/ImageLnk/">github</a>
+                <br />
+                Takayama Fumihiko &lt;tekezo@pqrs.org&gt;
+            </div>
+        </div>
+
+        <script src="//code.jquery.com/jquery-2.1.3.min.js"></script>
+        <script type="text/javascript" src="js/imagelnk.js?1318902901"></script>
+    </body>
+</html>

@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+        <link rel="stylesheet" href="../css/common.css" type="text/css" media="all" />
+        <link rel="shortcut icon" href="/favicon.ico" />
+        <title>ImageLnk API</title>
+    </head>
+    <body>
+        <h1>ImageLnk API</h1>
+
+        <div style="text-align: left; width: 750px; margin: 40px auto;">
+            You can call ImageLnk functions via HTTP.
+
+            <h2>api/get</h2>
+            <div class="api_description">
+                Getting image URLs from image page HTML.
+
+                <h3>URL:</h3>
+                https://imagelnk.pqrs.org/api/get
+
+                <h3>Parameters:</h3>
+                <table><tbody>
+                        <tr>
+                            <th>url</th>
+                            <td>URL of the image page</td>
+                        </tr>
+                </tbody></table>
+
+                <h3>Response (JSON):</h3>
+                <table><tbody>
+                        <tr>
+                            <th>pageurl</th>
+                            <td>URL of the image page</td>
+                        </tr>
+                        <tr>
+                            <th>title</th>
+                            <td>The title of image page</td>
+                        </tr>
+                        <tr>
+                            <th>referer</th>
+                            <td>Referer which you should set when you access the image URL.</td>
+                        </tr>
+                        <tr>
+                            <th>backlink</th>
+                            <td>URL of the article page.</td>
+                        </tr>
+                        <tr>
+                            <th>imageurls</th>
+                            <td>URLs of the image file.</td>
+                        </tr>
+                </tbody></table>
+
+                <h3>Example:</h3>
+                Request URL: <a href="https://imagelnk.pqrs.org/api/get?url=https%3A%2F%2Ftwitter.com%2FImageLnk%2Fstatus%2F631948031873519616">https://imagelnk.pqrs.org/api/get?url=https://twitter.com/ImageLnk/status/631948031873519616</a><br />
+                Response:
+                <div class="pre">{</div>
+                <div class="pre">  "pageurl":"https://twitter.com/ImageLnk/status/631948031873519616",</div>
+                <div class="pre">  "title":"twitter: ImageLnk: Penguins http://t.co/aQuSe9BGBD",</div>
+                <div class="pre">  "referer":"https://twitter.com/ImageLnk/status/631948031873519616",</div>
+                <div class="pre">  "backlink":"",</div>
+                <div class="pre">  "imageurls":["http://pbs.twimg.com/media/CMUhYqLVEAAOVT7.jpg:large"]</div>
+                <div class="pre">}</div>
+            </div>
+        </div>
+
+        <div id="footer">
+            <div>
+                Takayama Fumihiko &lt;tekezo@pqrs.org&gt;
+            </div>
+        </div>
+    </body>
+</html>

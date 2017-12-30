@@ -1,0 +1,132 @@
+/* -*- mode: css -*- */
+
+body {
+    width: 800px;
+    margin: 0 auto;
+    padding: 0;
+
+    border-width: 0 1px;
+    border-style: solid;
+    border-color: black;
+
+    font-family: serif;
+    font-size: 20px;
+    background-color: #fff;
+    color: #000;
+    text-align: center;
+}
+
+.small {
+    font-size: 16px;
+}
+
+.pre {
+    white-space: pre;
+    font-family: monospace;
+}
+
+h1 {
+    margin: 20px 0 10px 0;
+    padding: 0;
+    font-size: 52px;
+    font-weight: bold;
+}
+
+h2 {
+    margin: 20px 0 10px 0;
+    padding: 0;
+    font-size: 30px;
+    font-weight: bold;
+}
+
+h3 {
+    margin: 20px 0 0px 0;
+    padding: 0;
+    font-size: 20px;
+    font-weight: bold;
+}
+
+#footer {
+    width: 100%;
+    margin-top: 20px;
+    border-top: 1px solid gray;
+    text-align: right;
+    font-size: 16px;
+}
+
+#footer div {
+    padding: 3px;
+}
+
+#showinfo_form {
+    width: 700px;
+    margin: 0 auto;
+    padding: 10px;
+    border: 1px solid black;
+}
+
+input[type=text] {
+    border: 1px solid #006;
+    background: #ffc;
+}
+
+#showinfo_result {
+    display: none;
+    border-width: 1px 0;
+    border-color: black;
+    border-style: solid;
+}
+
+#showinfo_result table {
+    width: 650px;
+    margin: 0 auto;
+    border-width: 0 1px;
+    border-color: black;
+    border-style: solid;
+    border-collapse: collapse;
+}
+
+#showinfo_result table th {
+    width: 120px;
+    padding: 5px;
+    text-align: right;
+    vertical-align: top;
+    font-weight: bold;
+}
+
+#showinfo_result table td {
+    padding: 5px;
+    text-align: left;
+    vertical-align: top;
+    white-space: pre-wrap;
+    word-break: break-all;
+}
+
+.api_description {
+    margin-left: 40px;
+    font-size: 16px;
+}
+
+.api_description table {
+    margin-top: 10px;
+    border-width: 1px;
+    border-color: black;
+    border-style: solid;
+    border-collapse: collapse;
+}
+
+.api_description table th {
+    padding: 5px;
+    text-align: right;
+    vertical-align: top;
+    font-weight: bold;
+    background-color: #ffc;
+}
+
+.api_description table td {
+    padding: 5px;
+    text-align: left;
+    vertical-align: top;
+    white-space: pre-wrap;
+    word-break: break-all;
+}
