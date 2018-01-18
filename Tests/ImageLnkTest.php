@@ -451,7 +451,7 @@ class ImageLnkTest extends PHPUnit_Framework_TestCase
         $url = 'https://www.instagram.com/p/6XQ5nTTdjq/';
         $title = '@imagelnk on Instagram: “pepper”';
         $imageurls = array(
-            'regex:#https://.+.cdninstagram.com/t51.2885-15/e35/11356624_508726059287524_1160649839_n.jpg#',
+            'regex:#https://.+.cdninstagram.com/vp/.+?/t51.2885-15/e35/11356624_508726059287524_1160649839_n.jpg#',
         );
         $this->check_response($url, $title, $imageurls);
     }
@@ -461,7 +461,7 @@ class ImageLnkTest extends PHPUnit_Framework_TestCase
         $url = 'https://instagram.com/p/6XQ5nTTdjq/';
         $title = '@imagelnk on Instagram: “pepper”';
         $imageurls = array(
-            'regex:#https://.+.cdninstagram.com/t51.2885-15/e35/11356624_508726059287524_1160649839_n.jpg#',
+            'regex:#https://.+.cdninstagram.com/vp/.+?/t51.2885-15/e35/11356624_508726059287524_1160649839_n.jpg#',
         );
         $referer = 'https://www.instagram.com/p/6XQ5nTTdjq/';
         $this->check_response($url, $title, $imageurls, $referer);
@@ -569,7 +569,7 @@ class ImageLnkTest extends PHPUnit_Framework_TestCase
         $url = 'https://ja.uncyclopedia.info/wiki/%E3%83%95%E3%82%A1%E3%82%A4%E3%83%AB:CaesiumSan_01.jpg';
         $title = 'ファイル:CaesiumSan 01.jpg - アンサイクロペディア';
         $imageurls = array(
-            'https://images.uncyc.org/ja/2/25/CaesiumSan_01.jpg',
+            'http://images.uncyc.org/ja/2/25/CaesiumSan_01.jpg',
         );
         $this->check_response($url, $title, $imageurls);
     }
@@ -579,7 +579,7 @@ class ImageLnkTest extends PHPUnit_Framework_TestCase
         $url = 'https://ja.uncyclopedia.info/wiki/%E3%83%95%E3%82%A1%E3%82%A4%E3%83%AB:Sigeru.jpg';
         $title = 'ファイル:Sigeru.jpg - アンサイクロペディア';
         $imageurls = array(
-            'https://images.uncyc.org/ja/1/11/Sigeru.jpg',
+            'http://images.uncyc.org/ja/1/11/Sigeru.jpg',
         );
         $this->check_response($url, $title, $imageurls);
     }
@@ -589,7 +589,7 @@ class ImageLnkTest extends PHPUnit_Framework_TestCase
         $url = 'https://ansaikuropedia.org/wiki/%E3%83%95%E3%82%A1%E3%82%A4%E3%83%AB:GRP_0258.JPG';
         $title = 'ファイル:GRP 0258.JPG - アンサイクロペディア';
         $imageurls = array(
-            'https://images.uncyc.org/ja/f/f4/GRP_0258.JPG',
+            'http://images.uncyc.org/ja/f/f4/GRP_0258.JPG',
         );
         $this->check_response($url, $title, $imageurls);
     }
