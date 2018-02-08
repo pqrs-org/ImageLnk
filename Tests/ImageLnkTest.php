@@ -744,9 +744,9 @@ class ImageLnkTest extends PHPUnit_Framework_TestCase
     function test_dropbox1()
     {
         $url = 'https://www.dropbox.com/s/v8a95rih0ah0ej0/chart2.png?dl=0';
-        $title = 'Dropbox - chart2.png';
+        $title = 'Dropbox - chart2 (1).png';
         $imageurls = array(
-            'regex:#^https://photos-\d+\.dropbox\.com/t/2/.+?/12/\d+/png/32x32/3/\d+/0/2/chart2.png/.+?/.+?dl=0&preserve_transparency=1&size=2048x1536&size_mode=3#',
+            'regex:#^https://photos-\d+\.dropbox\.com/t/2/.+?/12/\d+/png/32x32/3/\d+/0/2/chart2%20%281%29.png/.+?/.+?dl=0&preserve_transparency=1&size=2048x1536&size_mode=3#',
         );
         $this->check_response($url, $title, $imageurls);
     }
