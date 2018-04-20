@@ -485,7 +485,7 @@ class ImageLnkTest extends PHPUnit_Framework_TestCase
         $url = 'https://natalie.mu/comic/gallery/news/50403/80332';
         $title = '物語の舞台である、由比ヶ浜へ連れ出してみるのも一興。(C)安部真弘（週刊少 年チャンピオン）／海の家れもん [画像ギャラリー 3/6] - コミックナタリー';
         $imageurls = array(
-            'https://cdnx.natalie.mu/media/news/comic/2011/0531/ika_roke1_fixw_640_hq.jpg',
+            'https://cdnx.natalie.mu/media/news/comic/2011/0531/ika_roke1_fixw_750_lt.jpg',
         );
         $this->check_response($url, $title, $imageurls);
     }
@@ -495,7 +495,7 @@ class ImageLnkTest extends PHPUnit_Framework_TestCase
         $url = 'https://natalie.mu/music/gallery/news/50476/80357';
         $title = '新しくなった怒髪天のロゴ。 [画像ギャラリー 1/2] - 音楽ナタリー';
         $imageurls = array(
-            'https://cdnx.natalie.mu/media/news/music/2011/0601/dohatsuten_topB_fixw_640_hq.jpg',
+            'https://cdnx.natalie.mu/media/news/music/2011/0601/dohatsuten_topB_fixw_750_lt.jpg',
         );
         $this->check_response($url, $title, $imageurls);
     }
