@@ -4,7 +4,7 @@ require_once sprintf('%s/../lib/ImageLnk.php', dirname(__FILE__));
 
 class ImageLnkTest extends PHPUnit_Framework_TestCase
 {
-    function __construct()
+    public function __construct()
     {
         ImageLnk_Config::set('cache_directory', 'tmp');
         ImageLnk_Config::set('cache_expire_minutes', 30);
