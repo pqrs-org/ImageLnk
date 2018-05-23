@@ -24,7 +24,7 @@ class ImageLnk_Engine_pixiv
 
     public static function handle_old($url)
     {
-        if (! preg_match('/^https?:\/\/(www|touch)\.pixiv\.net\/member_illust\.php/', $url)) {
+        if (!preg_match('/^https?:\/\/(www|touch)\.pixiv\.net\/member_illust\.php/', $url)) {
             return false;
         }
 
@@ -39,13 +39,13 @@ class ImageLnk_Engine_pixiv
         // --------------------
         // If mode=medium, fetch large image page
         $url_info = parse_url($url);
-        if (! isset($url_info['query'])) {
+        if (!isset($url_info['query'])) {
             return false;
         }
 
         $query = array();
         parse_str($url_info['query'], $query);
-        if (! isset($query['mode'])) {
+        if (!isset($query['mode'])) {
             return false;
         }
 
@@ -70,7 +70,11 @@ class ImageLnk_Engine_pixiv
 
         switch ($query['mode']) {
             case 'medium':
-                $response->addImageURL($dom->find('img.original-image', 0)->getAttribute('data-src'));
+                $urls = [];
+                if (preg_match('/"urls":({.+?})/', $html, $matches)) {
+                    $urls = json_decode($matches[1]);
+                    $response->addImageURL($urls->original);
+                }
                 break;
 
             case 'big':
@@ -98,7 +102,7 @@ class ImageLnk_Engine_pixiv
 
     public static function handle_whitecube($url)
     {
-        if (! preg_match('#https?://www.pixiv.net/whitecube/user/(\d+)/illust/(\d+)#', $url)) {
+        if (!preg_match('#https?://www.pixiv.net/whitecube/user/(\d+)/illust/(\d+)#', $url)) {
             return false;
         }
 
