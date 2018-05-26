@@ -49,20 +49,6 @@ class ImageLnk_Engine_pixiv
             return false;
         }
 
-        if ($query['mode'] == 'medium') {
-            foreach ($dom->find('div.works_display a') as $e) {
-                if (preg_match('/mode=big/', $e->href)) {
-                    $newurl = 'http://www.pixiv.net/' . $e->href;
-                    return self::handle($newurl);
-                }
-                if (preg_match('/mode=manga/', $e->href)) {
-                    $newurl = preg_replace('/mode=manga/', 'mode=manga_big', $e->href);
-                    $newurl = 'http://www.pixiv.net/' . $newurl . '&page=0';
-                    return self::handle($newurl);
-                }
-            }
-        }
-
         // --------------------
         $response = new ImageLnk_Response();
         $response->setReferer($url);
