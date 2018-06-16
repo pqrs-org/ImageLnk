@@ -304,7 +304,7 @@ class ImageLnkTest extends PHPUnit_Framework_TestCase
     // ======================================================================
     public function testYaplog1()
     {
-        $url = 'http://yaplog.jp/atsukana/image/236/306';
+        $url = 'https://yaplog.jp/atsukana/image/236/306';
         $title = '自分大好き日記(笑)の画像(2/5) :: 菜っ葉の『菜』！！';
         $imageurls = array(
             'https://img.yaplog.jp/img/07/pc/a/t/s/atsukana/0/306_large.jpg',
