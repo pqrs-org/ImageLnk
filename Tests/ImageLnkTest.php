@@ -497,7 +497,7 @@ class ImageLnkTest extends PHPUnit_Framework_TestCase
     public function test4gamer1()
     {
         $url = 'http://www.4gamer.net/games/044/G004471/20110616072/screenshot.html?num=003';
-        $title = '4Gamer.net ― スクリーンショット（「Wizardry Online」のCBT「機能テスト」先行体験プレイレポートを掲載。実態はやはり高難度……しかし序盤は「ロスト」の心配無用？）';
+        $title = '「Wizardry Online」のCBT「機能テスト」先行体験プレイレポートを掲載。実態はやはり高難度……しかし序盤は「ロスト」の心配無用？ - 4Gamer.net';
         $imageurls = array(
             'http://www.4gamer.net/games/044/G004471/20110616072/SS/003.jpg',
         );
@@ -507,7 +507,7 @@ class ImageLnkTest extends PHPUnit_Framework_TestCase
     public function test4gamer2()
     {
         $url = 'http://www.4gamer.net/games/044/G004471/20110616072/screenshot.html';
-        $title = '4Gamer.net ― スクリーンショット（「Wizardry Online」のCBT「機能テスト」先行体験プレイレポートを掲載。実態はやはり高難度……しかし序盤は「ロスト」の心配無用？）';
+        $title = '「Wizardry Online」のCBT「機能テスト」先行体験プレイレポートを掲載。実態はやはり高難度……しかし序盤は「ロスト」の心配無用？ - 4Gamer.net';
         $imageurls = array(
             'http://www.4gamer.net/games/044/G004471/20110616072/SS/001.jpg',
         );
@@ -739,8 +739,9 @@ class ImageLnkTest extends PHPUnit_Framework_TestCase
         $url = 'https://www.dropbox.com/s/v8a95rih0ah0ej0/chart2.png?dl=0';
         $title = 'Dropbox - chart2 (1).png';
         $imageurls = array(
-            'regex:#^https://photos-\d+\.dropbox\.com/t/2/.+?/12/\d+/png/32x32/3/\d+/0/2/chart2%20%281%29.png/.+?/.+?dl=0&preserve_transparency=1&size=2048x1536&size_mode=3#',
+            'regex:#^https://[a-z0-9]+\.previews\.dropboxusercontent\.com/p/thumb/.+?/p\.png\?size=2048x1536&size_mode=3#',
         );
-        $this->checkResponse($url, $title, $imageurls);
+        $referer = 'https://www.dropbox.com/s/v8a95rih0ah0ej0/chart2%20%281%29.png?dl=0';
+        $this->checkResponse($url, $title, $imageurls, $referer);
     }
 }
