@@ -250,7 +250,7 @@ class ImageLnkTest extends PHPUnit_Framework_TestCase
     {
         // Manga (medium)
 
-        $url = 'http://www.pixiv.net/member_illust.php?mode=medium&illust_id=51691357';
+        $url = 'https://www.pixiv.net/member_illust.php?mode=medium&illust_id=51691357';
         $title = "「Manga Example」/「imagelnk」のイラスト [pixiv]";
         $imageurls = array(
             'https://i.pximg.net/img-original/img/2015/07/30/22/18/43/51691357_p0.jpg',
@@ -263,7 +263,7 @@ class ImageLnkTest extends PHPUnit_Framework_TestCase
     {
         // Manga (manga_big)
 
-        $url = 'http://www.pixiv.net/member_illust.php?mode=manga_big&illust_id=51691357&page=1';
+        $url = 'https://www.pixiv.net/member_illust.php?mode=manga_big&illust_id=51691357&page=1';
         $title = "「Manga Example」/「imagelnk」の漫画 [pixiv]";
         $imageurls = array(
             'https://i.pximg.net/img-original/img/2015/07/30/22/18/43/51691357_p1.jpg',
@@ -277,7 +277,7 @@ class ImageLnkTest extends PHPUnit_Framework_TestCase
     {
         // Manga (all)
 
-        $url = 'http://www.pixiv.net/member_illust.php?mode=manga&illust_id=51691357';
+        $url = 'https://www.pixiv.net/member_illust.php?mode=manga&illust_id=51691357';
         $title = "「Manga Example」/「imagelnk」の漫画 [pixiv]";
         $imageurls = array(
             'https://i.pximg.net/img-master/img/2015/07/30/22/18/43/51691357_p0_master1200.jpg',
@@ -292,7 +292,7 @@ class ImageLnkTest extends PHPUnit_Framework_TestCase
     {
         // touch
 
-        $url = 'http://touch.pixiv.net/member_illust.php?mode=medium&illust_id=51691307';
+        $url = 'https://touch.pixiv.net/member_illust.php?mode=medium&illust_id=51691307';
         $title = "「Image Example」/「imagelnk」のイラスト [pixiv]";
         $imageurls = array(
             'https://i.pximg.net/img-original/img/2015/07/30/22/16/27/51691307_p0.jpg',

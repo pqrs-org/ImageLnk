@@ -24,7 +24,7 @@ class ImageLnk_Engine_pixiv
 
     public static function handle_old($url)
     {
-        if (!preg_match('/^https?:\/\/(www|touch)\.pixiv\.net\/member_illust\.php/', $url)) {
+        if (!preg_match('/^https?:\/\/(www|touch)\.pixiv\.net\//', $url)) {
             return false;
         }
 
@@ -43,8 +43,14 @@ class ImageLnk_Engine_pixiv
             return false;
         }
 
-        $query = array();
+        $query = [];
         parse_str($url_info['query'], $query);
+
+        if (isset($query['return_to'])) {
+            $url = $url_info['scheme'] . '://' . $url_info['host'] . rawurldecode($query['return_to']);
+            return self::handle_old($url);
+        }
+
         if (!isset($query['mode'])) {
             return false;
         }
