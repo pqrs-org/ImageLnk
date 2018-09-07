@@ -1,5 +1,7 @@
 <?php //-*- Mode: php; indent-tabs-mode: nil; -*-
 
+use Sunra\PhpSimple\HtmlDomParser;
+
 class ImageLnk_Engine_4gamer
 {
     const language = 'Japanese';
@@ -7,7 +9,7 @@ class ImageLnk_Engine_4gamer
 
     public static function handle($url)
     {
-        if (! preg_match('/^http:\/\/www\.4gamer\.net(\/.+)\/screenshot\.html(\?num=(\d+))?$/', $url, $matches)) {
+        if (!preg_match('/^https?:\/\/www\.4gamer\.net(\/.+)\/screenshot\.html(\?num=(\d+))?$/', $url, $matches)) {
             return false;
         }
 
@@ -22,12 +24,16 @@ class ImageLnk_Engine_4gamer
         $html = $data['data'];
         $html = @iconv("EUC-JP", "UTF-8//IGNORE", $html);
 
+        $dom = HtmlDomParser::str_get_html($html);
+
         $response = new ImageLnk_Response();
         $response->setReferer($url);
 
         $response->setTitle(ImageLnk_Helper::getTitle($html));
-        if (preg_match_all("/href=\"({$id}\/SS\/{$number}\.[^\"]+)\"/", $html, $matches)) {
-            $response->addImageURL('http://www.4gamer.net' . $matches[1][0]);
+        $pattern = 'li[id=SSTHUMB_' . $number . '] a';
+        foreach ($dom->find($pattern) as $e) {
+            $response->addImageURL('https://www.4gamer.net' . $e->getAttribute('href'));
+            break;
         }
 
         return $response;

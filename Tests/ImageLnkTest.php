@@ -496,20 +496,20 @@ class ImageLnkTest extends PHPUnit_Framework_TestCase
     // ======================================================================
     public function test4gamer1()
     {
-        $url = 'http://www.4gamer.net/games/044/G004471/20110616072/screenshot.html?num=003';
+        $url = 'https://www.4gamer.net/games/044/G004471/20110616072/screenshot.html?num=003';
         $title = '「Wizardry Online」のCBT「機能テスト」先行体験プレイレポートを掲載。実態はやはり高難度……しかし序盤は「ロスト」の心配無用？ - 4Gamer.net';
         $imageurls = array(
-            'http://www.4gamer.net/games/044/G004471/20110616072/SS/003.jpg',
+            'https://www.4gamer.net/games/044/G004471/20110616072/SS/003.jpg',
         );
         $this->checkResponse($url, $title, $imageurls);
     }
 
     public function test4gamer2()
     {
-        $url = 'http://www.4gamer.net/games/044/G004471/20110616072/screenshot.html';
+        $url = 'https://www.4gamer.net/games/044/G004471/20110616072/screenshot.html';
         $title = '「Wizardry Online」のCBT「機能テスト」先行体験プレイレポートを掲載。実態はやはり高難度……しかし序盤は「ロスト」の心配無用？ - 4Gamer.net';
         $imageurls = array(
-            'http://www.4gamer.net/games/044/G004471/20110616072/SS/001.jpg',
+            'https://www.4gamer.net/games/044/G004471/20110616072/SS/001.jpg',
         );
         $this->checkResponse($url, $title, $imageurls);
     }
