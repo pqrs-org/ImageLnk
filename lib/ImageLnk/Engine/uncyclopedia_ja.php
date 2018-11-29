@@ -21,7 +21,7 @@ class ImageLnk_Engine_uncyclopedia_ja
         $response->setReferer($url);
 
         if (preg_match('/ class="fullImageLink".+?href="(.+?)"/', $html, $matches)) {
-            $response->addImageURL($matches[1]);
+            $response->addImageURL('https:' . $matches[1]);
 
             if (preg_match('/id="fileinfotpl_desc".+?<td>(.*?)<\/td>/s', $html, $matches)) {
                 $response->setTitle(preg_replace('/\s+/', ' ', strip_tags(trim($matches[1]))));
