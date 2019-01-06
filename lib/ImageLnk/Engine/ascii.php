@@ -7,7 +7,7 @@ class ImageLnk_Engine_ascii
 
     public static function handle_common($url)
     {
-        if (! preg_match('/^http:\/\/ascii\.jp(\/elem\/.*?\/)img.*\.html$/', $url, $matches)) {
+        if (!preg_match('%^https?://ascii\.jp(/elem/.*?/)img.*\.html$%', $url, $matches)) {
             return false;
         }
 
@@ -26,7 +26,7 @@ class ImageLnk_Engine_ascii
         }
 
         if (preg_match("/src=\"({$id}.*?)\"/", $html, $matches)) {
-            $response->addImageURL('http://ascii.jp' . $matches[1]);
+            $response->addImageURL('https://ascii.jp' . $matches[1]);
         }
 
         return $response;
@@ -34,7 +34,7 @@ class ImageLnk_Engine_ascii
 
     public static function handle_weekly($url)
     {
-        if (! preg_match('%http://weekly\.ascii\.jp/elem/%', $url, $matches)) {
+        if (!preg_match('%^https?://weekly\.ascii\.jp/elem/%', $url, $matches)) {
             return false;
         }
 
@@ -42,7 +42,7 @@ class ImageLnk_Engine_ascii
         $data = ImageLnk_Cache::get($url);
         $html = $data['data'];
 
-        if (! preg_match('%<body id="imgExp">%s', $html)) {
+        if (!preg_match('%<body id="imgExp">%s', $html)) {
             return false;
         }
 
@@ -55,7 +55,7 @@ class ImageLnk_Engine_ascii
 
         foreach (ImageLnk_Helper::scanSingleTag('img', $html) as $img) {
             if (preg_match('% src="(/elem/.+?)"%s', $img, $m)) {
-                $response->addImageURL('http://weekly.ascii.jp' . $m[1]);
+                $response->addImageURL('https://weekly.ascii.jp' . $m[1]);
             }
         }
 
