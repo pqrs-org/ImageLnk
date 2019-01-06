@@ -97,17 +97,17 @@ class ImageLnkTest extends PHPUnit_Framework_TestCase
         $url = 'http://ascii.jp/elem/000/001/013/1013475/img.html';
         $title = 'いよいよ来た！ Windows 10が「無償アップグレードの予約」を開始！';
         $imageurls = array(
-            'http://ascii.jp/elem/000/001/013/1013475/01_814x528.png',
+            'https://ascii.jp/elem/000/001/013/1013475/01_814x528.png',
         );
         $this->checkResponse($url, $title, $imageurls);
     }
 
     public function testAscii2()
     {
-        $url = 'http://weekly.ascii.jp/elem/000/000/066/66769/';
+        $url = 'https://weekly.ascii.jp/elem/000/000/066/66769/';
         $title = 'ThinkPad Tabletに3G版が登場！　しかもSIMフリーだと!?';
         $imageurls = array(
-            'http://weekly.ascii.jp/elem/000/000/066/66769/lenovo_sim_free03_cs1e1_x1000.jpg',
+            'https://weekly.ascii.jp/elem/000/000/066/66769/lenovo_sim_free03_cs1e1_x1000.jpg',
         );
         $this->checkResponse($url, $title, $imageurls);
     }
@@ -117,7 +117,7 @@ class ImageLnkTest extends PHPUnit_Framework_TestCase
         $url = 'http://ascii.jp/elem/000/000/672/672411/img800.html';
         $title = '寒い日に寄り添ってぬくぬくする猫たち';
         $imageurls = array(
-            'http://ascii.jp/elem/000/000/672/672411/DSC00017_800x.jpg',
+            'https://ascii.jp/elem/000/000/672/672411/DSC00017_800x.jpg',
         );
         $this->checkResponse($url, $title, $imageurls);
     }
@@ -238,7 +238,7 @@ class ImageLnkTest extends PHPUnit_Framework_TestCase
         // Image (medium)
 
         $url = 'https://www.pixiv.net/member_illust.php?mode=medium&illust_id=51691307';
-        $title = "「Image Example」/「imagelnk」のイラスト [pixiv]";
+        $title = '[Example] "Image Example" Illustration/imagelnk [pixiv]';
         $imageurls = array(
             'https://i.pximg.net/img-original/img/2015/07/30/22/16/27/51691307_p0.jpg',
         );
@@ -251,7 +251,7 @@ class ImageLnkTest extends PHPUnit_Framework_TestCase
         // Manga (medium)
 
         $url = 'https://www.pixiv.net/member_illust.php?mode=medium&illust_id=51691357';
-        $title = "「Manga Example」/「imagelnk」のイラスト [pixiv]";
+        $title = '[漫画] "Manga Example" Manga/imagelnk [pixiv]';
         $imageurls = array(
             'https://i.pximg.net/img-original/img/2015/07/30/22/18/43/51691357_p0.jpg',
         );
@@ -293,7 +293,7 @@ class ImageLnkTest extends PHPUnit_Framework_TestCase
         // touch
 
         $url = 'https://touch.pixiv.net/member_illust.php?mode=medium&illust_id=51691307';
-        $title = "「Image Example」/「imagelnk」のイラスト [pixiv]";
+        $title = '[Example] "Image Example" Illustration/imagelnk [pixiv]';
         $imageurls = array(
             'https://i.pximg.net/img-original/img/2015/07/30/22/16/27/51691307_p0.jpg',
         );
@@ -420,7 +420,7 @@ class ImageLnkTest extends PHPUnit_Framework_TestCase
     public function testTumblr2()
     {
         $url = 'http://maegamipattun.tumblr.com/post/7815975799';
-        $title = '前髪ぱっつん専用タンブラー: blacktights:   iro:   candy-injection:   ...';
+        $title = '前髪ぱっつん専用タンブラー';
         $imageurls = array(
             'regex:#https://\d+.media.tumblr.com/tumblr_l1n113Lyub1qaxrtko1_1280.jpg#',
         );
