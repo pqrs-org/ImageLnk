@@ -156,39 +156,6 @@ class ImageLnkTest extends PHPUnit_Framework_TestCase
     }
 
     // ======================================================================
-    public function testWwitpic1()
-    {
-        $url = 'http://twitpic.com/1yggai';
-        $response = ImageLnk::getImageInfo($url);
-
-        $title = '良くお休みのようで';
-        $actual = $response->getTitle();
-        $this->assertSame($title, $actual);
-
-        $referer = 'http://twitpic.com/1yggai';
-        $actual = $response->getReferer();
-        $this->assertSame($referer, $actual);
-
-        $this->assertSame(1, count($response->getImageURLs()));
-    }
-
-    public function testTwitpic2()
-    {
-        $url = 'http://twitpic.com/c17ing';
-        $response = ImageLnk::getImageInfo($url);
-
-        $title = '総武線各駅停車、ホームに人が溢れ危険な状態だったので、諦めて総武線快速で東京に出ることにする。総武線快速乗ったらなぜか車内に鳥が……';
-        $actual = $response->getTitle();
-        $this->assertSame($title, $actual);
-
-        $referer = 'http://twitpic.com/c17ing';
-        $actual = $response->getReferer();
-        $this->assertSame($referer, $actual);
-
-        $this->assertSame(1, count($response->getImageURLs()));
-    }
-
-    // ======================================================================
     public function testItmedia1()
     {
         $url = 'https://image.itmedia.co.jp/l/im/pcuser/articles/1502/07/l_og_akibatokka_001.jpg';
@@ -461,18 +428,6 @@ class ImageLnkTest extends PHPUnit_Framework_TestCase
     }
 
     // ======================================================================
-    public function testOwly1()
-    {
-        $url = 'http://ow.ly/i/bG2H';
-        $title = 'Ow.ly - image uploaded by @jossfat (Joss Fat): ロシア寿命飲酒量曲線.jpg';
-        $imageurls = array(
-            'http://static.ow.ly/photos/original/bG2H.jpg',
-        );
-        $referer = 'http://ow.ly/i/bG2H/original';
-        $this->checkResponse($url, $title, $imageurls, $referer);
-    }
-
-    // ======================================================================
     public function testNatalie1()
     {
         $url = 'https://natalie.mu/comic/gallery/news/50403/80332';
@@ -538,20 +493,20 @@ class ImageLnkTest extends PHPUnit_Framework_TestCase
     // ======================================================================
     public function testZakzak1()
     {
-        $url = 'http://www.zakzak.co.jp/gravure/idol/photos/20110627/idl1106271244001-p1.htm';
+        $url = 'https://www.zakzak.co.jp/gravure/idol/photos/20110627/idl1106271244001-p1.htm';
         $title = '１６歳の森野朝美、スレンダーボディー炸裂にドキッ  - グラビアアイドル - ZAKZAK';
         $imageurls = array(
-            'http://www.zakzak.co.jp/gravure/idol/images/20110627/idl1106271244001-p1.jpg',
+            'https://www.zakzak.co.jp/gravure/idol/images/20110627/idl1106271244001-p1.jpg',
         );
         $this->checkResponse($url, $title, $imageurls);
     }
 
     public function testZakzak2()
     {
-        $url = 'http://www.zakzak.co.jp/sports/etc_sports/photos/20150808/spo1508081531009-p1.htm';
+        $url = 'https://www.zakzak.co.jp/sports/etc_sports/photos/20150808/spo1508081531009-p1.htm';
         $title = '松山、４９位に後退　池ポチャ２度の大乱調　ブリヂストン招待  - スポーツ - ZAKZAK';
         $imageurls = array(
-            'http://www.zakzak.co.jp/sports/etc_sports/images/20150808/spo1508081531009-p1.jpg',
+            'https://www.zakzak.co.jp/sports/etc_sports/images/20150808/spo1508081531009-p1.jpg',
         );
         $this->checkResponse($url, $title, $imageurls);
     }
@@ -743,5 +698,16 @@ class ImageLnkTest extends PHPUnit_Framework_TestCase
         );
         $referer = 'https://www.dropbox.com/s/v8a95rih0ah0ej0/chart2%20%281%29.png?dl=0';
         $this->checkResponse($url, $title, $imageurls, $referer);
+    }
+
+    // ======================================================================
+    public function testImgur()
+    {
+        $url = 'https://imgur.com/gallery/GHlof1T';
+        $title = 'klab';
+        $imageurls = array(
+            'https://i.imgur.com/DghXdFe.jpg',
+        );
+        $this->checkResponse($url, $title, $imageurls);
     }
 }
