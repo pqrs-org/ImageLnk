@@ -5,11 +5,11 @@ use Sunra\PhpSimple\HtmlDomParser;
 class ImageLnk_Engine_itmedia
 {
     const language = 'Japanese';
-    const sitename = 'http://www.itmedia.co.jp/';
+    const sitename = 'https?://www.itmedia.co.jp/';
 
     public static function handle($url)
     {
-        if (! preg_match('/^http:\/\/image\.itmedia\.co\.jp\/l\/im(\/.+)$/', $url, $matches)) {
+        if (! preg_match('/^https?:\/\/image\.itmedia\.co\.jp\/l\/im(\/.+)$/', $url, $matches)) {
             return false;
         }
         $path = $matches[1];
@@ -26,7 +26,7 @@ class ImageLnk_Engine_itmedia
         $title = $dom->find('meta[property=og:title]', 0)->content;
         $response->setTitle(ImageLnk_Encode::sjis_to_utf8($title));
 
-        $response->addImageURL('http://image.itmedia.co.jp' . $path);
+        $response->addImageURL('https://image.itmedia.co.jp' . $path);
         $response->setBackLink($dom->find('meta[name=pcvurl]', 0)->content);
 
         return $response;

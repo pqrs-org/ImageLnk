@@ -191,32 +191,32 @@ class ImageLnkTest extends PHPUnit_Framework_TestCase
     // ======================================================================
     public function testItmedia1()
     {
-        $url = 'http://image.itmedia.co.jp/l/im/pcuser/articles/1502/07/l_og_akibatokka_001.jpg';
+        $url = 'https://image.itmedia.co.jp/l/im/pcuser/articles/1502/07/l_og_akibatokka_001.jpg';
         $title = '128GバイトSSDが7500円切り！ 256Gバイトも1万2000円弱に';
         $imageurls = array(
-            'http://image.itmedia.co.jp/pcuser/articles/1502/07/l_og_akibatokka_001.jpg',
+            'https://image.itmedia.co.jp/pcuser/articles/1502/07/l_og_akibatokka_001.jpg',
         );
         $this->checkResponse($url, $title, $imageurls);
     }
 
     public function testItmedia2()
     {
-        $url = 'http://image.itmedia.co.jp/l/im/nl/articles/1106/02/l_ky_robo_0602_5.jpg';
+        $url = 'https://image.itmedia.co.jp/l/im/nl/articles/1106/02/l_ky_robo_0602_5.jpg';
         $title = 'セグウェイが歩道を走る　つくばでロボットの公道走行実験スタート';
         $imageurls = array(
-            'http://image.itmedia.co.jp/nl/articles/1106/02/l_ky_robo_0602_5.jpg',
+            'https://image.itmedia.co.jp/nl/articles/1106/02/l_ky_robo_0602_5.jpg',
         );
         $this->checkResponse($url, $title, $imageurls);
     }
 
     public function testItmedia3()
     {
-        $url = 'http://image.itmedia.co.jp/l/im/mobile/articles/1110/14/l_os_appsomm03.jpg';
+        $url = 'https://image.itmedia.co.jp/l/im/mobile/articles/1110/14/l_os_appsomm03.jpg';
         $title = '“普通の女性”目線で厳選したスマートフォンアプリ紹介サイト「アプリソムリエ」';
         $imageurls = array(
-            'http://image.itmedia.co.jp/mobile/articles/1110/14/l_os_appsomm03.jpg',
+            'https://image.itmedia.co.jp/mobile/articles/1110/14/l_os_appsomm03.jpg',
         );
-        $backlink = 'http://www.itmedia.co.jp/mobile/articles/1110/14/news142.html#l_os_appsomm03.jpg';
+        $backlink = 'https://www.itmedia.co.jp/mobile/articles/1110/14/news142.html#l_os_appsomm03.jpg';
 
         $this->checkResponse($url, $title, $imageurls, null, $backlink);
     }
