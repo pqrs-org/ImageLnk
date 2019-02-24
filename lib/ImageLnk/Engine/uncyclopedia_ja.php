@@ -2,13 +2,13 @@
 
 class ImageLnk_Engine_uncyclopedia_ja
 {
-    const language = 'Japanese';
-    const sitename = 'http://ja.uncyclopedia.info/';
+    const LANGUAGE = 'Japanese';
+    const SITENAME = 'https://ja.uncyclopedia.info/';
 
     public static function handle($url)
     {
-        if (! preg_match('|^https?://ja.uncyclopedia.info/wiki/.+|', $url, $matches)
-            && ! preg_match('|^https?://ansaikuropedia.org/wiki/.+|', $url, $matches)
+        if (!preg_match('|^https?://ja.uncyclopedia.info/wiki/.+|', $url, $matches)
+            && !preg_match('|^https?://ansaikuropedia.org/wiki/.+|', $url, $matches)
         ) {
             return false;
         }
@@ -28,7 +28,7 @@ class ImageLnk_Engine_uncyclopedia_ja
             }
         }
 
-        if (! $response->getTitle()) {
+        if (!$response->getTitle()) {
             // fall-back
             $title = ImageLnk_Helper::getTitle($html);
             if ($title) {

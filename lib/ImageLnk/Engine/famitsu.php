@@ -2,8 +2,8 @@
 
 class ImageLnk_Engine_famitsu
 {
-    const language = 'Japanese';
-    const sitename = 'https://www.famitsu.com/';
+    const LANGUAGE = 'Japanese';
+    const SITENAME = 'https://www.famitsu.com/';
 
     public static function handle($url)
     {

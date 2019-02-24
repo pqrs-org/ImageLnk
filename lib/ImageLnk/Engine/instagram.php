@@ -4,8 +4,8 @@ use Sunra\PhpSimple\HtmlDomParser;
 
 class ImageLnk_Engine_instagram
 {
-    const language = null;
-    const sitename = 'https://www.instagram.com/';
+    const LANGUAGE = null;
+    const SITENAME = 'https://www.instagram.com/';
 
     public static function handle($url)
     {

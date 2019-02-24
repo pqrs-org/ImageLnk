@@ -4,8 +4,8 @@ use Sunra\PhpSimple\HtmlDomParser;
 
 class ImageLnk_Engine_pixiv
 {
-    const language = null;
-    const sitename = 'https://www.pixiv.net/';
+    const LANGUAGE = null;
+    const SITENAME = 'https://www.pixiv.net/';
 
     public static function handle($url)
     {

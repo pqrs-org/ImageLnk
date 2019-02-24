@@ -2,12 +2,12 @@
 
 class ImageLnk_Engine_hatena
 {
-    const language = 'Japanese';
-    const sitename = 'http://f.hatena.ne.jp/';
+    const LANGUAGE = 'Japanese';
+    const SITENAME = 'http://f.hatena.ne.jp/';
 
     public static function handle($url)
     {
-        if (! preg_match('/^http:\/\/f\.hatena\.ne\.jp\//', $url)) {
+        if (!preg_match('/^http:\/\/f\.hatena\.ne\.jp\//', $url)) {
             return false;
         }
 

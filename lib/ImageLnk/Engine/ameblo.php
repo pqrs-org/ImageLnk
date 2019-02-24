@@ -4,8 +4,8 @@ use Sunra\PhpSimple\HtmlDomParser;
 
 class ImageLnk_Engine_ameblo
 {
-    const language = 'Japanese';
-    const sitename = 'https://ameblo.jp/';
+    const LANGUAGE = 'Japanese';
+    const SITENAME = 'https://ameblo.jp/';
 
     public static function handle($url)
     {

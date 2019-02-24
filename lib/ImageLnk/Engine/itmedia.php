@@ -4,12 +4,12 @@ use Sunra\PhpSimple\HtmlDomParser;
 
 class ImageLnk_Engine_itmedia
 {
-    const language = 'Japanese';
-    const sitename = 'https?://www.itmedia.co.jp/';
+    const LANGUAGE = 'Japanese';
+    const SITENAME = 'https://www.itmedia.co.jp/';
 
     public static function handle($url)
     {
-        if (! preg_match('/^https?:\/\/image\.itmedia\.co\.jp\/l\/im(\/.+)$/', $url, $matches)) {
+        if (!preg_match('/^https?:\/\/image\.itmedia\.co\.jp\/l\/im(\/.+)$/', $url, $matches)) {
             return false;
         }
         $path = $matches[1];

@@ -4,8 +4,8 @@ use Sunra\PhpSimple\HtmlDomParser;
 
 class ImageLnk_Engine_sankakucomplex
 {
-    const language = 'English';
-    const sitename = 'https://chan.sankakucomplex.com/';
+    const LANGUAGE = 'English';
+    const SITENAME = 'https://chan.sankakucomplex.com/';
 
     public static function handle($url)
     {

@@ -2,8 +2,8 @@
 
 class ImageLnk_Engine_ascii
 {
-    const language = 'Japanese';
-    const sitename = 'http://ascii.jp/';
+    const LANGUAGE = 'Japanese';
+    const SITENAME = 'https://ascii.jp/';
 
     public static function handle_common($url)
     {

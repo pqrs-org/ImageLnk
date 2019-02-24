@@ -2,8 +2,8 @@
 
 class ImageLnk_Engine_impress
 {
-    const language = 'Japanese';
-    const sitename = 'https://watch.impress.co.jp/';
+    const LANGUAGE = 'Japanese';
+    const SITENAME = 'https://watch.impress.co.jp/';
 
     public static function handle_common($url)
     {

@@ -4,8 +4,8 @@ use Sunra\PhpSimple\HtmlDomParser;
 
 class ImageLnk_Engine_amazon
 {
-    const language = null;
-    const sitename = 'https://www.amazon.com/';
+    const LANGUAGE = null;
+    const SITENAME = 'https://www.amazon.com/';
 
     public static function handle($url)
     {

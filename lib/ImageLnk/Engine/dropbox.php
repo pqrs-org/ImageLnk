@@ -4,8 +4,8 @@ use Sunra\PhpSimple\HtmlDomParser;
 
 class ImageLnk_Engine_dropbox
 {
-    const language = null;
-    const sitename = 'https://www.dropbox.com/';
+    const LANGUAGE = null;
+    const SITENAME = 'https://www.dropbox.com/';
 
     public static function handle($url)
     {

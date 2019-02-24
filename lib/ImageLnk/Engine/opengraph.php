@@ -2,8 +2,8 @@
 
 class ImageLnk_Engine_opengraph
 {
-    const language = null;
-    const sitename = 'any site which has og:image';
+    const LANGUAGE = null;
+    const SITENAME = 'any site which has og:image';
 
     public static function handle($url)
     {

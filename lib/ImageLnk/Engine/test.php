@@ -2,8 +2,8 @@
 
 class ImageLnk_Engine_test
 {
-    const language = null;
-    const sitename = null;
+    const LANGUAGE = null;
+    const SITENAME = null;
 
     public static function handle($url)
     {

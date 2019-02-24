@@ -2,12 +2,12 @@
 
 class ImageLnk_Engine_zakzak
 {
-    const language = 'Japanese';
-    const sitename = 'http://www.zakzak.co.jp/';
+    const LANGUAGE = 'Japanese';
+    const SITENAME = 'https://www.zakzak.co.jp/';
 
     public static function handle($url)
     {
-        if (! preg_match('/^http:\/\/www\.zakzak\.co\.jp\/.+\/photos\/.+\.htm$/', $url, $matches)) {
+        if (!preg_match('/^https?:\/\/www\.zakzak\.co\.jp\/.+\/photos\/.+\.htm$/', $url, $matches)) {
             return false;
         }
 
@@ -23,7 +23,7 @@ class ImageLnk_Engine_zakzak
         if (preg_match('/<table class="photo">(.+?)<\/table>/s', $html, $matches)) {
             foreach (ImageLnk_Helper::scanSingleTag('img', $matches[1]) as $img) {
                 if (preg_match('/ src="[\.\/]+(.+?)"/s', $img, $m)) {
-                    $response->addImageURL('http://www.zakzak.co.jp/' . $m[1]);
+                    $response->addImageURL('https://www.zakzak.co.jp/' . $m[1]);
                 }
             }
         }

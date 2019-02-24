@@ -2,12 +2,12 @@
 
 class ImageLnk_Engine_akibablog
 {
-    const language = 'Japanese';
-    const sitename = 'http://blog.livedoor.jp/geek/';
+    const LANGUAGE = 'Japanese';
+    const SITENAME = 'http://blog.livedoor.jp/geek/';
 
     public static function handle($url)
     {
-        if (! preg_match('/^http:\/\/node.*?\.img.*?\.akibablog\.net\/.*\.html$/', $url)) {
+        if (!preg_match('/^http:\/\/node.*?\.img.*?\.akibablog\.net\/.*\.html$/', $url)) {
             return false;
         }
 

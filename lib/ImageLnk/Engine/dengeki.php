@@ -2,12 +2,12 @@
 
 class ImageLnk_Engine_dengeki
 {
-    const language = 'Japanese';
-    const sitename = 'http://dengekionline.com/';
+    const LANGUAGE = 'Japanese';
+    const SITENAME = 'http://dengekionline.com/';
 
     public static function handle($url)
     {
-        if (! preg_match('#(http://dengekionline.com)(/.+?/)img.html#', $url, $matches)) {
+        if (!preg_match('#(http://dengekionline.com)(/.+?/)img.html#', $url, $matches)) {
             return false;
         }
 

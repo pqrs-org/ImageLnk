@@ -4,8 +4,8 @@ use Sunra\PhpSimple\HtmlDomParser;
 
 class ImageLnk_Engine_stocks_finance_yahoo_co_jp
 {
-    const language = 'Japanese';
-    const sitename = 'https://stocks.finance.yahoo.co.jp/';
+    const LANGUAGE = 'Japanese';
+    const SITENAME = 'https://stocks.finance.yahoo.co.jp/';
 
     public static function handle($url)
     {

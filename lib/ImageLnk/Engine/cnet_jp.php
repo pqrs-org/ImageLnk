@@ -4,8 +4,8 @@ use Sunra\PhpSimple\HtmlDomParser;
 
 class ImageLnk_Engine_cnet_jp
 {
-    const language = 'Japanese';
-    const sitename = 'https://japan.cnet.com/';
+    const LANGUAGE = 'Japanese';
+    const SITENAME = 'https://japan.cnet.com/';
 
     public static function handle($url)
     {

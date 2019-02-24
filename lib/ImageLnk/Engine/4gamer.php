@@ -4,8 +4,8 @@ use Sunra\PhpSimple\HtmlDomParser;
 
 class ImageLnk_Engine_4gamer
 {
-    const language = 'Japanese';
-    const sitename = 'http://www.4gamer.net/';
+    const LANGUAGE = 'Japanese';
+    const SITENAME = 'https://www.4gamer.net/';
 
     public static function handle($url)
     {

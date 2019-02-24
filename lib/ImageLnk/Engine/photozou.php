@@ -2,12 +2,12 @@
 
 class ImageLnk_Engine_photozou
 {
-    const language = 'Japanese';
-    const sitename = 'http://photozou.jp/';
+    const LANGUAGE = 'Japanese';
+    const SITENAME = 'http://photozou.jp/';
 
     public static function handle($url)
     {
-        if (! preg_match('/^http:\/\/photozou\.jp\/photo\/[^\/]+?\/(\d+)\/(\d+)/', $url, $matches)) {
+        if (!preg_match('/^http:\/\/photozou\.jp\/photo\/[^\/]+?\/(\d+)\/(\d+)/', $url, $matches)) {
             return false;
         }
 

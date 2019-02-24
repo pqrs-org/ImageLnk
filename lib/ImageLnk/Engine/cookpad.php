@@ -2,12 +2,12 @@
 
 class ImageLnk_Engine_cookpad
 {
-    const language = 'Japanese';
-    const sitename = 'http://cookpad.com/';
+    const LANGUAGE = 'Japanese';
+    const SITENAME = 'https://cookpad.com/';
 
     public static function handle($url)
     {
-        if (! preg_match('%^https?://cookpad\.com/recipe/\d+%', $url)) {
+        if (!preg_match('%^https?://cookpad\.com/recipe/\d+%', $url)) {
             return false;
         }
 

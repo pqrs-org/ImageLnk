@@ -2,8 +2,8 @@
 
 class ImageLnk_Engine_wikipedia
 {
-    const language = null;
-    const sitename = 'https://www.wikipedia.org/';
+    const LANGUAGE = null;
+    const SITENAME = 'https://www.wikipedia.org/';
 
     public static function handle($url)
     {

@@ -8,9 +8,9 @@ require_once __DIR__ . '/../vendor/autoload.php';
 function ImageLnk_autoload($className)
 {
     $replaces = array(
-        '_'  => DIRECTORY_SEPARATOR,
+        '_' => DIRECTORY_SEPARATOR,
         '::' => DIRECTORY_SEPARATOR,
-        '.'  => '',
+        '.' => '',
     );
     $classPath = str_replace(array_keys($replaces), array_values($replaces), $className);
     $fileName = join(
@@ -55,16 +55,17 @@ class ImageLnk
 
     public static function getSites()
     {
-        $sites_generic  = array();
+        $sites_generic = array();
         $sites_domestic = array();
         foreach (ImageLnk_Engine::getEngines() as $classname) {
-            if (! $classname::sitename) { continue;
+            if (!$classname::SITENAME) {
+                continue;
             }
 
-            if ($classname::language) {
-                $sites_domestic[] = $classname::sitename;
+            if ($classname::LANGUAGE) {
+                $sites_domestic[] = $classname::SITENAME;
             } else {
-                $sites_generic[] = $classname::sitename;
+                $sites_generic[] = $classname::SITENAME;
             }
         }
         sort($sites_generic);
