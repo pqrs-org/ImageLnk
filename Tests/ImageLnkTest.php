@@ -94,7 +94,7 @@ class ImageLnkTest extends PHPUnit_Framework_TestCase
     // ======================================================================
     public function testAscii1()
     {
-        $url = 'http://ascii.jp/elem/000/001/013/1013475/img.html';
+        $url = 'https://ascii.jp/elem/000/001/013/1013475/img.html';
         $title = 'いよいよ来た！ Windows 10が「無償アップグレードの予約」を開始！';
         $imageurls = array(
             'https://ascii.jp/elem/000/001/013/1013475/01_814x528.png',
@@ -114,7 +114,7 @@ class ImageLnkTest extends PHPUnit_Framework_TestCase
 
     public function testAscii3()
     {
-        $url = 'http://ascii.jp/elem/000/000/672/672411/img800.html';
+        $url = 'https://ascii.jp/elem/000/000/672/672411/img800.html';
         $title = '寒い日に寄り添ってぬくぬくする猫たち';
         $imageurls = array(
             'https://ascii.jp/elem/000/000/672/672411/DSC00017_800x.jpg',
