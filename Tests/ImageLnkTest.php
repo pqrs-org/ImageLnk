@@ -245,7 +245,7 @@ class ImageLnkTest extends PHPUnit_Framework_TestCase
         // Manga (all)
 
         $url = 'https://www.pixiv.net/member_illust.php?mode=manga&illust_id=51691357';
-        $title = "「Manga Example」/「imagelnk」の漫画 [pixiv]";
+        $title = "【漫画】\"Manga Example\" / Manga by \"imagelnk\" [pixiv]";
         $imageurls = array(
             'https://i.pximg.net/img-master/img/2015/07/30/22/18/43/51691357_p0_master1200.jpg',
             'https://i.pximg.net/img-master/img/2015/07/30/22/18/43/51691357_p1_master1200.jpg',
@@ -283,7 +283,7 @@ class ImageLnkTest extends PHPUnit_Framework_TestCase
     public function testYoutube1()
     {
         $url = 'https://www.youtube.com/watch?v=Tlmho7SY-ic&feature=player_embedded';
-        $title = 'YouTube Turns Five!';
+        $title = 'YouTube Turns Five! - Youtube';
         $imageurls = array(
             'https://i.ytimg.com/vi/Tlmho7SY-ic/maxresdefault.jpg',
         );

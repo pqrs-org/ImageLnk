@@ -79,8 +79,8 @@ class ImageLnk_Engine_pixiv
                 break;
 
             case 'manga':
-                foreach ($dom->find('img[data-filter=manga-image]') as $e) {
-                    $response->addImageURL($e->getAttribute('data-src'));
+                foreach (self::fetchPages($query['illust_id'])->body as $p) {
+                    $response->addImageURL($p->urls->regular);
                 }
                 break;
 
@@ -123,6 +123,18 @@ class ImageLnk_Engine_pixiv
         }
 
         return $response;
+    }
+
+    public static function fetchPages($id)
+    {
+        if (!$id) {
+            return [];
+        }
+
+        $url = 'https://www.pixiv.net/ajax/illust/' . $id . '/pages';
+        $data = ImageLnk_Cache::get($url);
+        $pages = json_decode($data['data']);
+        return $pages;
     }
 }
 ImageLnk_Engine::push('ImageLnk_Engine_pixiv');
