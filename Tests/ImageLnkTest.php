@@ -375,18 +375,18 @@ class ImageLnkTest extends PHPUnit_Framework_TestCase
     // ======================================================================
     public function testTumblr1()
     {
-        $url = 'http://titlebot.tumblr.com/post/5544499061/%E3%83%8D%E3%82%B3%E3%81%A8%E5%92%8C%E8%A7%A3%E3%81%9B%E3%82%88';
+        $url = 'https://titlebot.tumblr.com/post/5544499061/%E3%83%8D%E3%82%B3%E3%81%A8%E5%92%8C%E8%A7%A3%E3%81%9B%E3%82%88';
         $title = 'titlebot';
         $imageurls = array(
             'regex:#https://\d+.media.tumblr.com/tumblr_llal1ttZ7W1qfqa6no1_400.jpg#',
         );
-        $referer = 'http://titlebot.tumblr.com/post/5544499061/%E3%83%8D%E3%82%B3%E3%81%A8%E5%92%8C%E8%A7%A3%E3%81%9B%E3%82%88';
+        $referer = 'https://titlebot.tumblr.com/post/5544499061/%E3%83%8D%E3%82%B3%E3%81%A8%E5%92%8C%E8%A7%A3%E3%81%9B%E3%82%88';
         $this->checkResponse($url, $title, $imageurls, $referer);
     }
 
     public function testTumblr2()
     {
-        $url = 'http://maegamipattun.tumblr.com/post/7815975799';
+        $url = 'https://maegamipattun.tumblr.com/post/7815975799';
         $title = '前髪ぱっつん専用タンブラー';
         $imageurls = array(
             'regex:#https://\d+.media.tumblr.com/tumblr_l1n113Lyub1qaxrtko1_1280.jpg#',
@@ -692,7 +692,7 @@ class ImageLnkTest extends PHPUnit_Framework_TestCase
     public function testDropbox1()
     {
         $url = 'https://www.dropbox.com/s/v8a95rih0ah0ej0/chart2.png?dl=0';
-        $title = 'Dropbox - chart2 (1).png';
+        $title = 'Dropbox - chart2 (1).png - Simplify your life';
         $imageurls = array(
             'regex:#^https://[a-z0-9]+\.previews\.dropboxusercontent\.com/p/thumb/.+?/p\.png\?size=2048x1536&size_mode=3#',
         );
