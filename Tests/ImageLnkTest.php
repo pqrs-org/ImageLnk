@@ -147,10 +147,10 @@ class ImageLnkTest extends PHPUnit_Framework_TestCase
     // ======================================================================
     public function testDengeki1()
     {
-        $url = 'http://dengekionline.com/elem/000/000/364/364901/img.html';
+        $url = 'https://dengekionline.com/elem/000/000/364/364901/img.html';
         $title = '電撃 - 【App通信】iPad 2が満を持して発売！ 美少女姉妹による萌え系紙芝居 アプリも';
         $imageurls = array(
-            'http://dengekionline.com/elem/000/000/364/364901/c20110502_app_18_cs1w1_347x720.jpg',
+            'https://ssl.dengeki.com/elem/000/000/364/364922/c20110502_app_th_o_.jpg',
         );
         $this->checkResponse($url, $title, $imageurls);
     }
