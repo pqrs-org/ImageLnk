@@ -587,7 +587,7 @@ class ImageLnkTest extends PHPUnit_Framework_TestCase
     // ======================================================================
     public function testItunes1()
     {
-        $url = 'https://itunes.apple.com/jp/album/muscle-march-original-soundtrack/id455935658?l=en';
+        $url = 'https://music.apple.com/jp/album/muscle-march-original-soundtrack/id455935658?l=en';
         $title = 'Muscle March Original Soundtrack by Namco Sounds on iTunes';
         $imageurls = array(
             'regex:#https://is.-ssl.mzstatic.com/image/thumb/Music/87/7a/56/mzi.vzoqpscv.jpg/1200x630wp.png#',
@@ -673,7 +673,7 @@ class ImageLnkTest extends PHPUnit_Framework_TestCase
         $url = 'https://chan.sankakucomplex.com/post/show/5949839/';
         $title = 'Post 5949839';
         $imageurls = array(
-            'regex:#https://cs\.sankakucomplex\.com/data/2e/54/2e540481ae41d3b9d652f1ac92a82b5c\.png\?.*#',
+            'regex:#https://cs\.sankakucomplex\.com/data/sample/2e/54/sample-2e540481ae41d3b9d652f1ac92a82b5c\.jpg\?.*#',
         );
         $this->checkResponse($url, $title, $imageurls);
     }
