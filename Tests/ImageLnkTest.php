@@ -545,20 +545,20 @@ class ImageLnkTest extends PHPUnit_Framework_TestCase
     // ======================================================================
     public function testNewsLivedoorCom1()
     {
-        $url = 'http://news.livedoor.com/article/image_detail/5786423/?img_id=2118390';
+        $url = 'https://news.livedoor.com/article/image_detail/5786423/?img_id=2118390';
         $title = '【画像】【こんにちは！ナマな人々】露出度高めなコスプレ娘・知羽音さん 1/2 - ライブドアニュース';
         $imageurls = array(
-            'http://image.news.livedoor.com/newsimage/c/0/c08fd40e8bba4eee8ed91b72707e0378.jpg',
+            'https://image.news.livedoor.com/newsimage/c/0/c08fd40e8bba4eee8ed91b72707e0378.jpg',
         );
         $this->checkResponse($url, $title, $imageurls);
     }
 
     public function testNewsLivedoorCom2()
     {
-        $url = 'http://news.livedoor.com/article/image_detail/5460430/?img_id=1848550';
+        $url = 'https://news.livedoor.com/article/image_detail/5460430/?img_id=1848550';
         $title = '【画像】美少女時計に人気モデル 前田希美 黒田瑞貴 志田友美が登場 ウェブ版もスタート 17/18 - ライブドアニュース';
         $imageurls = array(
-            'http://image.news.livedoor.com/newsimage/0/1/01e1a_756_b0853.jpg',
+            'https://image.news.livedoor.com/newsimage/0/1/01e1a_756_b0853.jpg',
         );
         $this->checkResponse($url, $title, $imageurls);
     }
