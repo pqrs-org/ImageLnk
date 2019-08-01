@@ -50,7 +50,7 @@ class ImageLnk_Engine_pixiv
             case 'big':
             case 'manga_big':
                 $pages = $json->illust->meta_pages;
-                $i = (int) ($query['page']);
+                $i = (int) ($query['page']) - 1;
                 if (isset($pages[$i])) {
                     $response->addImageURL($pages[$i]->image_urls->large);
                 }
