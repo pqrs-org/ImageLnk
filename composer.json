@@ -7,7 +7,8 @@
         "guzzlehttp/guzzle": "^6.3",
         "slim/slim": "^3.0",
         "twig/twig": "^2.0",
-        "slim/twig-view": "~2.0"
+        "slim/twig-view": "~2.0",
+        "kokororin/pixiv-api-php": "dev-master"
     },
     "include-path": [
         "vendor/pear/net_url2",
