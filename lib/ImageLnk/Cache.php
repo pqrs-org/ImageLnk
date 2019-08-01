@@ -25,7 +25,7 @@ class ImageLnk_Cache
     {
         $directory = dirname($path);
 
-        if (! is_dir($directory)) {
+        if (!is_dir($directory)) {
             if (mkdir($directory, 0700, true) === false) {
                 throw new ImageLnk_Exception();
             }
@@ -45,7 +45,7 @@ class ImageLnk_Cache
 
     public static function readFromCacheFile($path)
     {
-        if (! is_file($path)) {
+        if (!is_file($path)) {
             return false;
         }
         if (time() - filemtime($path) > 60 * ImageLnk_Config::v('cache_expire_minutes')) {
@@ -63,7 +63,6 @@ class ImageLnk_Cache
         if ($cache !== false) {
             $data = unserialize($cache);
             $data['from_cache'] = true;
-
         } else {
             $response = ImageLnk_Fetcher::fetch($url, $referer);
 
