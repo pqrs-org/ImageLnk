@@ -205,9 +205,9 @@ class ImageLnkTest extends PHPUnit_Framework_TestCase
         // Image (medium)
 
         $url = 'https://www.pixiv.net/member_illust.php?mode=medium&illust_id=51691307';
-        $title = '【Example】"Image Example" / Illustration by "imagelnk" [pixiv]';
+        $title = 'Image Example';
         $imageurls = array(
-            'https://i.pximg.net/img-original/img/2015/07/30/22/16/27/51691307_p0.jpg',
+            'https://i.pximg.net/c/600x1200_90/img-master/img/2015/07/30/22/16/27/51691307_p0_master1200.jpg',
         );
         $referer = 'https://www.pixiv.net/member_illust.php?mode=medium&illust_id=51691307';
         $this->checkResponse($url, $title, $imageurls, $referer);
@@ -218,9 +218,9 @@ class ImageLnkTest extends PHPUnit_Framework_TestCase
         // Manga (medium)
 
         $url = 'https://www.pixiv.net/member_illust.php?mode=medium&illust_id=51691357';
-        $title = '【漫画】"Manga Example" / Manga by "imagelnk" [pixiv]';
+        $title = 'Manga Example';
         $imageurls = array(
-            'https://i.pximg.net/img-original/img/2015/07/30/22/18/43/51691357_p0.jpg',
+            'https://i.pximg.net/c/600x1200_90/img-master/img/2015/07/30/22/18/43/51691357_p0_master1200.jpg',
         );
         $referer = 'https://www.pixiv.net/member_illust.php?mode=medium&illust_id=51691357';
         $this->checkResponse($url, $title, $imageurls, $referer);
@@ -231,9 +231,9 @@ class ImageLnkTest extends PHPUnit_Framework_TestCase
         // Manga (manga_big)
 
         $url = 'https://www.pixiv.net/member_illust.php?mode=manga_big&illust_id=51691357&page=1';
-        $title = "「Manga Example」/「imagelnk」の漫画 [pixiv]";
+        $title = 'Manga Example';
         $imageurls = array(
-            'https://i.pximg.net/img-original/img/2015/07/30/22/18/43/51691357_p1.jpg',
+            'https://i.pximg.net/c/600x1200_90/img-master/img/2015/07/30/22/18/43/51691357_p0_master1200.jpg',
         );
         $referer = 'https://www.pixiv.net/member_illust.php?mode=manga_big&illust_id=51691357&page=1';
 
@@ -245,10 +245,10 @@ class ImageLnkTest extends PHPUnit_Framework_TestCase
         // Manga (all)
 
         $url = 'https://www.pixiv.net/member_illust.php?mode=manga&illust_id=51691357';
-        $title = "【漫画】\"Manga Example\" / Manga by \"imagelnk\" [pixiv]";
+        $title = 'Manga Example';
         $imageurls = array(
-            'https://i.pximg.net/img-master/img/2015/07/30/22/18/43/51691357_p0_master1200.jpg',
-            'https://i.pximg.net/img-master/img/2015/07/30/22/18/43/51691357_p1_master1200.jpg',
+            'https://i.pximg.net/c/600x1200_90/img-master/img/2015/07/30/22/18/43/51691357_p0_master1200.jpg',
+            'https://i.pximg.net/c/600x1200_90/img-master/img/2015/07/30/22/18/43/51691357_p1_master1200.jpg',
         );
         $referer = 'https://www.pixiv.net/member_illust.php?mode=manga&illust_id=51691357';
 
@@ -260,9 +260,9 @@ class ImageLnkTest extends PHPUnit_Framework_TestCase
         // touch
 
         $url = 'https://touch.pixiv.net/member_illust.php?mode=medium&illust_id=51691307';
-        $title = '【Example】"Image Example" / Illustration by "imagelnk" [pixiv]';
+        $title = 'Image Example';
         $imageurls = array(
-            'https://i.pximg.net/img-original/img/2015/07/30/22/16/27/51691307_p0.jpg',
+            'https://i.pximg.net/c/600x1200_90/img-master/img/2015/07/30/22/16/27/51691307_p0_master1200.jpg',
         );
         $referer = 'https://www.pixiv.net/member_illust.php?mode=medium&illust_id=51691307';
         $this->checkResponse($url, $title, $imageurls, $referer);
@@ -283,7 +283,7 @@ class ImageLnkTest extends PHPUnit_Framework_TestCase
     public function testYoutube1()
     {
         $url = 'https://www.youtube.com/watch?v=Tlmho7SY-ic&feature=player_embedded';
-        $title = 'YouTube Turns Five! - Youtube';
+        $title = 'YouTube Turns Five!';
         $imageurls = array(
             'https://i.ytimg.com/vi/Tlmho7SY-ic/maxresdefault.jpg',
         );

@@ -30,8 +30,10 @@ class ImageLnk_Engine_youtube
         $response = new ImageLnk_Response();
         $response->setReferer($url);
 
-        if (preg_match('%document.title = "(.+?)";%', $html, $matches)) {
-            $response->setTitle($matches[1]);
+        if (preg_match('%<script >var ytplayer = ytplayer \|\| \{\};ytplayer.config = (.+?);ytplayer.load = %s', $html, $matches)) {
+            $json = json_decode($matches[1]);
+            $playerResponse = json_decode($json->args->player_response);
+            $response->setTitle($playerResponse->videoDetails->title);
         } else {
             $response->setTitle(ImageLnk_Helper::getTitle($html));
         }

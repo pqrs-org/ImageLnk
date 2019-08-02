@@ -25,6 +25,11 @@ class ImageLnk_Fetcher_Pixiv extends ImageLnk_Fetcher
 {
     private static $api = null;
 
+    private static function getTokenCacheFilePath()
+    {
+        return ImageLnk_Cache::getCacheDirectory() . '/token/pixiv.json';
+    }
+
     public static function login()
     {
         if (self::$api !== null) {
@@ -33,7 +38,7 @@ class ImageLnk_Fetcher_Pixiv extends ImageLnk_Fetcher
 
         self::$api = new PixivAppAPI();
 
-        $path = ImageLnk_Cache::getCacheDirectory() . '/token/pixiv.json';
+        $path = self::getTokenCacheFilePath();
         if (file_exists($path)) {
             $json = json_decode(file_get_contents($path));
             self::$api->setAuthorizationResponse($json->authorizationResponse);
@@ -68,6 +73,16 @@ class ImageLnk_Fetcher_Pixiv extends ImageLnk_Fetcher
 
         self::login();
 
-        return new ImageLnk_Fetcher_Pixiv_Response(json_encode(self::$api->illust_detail($query['illust_id'])));
+        // Retry if error. (e.g., token expired)
+        $detail = self::$api->illust_detail($query['illust_id']);
+        if (isset($detail['error'])) {
+            $path = self::getTokenCacheFilePath();
+            if (file_exists($path)) {
+                unlink($path);
+                self::login();
+            }
+        }
+
+        return new ImageLnk_Fetcher_Pixiv_Response(json_encode($detail));
     }
 }
