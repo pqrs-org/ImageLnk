@@ -81,6 +81,7 @@ class ImageLnk_Fetcher_Pixiv extends ImageLnk_Fetcher
                 unlink($path);
                 self::login();
             }
+            $detail = self::$api->illust_detail($query['illust_id']);
         }
 
         return new ImageLnk_Fetcher_Pixiv_Response(json_encode($detail));
