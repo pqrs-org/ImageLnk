@@ -75,7 +75,7 @@ class ImageLnk_Fetcher_Pixiv extends ImageLnk_Fetcher
 
         // Retry if error. (e.g., token expired)
         $detail = self::$api->illust_detail($query['illust_id']);
-        if (isset($detail['error'])) {
+        if (isset($detail['error']) || !isset($detail['illust'])) {
             $path = self::getTokenCacheFilePath();
             if (file_exists($path)) {
                 unlink($path);
