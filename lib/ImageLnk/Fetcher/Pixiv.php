@@ -40,11 +40,14 @@ class ImageLnk_Fetcher_Pixiv extends ImageLnk_Fetcher
 
         $path = self::getTokenCacheFilePath();
         if (file_exists($path)) {
-            $json = json_decode(file_get_contents($path));
-            self::$api->setAuthorizationResponse($json->authorizationResponse);
-            self::$api->setAccessToken($json->accessToken);
-            self::$api->setRefreshToken($json->refreshToken);
-            return;
+            $elapsedTime = time() - filemtime($path);
+            if ($elapsedTime < 3600) {
+                $json = json_decode(file_get_contents($path));
+                self::$api->setAuthorizationResponse($json->authorizationResponse);
+                self::$api->setAccessToken($json->accessToken);
+                self::$api->setRefreshToken($json->refreshToken);
+                return;
+            }
         }
 
         self::$api->login(
@@ -73,16 +76,7 @@ class ImageLnk_Fetcher_Pixiv extends ImageLnk_Fetcher
 
         self::login();
 
-        // Retry if error. (e.g., token expired)
         $detail = self::$api->illust_detail($query['illust_id']);
-        if (isset($detail['error']) || !isset($detail['illust'])) {
-            $path = self::getTokenCacheFilePath();
-            if (file_exists($path)) {
-                unlink($path);
-                self::login();
-            }
-            $detail = self::$api->illust_detail($query['illust_id']);
-        }
 
         return new ImageLnk_Fetcher_Pixiv_Response(json_encode($detail));
     }
