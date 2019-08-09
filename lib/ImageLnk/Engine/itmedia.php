@@ -1,6 +1,6 @@
 <?php //-*- Mode: php; indent-tabs-mode: nil; -*-
 
-use Sunra\PhpSimple\HtmlDomParser;
+use KubAT\PhpSimple\HtmlDomParser;
 
 class ImageLnk_Engine_itmedia
 {
@@ -17,6 +17,7 @@ class ImageLnk_Engine_itmedia
         // ----------------------------------------
         $data = ImageLnk_Cache::get($url);
         $html = $data['data'];
+        $html = ImageLnk_Encode::sjis_to_utf8($html);
 
         $dom = HtmlDomParser::str_get_html($html);
 
@@ -24,7 +25,7 @@ class ImageLnk_Engine_itmedia
         $response->setReferer($url);
 
         $title = $dom->find('meta[property=og:title]', 0)->content;
-        $response->setTitle(ImageLnk_Encode::sjis_to_utf8($title));
+        $response->setTitle($title);
 
         $response->addImageURL('https://image.itmedia.co.jp' . $path);
         $response->setBackLink($dom->find('meta[name=pcvurl]', 0)->content);

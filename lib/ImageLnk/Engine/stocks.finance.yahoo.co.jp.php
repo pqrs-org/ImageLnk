@@ -1,6 +1,6 @@
 <?php //-*- Mode: php; indent-tabs-mode: nil; -*-
 
-use Sunra\PhpSimple\HtmlDomParser;
+use KubAT\PhpSimple\HtmlDomParser;
 
 class ImageLnk_Engine_stocks_finance_yahoo_co_jp
 {

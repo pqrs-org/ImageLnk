@@ -5,11 +5,11 @@ class ImageLnk_URL
     public static function getRedirectedURL($url, $nest = 0)
     {
         stream_context_set_default(
-            array(
-                'http' => array(
-                    'method' => 'HEAD'
-                )
-            )
+            [
+                'http' => [
+                    'method' => 'HEAD',
+                ],
+            ]
         );
         $headers = get_headers($url, 1);
         if ($headers !== false && isset($headers['Location'])) {
