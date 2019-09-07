@@ -46,25 +46,13 @@ class ImageLnk_Engine_pixiv
         $response->setReferer($url);
         $response->setTitle($json->illust->title);
 
-        switch ($query['mode']) {
-            case 'big':
-            case 'manga_big':
-                $pages = $json->illust->meta_pages;
-                $i = (int) ($query['page']) - 1;
-                if (isset($pages[$i])) {
-                    $response->addImageURL($pages[$i]->image_urls->large);
-                }
-                break;
-
-            case 'manga':
-                foreach ($json->illust->meta_pages as $page) {
-                    $response->addImageURL($page->image_urls->large);
-                }
-                break;
-
-            default:
-                $response->addImageURL($json->illust->image_urls->large);
-                break;
+        if (isset($json->illust->meta_pages) &&
+            count($json->illust->meta_pages) > 0) {
+            foreach ($json->illust->meta_pages as $page) {
+                $response->addImageURL($page->image_urls->large);
+            }
+        } else {
+            $response->addImageURL($json->illust->image_urls->large);
         }
 
         return $response;

@@ -215,47 +215,19 @@ class ImageLnkTest extends PHPUnit_Framework_TestCase
 
     public function testPixiv2()
     {
-        // Manga (medium)
+        // Manga
 
         $url = 'https://www.pixiv.net/member_illust.php?mode=medium&illust_id=51691357';
         $title = 'Manga Example';
         $imageurls = array(
             'https://i.pximg.net/c/600x1200_90/img-master/img/2015/07/30/22/18/43/51691357_p0_master1200.jpg',
+            'https://i.pximg.net/c/600x1200_90/img-master/img/2015/07/30/22/18/43/51691357_p1_master1200.jpg',
         );
         $referer = 'https://www.pixiv.net/member_illust.php?mode=medium&illust_id=51691357';
         $this->checkResponse($url, $title, $imageurls, $referer);
     }
 
     public function testPixiv3()
-    {
-        // Manga (manga_big)
-
-        $url = 'https://www.pixiv.net/member_illust.php?mode=manga_big&illust_id=51691357&page=1';
-        $title = 'Manga Example';
-        $imageurls = array(
-            'https://i.pximg.net/c/600x1200_90/img-master/img/2015/07/30/22/18/43/51691357_p0_master1200.jpg',
-        );
-        $referer = 'https://www.pixiv.net/member_illust.php?mode=manga_big&illust_id=51691357&page=1';
-
-        $this->checkResponse($url, $title, $imageurls, $referer);
-    }
-
-    public function testPixiv4()
-    {
-        // Manga (all)
-
-        $url = 'https://www.pixiv.net/member_illust.php?mode=manga&illust_id=51691357';
-        $title = 'Manga Example';
-        $imageurls = array(
-            'https://i.pximg.net/c/600x1200_90/img-master/img/2015/07/30/22/18/43/51691357_p0_master1200.jpg',
-            'https://i.pximg.net/c/600x1200_90/img-master/img/2015/07/30/22/18/43/51691357_p1_master1200.jpg',
-        );
-        $referer = 'https://www.pixiv.net/member_illust.php?mode=manga&illust_id=51691357';
-
-        $this->checkResponse($url, $title, $imageurls, $referer);
-    }
-
-    public function testPixiv5()
     {
         // touch
 
