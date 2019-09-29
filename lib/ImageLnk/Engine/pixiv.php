@@ -16,22 +16,15 @@ class ImageLnk_Engine_pixiv
         // --------------------
         // If mode=medium, fetch large image page
         $url_info = parse_url($url);
-        if (!isset($url_info['query'])) {
-            return false;
-        }
 
         $query = [];
-        parse_str($url_info['query'], $query);
+        parse_str($url_info['query'] ?? '', $query);
 
         // Handle return_to
 
         if (isset($query['return_to'])) {
             $url = $url_info['scheme'] . '://' . $url_info['host'] . rawurldecode($query['return_to']);
             return self::handle($url);
-        }
-
-        if (!isset($query['mode'])) {
-            return false;
         }
 
         // ----------------------------------------

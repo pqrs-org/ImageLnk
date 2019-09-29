@@ -67,17 +67,16 @@ class ImageLnk_Fetcher_Pixiv extends ImageLnk_Fetcher
     public static function fetch($url, $referer = null)
     {
         $urlInfo = parse_url($url);
-        $query = [];
-        parse_str($urlInfo['query'], $query);
+        if (preg_match('%artworks/(\d+)%', $urlInfo['path'], $matches)) {
+            $id = $matches[1];
 
-        if (!isset($query['illust_id'])) {
-            return new ImageLnk_Fetcher_Pixiv_Response('');
+            self::login();
+
+            $detail = self::$api->illust_detail($id);
+
+            return new ImageLnk_Fetcher_Pixiv_Response(json_encode($detail));
         }
 
-        self::login();
-
-        $detail = self::$api->illust_detail($query['illust_id']);
-
-        return new ImageLnk_Fetcher_Pixiv_Response(json_encode($detail));
+        return new ImageLnk_Fetcher_Pixiv_Response('');
     }
 }
