@@ -136,7 +136,7 @@ class ImageLnkTest extends PHPUnit_Framework_TestCase
     // ======================================================================
     public function testHatena1()
     {
-        $url = 'http://f.hatena.ne.jp/tekezo/20090625215759';
+        $url = 'https://f.hatena.ne.jp/tekezo/20090625215759';
         $title = 'タイトルです。';
         $imageurls = array(
             'https://cdn-ak.f.st-hatena.com/images/fotolife/t/tekezo/20090625/20090625215759.jpg',

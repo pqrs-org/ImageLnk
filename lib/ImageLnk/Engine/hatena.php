@@ -7,7 +7,7 @@ class ImageLnk_Engine_hatena
 
     public static function handle($url)
     {
-        if (!preg_match('/^http:\/\/f\.hatena\.ne\.jp\//', $url)) {
+        if (!preg_match('/^https:\/\/f\.hatena\.ne\.jp\//', $url)) {
             return false;
         }
 
