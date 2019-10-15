@@ -194,7 +194,7 @@ class ImageLnkTest extends PHPUnit_Framework_TestCase
         $url = 'https://www.nicovideo.jp/watch/sm17606436';
         $title = '【折り紙】バラを折ってみた';
         $imageurls = array(
-            'https://tn.smilevideo.jp/smile?i=17606436.L',
+            'https://nicovideo.cdn.nimg.jp/thumbnails/17606436/17606436.L',
         );
         $this->checkResponse($url, $title, $imageurls);
     }
