@@ -9,9 +9,12 @@ class ImageLnk_Engine_ameblo
 
     public static function handle($url)
     {
-        if (! preg_match('/^https?:\/\/([^\/]*\.)?ameblo\.jp\/.+\/image-/', $url)) {
+        if (!preg_match('/^https?:\/\/([^\/]*\.)?ameblo\.jp\/.+\/image-(.+?)-(.+?)\.html/', $url, $matches)) {
             return false;
         }
+
+        $entryId = $matches[2];
+        $imageId = $matches[3];
 
         // ----------------------------------------
         $data = ImageLnk_Cache::get($url);
@@ -24,14 +27,8 @@ class ImageLnk_Engine_ameblo
 
         $response->setTitle(ImageLnk_Helper::getTitle($html));
 
-        foreach ($dom->find('script') as $script) {
-            if (preg_match('/Amb\.Ameblo\.image = new Amb\.Ameblo\.Image\((.+)\);/s', $script->innertext, $matches)) {
-                $json = json_decode($matches[1]);
-                foreach ($json->imgData->current->imgList as $imgList) {
-                    $imgUrl = 'https://stat.ameba.jp' . $imgList->imgUrl;
-                    $response->addImageURL($imgUrl);
-                }
-            }
+        foreach ($dom->find('img[data-entry-id="' . $entryId . '"][data-image-id="' . $imageId . '"]') as $img) {
+            $response->addImageURL($img->getAttribute('src'));
         }
 
         return $response;
