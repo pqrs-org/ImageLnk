@@ -256,21 +256,6 @@ class ImageLnkTest extends TestCase
     }
 
     // ======================================================================
-    public function testYaplog1()
-    {
-        // Skip because of the following error.
-        // error:141A318A:SSL routines:tls_process_ske_dhe:dh key too small
-        return;
-
-        $url = 'https://yaplog.jp/atsukana/image/236/306';
-        $title = '自分大好き日記(笑)の画像(2/5) :: 菜っ葉の『菜』！！';
-        $imageurls = [
-            'https://img.yaplog.jp/img/07/pc/a/t/s/atsukana/0/306_large.jpg',
-        ];
-        $this->checkResponse($url, $title, $imageurls);
-    }
-
-    // ======================================================================
     public function testYoutube1()
     {
         $url = 'https://www.youtube.com/watch?v=Tlmho7SY-ic&feature=player_embedded';
@@ -456,35 +441,6 @@ class ImageLnkTest extends TestCase
         $title = '「Wizardry Online」のCBT「機能テスト」先行体験プレイレポートを掲載。実態はやはり高難度……しかし序盤は「ロスト」の心配無用？ - 4Gamer.net';
         $imageurls = [
             'https://www.4gamer.net/games/044/G004471/20110616072/SS/001.jpg',
-        ];
-        $this->checkResponse($url, $title, $imageurls);
-    }
-
-    // ======================================================================
-    public function testFamitsu1()
-    {
-        // Skip because of the following error.
-        // error:141A318A:SSL routines:tls_process_ske_dhe:dh key too small
-        return;
-
-        $url = 'https://www.famitsu.com/news/201106/images/00045516/qSmn53J8Boevo2zZqF3IYq6hCI37GJ7w.html';
-        $title = '『侵略！イカ娘』が釣りゲームになって登場！　エビでイカを釣らなイカ？関連スクリーンショット・写真画像';
-        $imageurls = [
-            'https://www.famitsu.com/news/201106/images/00045516/qSmn53J8Boevo2zZqF3IYq6hCI37GJ7w.jpg',
-        ];
-        $this->checkResponse($url, $title, $imageurls);
-    }
-
-    public function testFamitsu2()
-    {
-        // Skip because of the following error.
-        // error:141A318A:SSL routines:tls_process_ske_dhe:dh key too small
-        return;
-
-        $url = 'https://www.famitsu.com/news/201106/images/00045487/AGE4AGCB21y4EX6lmIuMOTSYW3Bs4o9Q.html';
-        $title = '『ギアーズ オブ ウォー 3』の真髄に迫る、“Horde”いよいよ解禁！【スタジオツアー1】関連スクリーンショット・写真画像';
-        $imageurls = [
-            'https://www.famitsu.com/news/201106/images/00045487/AGE4AGCB21y4EX6lmIuMOTSYW3Bs4o9Q.jpg',
         ];
         $this->checkResponse($url, $title, $imageurls);
     }
