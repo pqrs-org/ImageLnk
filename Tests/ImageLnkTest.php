@@ -63,9 +63,9 @@ class ImageLnkTest extends PHPUnit_Framework_TestCase
     public function testAmeblo1()
     {
         $url = 'https://ameblo.jp/hakasetoiu-ikimono/image-10430643614-10370336976.html';
-        $title = '第４話：Beautiful nameの画像 | 研究者マンガ「ハカセといふ生物」';
+        $title = '第４話：Beautiful nameの画像';
         $imageurls = [
-            'https://stat.ameba.jp/user_images/20100109/22/hakasetoiu-ikimono/5f/c7/j/o0360050010370336976.jpg',
+            'https://stat.ameba.jp/user_images/20100109/22/hakasetoiu-ikimono/5f/c7/j/o0360050010370336976.jpg?cat=136',
         ];
         $this->checkResponse($url, $title, $imageurls);
     }
@@ -73,9 +73,9 @@ class ImageLnkTest extends PHPUnit_Framework_TestCase
     public function testAmeblo2()
     {
         $url = 'https://s.ameblo.jp/hakasetoiu-ikimono/image-10430643614-10370336976.html';
-        $title = '第４話：Beautiful nameの画像 | 研究者マンガ「ハカセといふ生物」';
+        $title = '第４話：Beautiful nameの画像';
         $imageurls = [
-            'https://stat.ameba.jp/user_images/20100109/22/hakasetoiu-ikimono/5f/c7/j/o0360050010370336976.jpg',
+            'https://stat.ameba.jp/user_images/20100109/22/hakasetoiu-ikimono/5f/c7/j/o0360050010370336976.jpg?cat=136',
         ];
         $referer = 'https://ameblo.jp/hakasetoiu-ikimono/image-10430643614-10370336976.html';
         $this->checkResponse($url, $title, $imageurls, $referer);
@@ -84,9 +84,9 @@ class ImageLnkTest extends PHPUnit_Framework_TestCase
     public function testAmeblo3()
     {
         $url = 'https://ameblo.jp/strawberry-ayana/image-10963873926-11370958832.html';
-        $title = 'わんふぇす2の画像 | 竹達彩奈オフィシャルブログ「Strawberry Candy」Powe…';
+        $title = 'わんふぇす2の画像';
         $imageurls = [
-            'https://stat.ameba.jp/user_images/20110724/19/strawberry-ayana/ac/1e/j/o0480064011370958832.jpg',
+            'https://stat.ameba.jp/user_images/20110724/19/strawberry-ayana/ac/1e/j/o0480064011370958832.jpg?cat=136',
         ];
         $this->checkResponse($url, $title, $imageurls);
     }
