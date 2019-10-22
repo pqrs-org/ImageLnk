@@ -1,10 +1,12 @@
 <?php
 
+use PHPUnit\Framework\TestCase;
+
 require_once sprintf('%s/../lib/ImageLnk.php', dirname(__FILE__));
 
-class ImageLnkTest extends PHPUnit_Framework_TestCase
+class ImageLnkTest extends TestCase
 {
-    public function __construct()
+    public static function setUpBeforeClass(): void
     {
         ImageLnk_Config::set('cache_directory', 'tmp');
         ImageLnk_Config::set('cache_expire_minutes', 30);
@@ -96,9 +98,9 @@ class ImageLnkTest extends PHPUnit_Framework_TestCase
     {
         $url = 'https://ascii.jp/elem/000/001/013/1013475/img.html';
         $title = 'いよいよ来た！ Windows 10が「無償アップグレードの予約」を開始！';
-        $imageurls = array(
+        $imageurls = [
             'https://ascii.jp/elem/000/001/013/1013475/01_814x528.png',
-        );
+        ];
         $this->checkResponse($url, $title, $imageurls);
     }
 
@@ -106,9 +108,9 @@ class ImageLnkTest extends PHPUnit_Framework_TestCase
     {
         $url = 'https://weekly.ascii.jp/elem/000/000/066/66769/';
         $title = 'ThinkPad Tabletに3G版が登場！　しかもSIMフリーだと!?';
-        $imageurls = array(
+        $imageurls = [
             'https://weekly.ascii.jp/elem/000/000/066/66769/lenovo_sim_free03_cs1e1_x1000.jpg',
-        );
+        ];
         $this->checkResponse($url, $title, $imageurls);
     }
 
@@ -116,9 +118,9 @@ class ImageLnkTest extends PHPUnit_Framework_TestCase
     {
         $url = 'https://ascii.jp/elem/000/000/672/672411/img800.html';
         $title = '寒い日に寄り添ってぬくぬくする猫たち';
-        $imageurls = array(
+        $imageurls = [
             'https://ascii.jp/elem/000/000/672/672411/DSC00017_800x.jpg',
-        );
+        ];
         $this->checkResponse($url, $title, $imageurls);
     }
 
@@ -127,9 +129,9 @@ class ImageLnkTest extends PHPUnit_Framework_TestCase
     {
         $url = 'http://node3.img3.akibablog.net/11/may/1/real-qb/119.html';
         $title = '[画像]:ゲーマーズ本店にリアルキュゥべえ　「どうみても不審者ｗｗｗ」';
-        $imageurls = array(
+        $imageurls = [
             'http://node3.img3.akibablog.net/11/may/1/real-qb/119.jpg',
-        );
+        ];
         $this->checkResponse($url, $title, $imageurls);
     }
 
@@ -138,9 +140,9 @@ class ImageLnkTest extends PHPUnit_Framework_TestCase
     {
         $url = 'https://f.hatena.ne.jp/tekezo/20090625215759';
         $title = 'タイトルです。';
-        $imageurls = array(
+        $imageurls = [
             'https://cdn-ak.f.st-hatena.com/images/fotolife/t/tekezo/20090625/20090625215759.jpg',
-        );
+        ];
         $this->checkResponse($url, $title, $imageurls);
     }
 
@@ -149,9 +151,9 @@ class ImageLnkTest extends PHPUnit_Framework_TestCase
     {
         $url = 'https://dengekionline.com/elem/000/000/364/364901/img.html';
         $title = '電撃 - 【App通信】iPad 2が満を持して発売！ 美少女姉妹による萌え系紙芝居 アプリも';
-        $imageurls = array(
+        $imageurls = [
             'https://ssl.dengeki.com/elem/000/000/364/364922/c20110502_app_th_o_.jpg',
-        );
+        ];
         $this->checkResponse($url, $title, $imageurls);
     }
 
@@ -160,9 +162,9 @@ class ImageLnkTest extends PHPUnit_Framework_TestCase
     {
         $url = 'https://image.itmedia.co.jp/l/im/pcuser/articles/1502/07/l_og_akibatokka_001.jpg';
         $title = '128GバイトSSDが7500円切り！ 256Gバイトも1万2000円弱に';
-        $imageurls = array(
+        $imageurls = [
             'https://image.itmedia.co.jp/pcuser/articles/1502/07/l_og_akibatokka_001.jpg',
-        );
+        ];
         $this->checkResponse($url, $title, $imageurls);
     }
 
@@ -170,9 +172,9 @@ class ImageLnkTest extends PHPUnit_Framework_TestCase
     {
         $url = 'https://image.itmedia.co.jp/l/im/nl/articles/1106/02/l_ky_robo_0602_5.jpg';
         $title = 'セグウェイが歩道を走る　つくばでロボットの公道走行実験スタート';
-        $imageurls = array(
+        $imageurls = [
             'https://image.itmedia.co.jp/nl/articles/1106/02/l_ky_robo_0602_5.jpg',
-        );
+        ];
         $this->checkResponse($url, $title, $imageurls);
     }
 
@@ -180,9 +182,9 @@ class ImageLnkTest extends PHPUnit_Framework_TestCase
     {
         $url = 'https://image.itmedia.co.jp/l/im/mobile/articles/1110/14/l_os_appsomm03.jpg';
         $title = '“普通の女性”目線で厳選したスマートフォンアプリ紹介サイト「アプリソムリエ」';
-        $imageurls = array(
+        $imageurls = [
             'https://image.itmedia.co.jp/mobile/articles/1110/14/l_os_appsomm03.jpg',
-        );
+        ];
         $backlink = 'https://www.itmedia.co.jp/mobile/articles/1110/14/news142.html#l_os_appsomm03.jpg';
 
         $this->checkResponse($url, $title, $imageurls, null, $backlink);
@@ -193,9 +195,9 @@ class ImageLnkTest extends PHPUnit_Framework_TestCase
     {
         $url = 'https://www.nicovideo.jp/watch/sm17606436';
         $title = '【折り紙】バラを折ってみた';
-        $imageurls = array(
+        $imageurls = [
             'https://nicovideo.cdn.nimg.jp/thumbnails/17606436/17606436.L',
-        );
+        ];
         $this->checkResponse($url, $title, $imageurls);
     }
 
@@ -206,9 +208,9 @@ class ImageLnkTest extends PHPUnit_Framework_TestCase
 
         $url = 'https://www.pixiv.net/artworks/51691307';
         $title = 'Image Example';
-        $imageurls = array(
+        $imageurls = [
             'https://i.pximg.net/c/600x1200_90/img-master/img/2015/07/30/22/16/27/51691307_p0_master1200.jpg',
-        );
+        ];
         $referer = 'https://www.pixiv.net/artworks/51691307';
         $this->checkResponse($url, $title, $imageurls, $referer);
     }
@@ -219,10 +221,10 @@ class ImageLnkTest extends PHPUnit_Framework_TestCase
 
         $url = 'https://www.pixiv.net/member_illust.php?mode=medium&illust_id=51691357';
         $title = 'Manga Example';
-        $imageurls = array(
+        $imageurls = [
             'https://i.pximg.net/c/600x1200_90/img-master/img/2015/07/30/22/18/43/51691357_p0_master1200.jpg',
             'https://i.pximg.net/c/600x1200_90/img-master/img/2015/07/30/22/18/43/51691357_p1_master1200.jpg',
-        );
+        ];
         $referer = 'https://www.pixiv.net/artworks/51691357';
         $this->checkResponse($url, $title, $imageurls, $referer);
     }
@@ -233,9 +235,9 @@ class ImageLnkTest extends PHPUnit_Framework_TestCase
 
         $url = 'https://touch.pixiv.net/member_illust.php?mode=medium&illust_id=51691307';
         $title = 'Image Example';
-        $imageurls = array(
+        $imageurls = [
             'https://i.pximg.net/c/600x1200_90/img-master/img/2015/07/30/22/16/27/51691307_p0_master1200.jpg',
-        );
+        ];
         $referer = 'https://www.pixiv.net/artworks/51691307';
         $this->checkResponse($url, $title, $imageurls, $referer);
     }
@@ -246,9 +248,9 @@ class ImageLnkTest extends PHPUnit_Framework_TestCase
 
         $url = 'https://www.pixiv.net/member_illust.php?mode=medium&illust_id=51691307';
         $title = 'Image Example';
-        $imageurls = array(
+        $imageurls = [
             'https://i.pximg.net/c/600x1200_90/img-master/img/2015/07/30/22/16/27/51691307_p0_master1200.jpg',
-        );
+        ];
         $referer = 'https://www.pixiv.net/artworks/51691307';
         $this->checkResponse($url, $title, $imageurls, $referer);
     }
@@ -262,9 +264,9 @@ class ImageLnkTest extends PHPUnit_Framework_TestCase
 
         $url = 'https://yaplog.jp/atsukana/image/236/306';
         $title = '自分大好き日記(笑)の画像(2/5) :: 菜っ葉の『菜』！！';
-        $imageurls = array(
+        $imageurls = [
             'https://img.yaplog.jp/img/07/pc/a/t/s/atsukana/0/306_large.jpg',
-        );
+        ];
         $this->checkResponse($url, $title, $imageurls);
     }
 
@@ -273,9 +275,9 @@ class ImageLnkTest extends PHPUnit_Framework_TestCase
     {
         $url = 'https://www.youtube.com/watch?v=Tlmho7SY-ic&feature=player_embedded';
         $title = 'YouTube Turns Five!';
-        $imageurls = array(
+        $imageurls = [
             'https://i.ytimg.com/vi/Tlmho7SY-ic/maxresdefault.jpg',
-        );
+        ];
         $this->checkResponse($url, $title, $imageurls);
     }
 
@@ -325,9 +327,9 @@ class ImageLnkTest extends PHPUnit_Framework_TestCase
     {
         $url = 'https://game.watch.impress.co.jp/img/gmw/docs/448/930/html/psn01.jpg.html';
         $title = '[拡大画像] SCEJ、PlayStation NetworkとQriocityのサービスを5月28日から再開。安全管理措置を導入し、ゲームコンテンツの無償提供も';
-        $imageurls = array(
+        $imageurls = [
             'https://game.watch.impress.co.jp/img/gmw/docs/448/930/psn01.jpg',
-        );
+        ];
         $this->checkResponse($url, $title, $imageurls);
     }
 
@@ -335,9 +337,9 @@ class ImageLnkTest extends PHPUnit_Framework_TestCase
     {
         $url = 'https://dc.watch.impress.co.jp/img/dcw/docs/422/882/html/009.jpg.html';
         $title = '[画像] 写真で見る写真で見るカシオ「TRYX」（β機）(9/31) - デジカメ Watch Watch';
-        $imageurls = array(
+        $imageurls = [
             'https://dc.watch.impress.co.jp/img/dcw/docs/422/882/009.jpg',
-        );
+        ];
         $this->checkResponse($url, $title, $imageurls);
     }
 
@@ -345,9 +347,9 @@ class ImageLnkTest extends PHPUnit_Framework_TestCase
     {
         $url = 'https://k-tai.watch.impress.co.jp/img/ktw/docs/460/236/html/sanzo.jpg.html';
         $title = '[拡大画像]サンヨーホームズ、Android採用のロボットを搭載した住宅(1/2) -  ケータイ Watch';
-        $imageurls = array(
+        $imageurls = [
             'https://k-tai.watch.impress.co.jp/img/ktw/docs/460/236/sanzo.jpg',
-        );
+        ];
         $this->checkResponse($url, $title, $imageurls);
     }
 
@@ -355,9 +357,9 @@ class ImageLnkTest extends PHPUnit_Framework_TestCase
     {
         $url = 'https://akiba-pc.watch.impress.co.jp/hotline/20110806/image/kfrety4.html';
         $title = '[拡大画像]お買い得価格情報 - AKIBA PC Hotline!';
-        $imageurls = array(
+        $imageurls = [
             'https://akiba-pc.watch.impress.co.jp/hotline/20110806/image/kfrety4.jpg',
-        );
+        ];
         $this->checkResponse($url, $title, $imageurls);
     }
 
@@ -366,9 +368,9 @@ class ImageLnkTest extends PHPUnit_Framework_TestCase
     {
         $url = 'https://titlebot.tumblr.com/post/5544499061/%E3%83%8D%E3%82%B3%E3%81%A8%E5%92%8C%E8%A7%A3%E3%81%9B%E3%82%88';
         $title = 'titlebot';
-        $imageurls = array(
+        $imageurls = [
             'regex:#https://\d+.media.tumblr.com/tumblr_llal1ttZ7W1qfqa6no1_400.jpg#',
-        );
+        ];
         $referer = 'https://titlebot.tumblr.com/post/5544499061/%E3%83%8D%E3%82%B3%E3%81%A8%E5%92%8C%E8%A7%A3%E3%81%9B%E3%82%88';
         $this->checkResponse($url, $title, $imageurls, $referer);
     }
@@ -377,9 +379,9 @@ class ImageLnkTest extends PHPUnit_Framework_TestCase
     {
         $url = 'https://maegamipattun.tumblr.com/post/7815975799';
         $title = '前髪ぱっつん専用タンブラー';
-        $imageurls = array(
+        $imageurls = [
             'regex:#https://\d+.media.tumblr.com/tumblr_l1n113Lyub1qaxrtko1_1280.jpg#',
-        );
+        ];
         $this->checkResponse($url, $title, $imageurls);
     }
 
@@ -388,9 +390,9 @@ class ImageLnkTest extends PHPUnit_Framework_TestCase
     {
         $url = 'https://en.wikipedia.org/wiki/File:PANSDeinonychus.JPG';
         $title = 'English: Deinonychus antirrhopus skeleton, Philadelphia Academy of Natural Sciences';
-        $imageurls = array(
+        $imageurls = [
             'https://upload.wikimedia.org/wikipedia/commons/e/e6/PANSDeinonychus.JPG',
-        );
+        ];
         $this->checkResponse($url, $title, $imageurls);
     }
 
@@ -399,9 +401,9 @@ class ImageLnkTest extends PHPUnit_Framework_TestCase
     {
         $url = 'https://www.instagram.com/p/6XQ5nTTdjq/';
         $title = '@imagelnk on Instagram: “pepper”';
-        $imageurls = array(
+        $imageurls = [
             'regex:#https://.+.cdninstagram.com/vp/.+?/t51.2885-15/e35/11356624_508726059287524_1160649839_n.jpg#',
-        );
+        ];
         $this->checkResponse($url, $title, $imageurls);
     }
 
@@ -409,9 +411,9 @@ class ImageLnkTest extends PHPUnit_Framework_TestCase
     {
         $url = 'https://instagram.com/p/6XQ5nTTdjq/';
         $title = '@imagelnk on Instagram: “pepper”';
-        $imageurls = array(
+        $imageurls = [
             'regex:#https://.+.cdninstagram.com/vp/.+?/t51.2885-15/e35/11356624_508726059287524_1160649839_n.jpg#',
-        );
+        ];
         $referer = 'https://www.instagram.com/p/6XQ5nTTdjq/';
         $this->checkResponse($url, $title, $imageurls, $referer);
     }
@@ -421,9 +423,9 @@ class ImageLnkTest extends PHPUnit_Framework_TestCase
     {
         $url = 'https://natalie.mu/comic/gallery/news/50403/80332';
         $title = '物語の舞台である、由比ヶ浜へ連れ出してみるのも一興。(C)安部真弘（週刊少 年チャンピオン）／海の家れもん [画像ギャラリー 3/6] - コミックナタリー';
-        $imageurls = array(
+        $imageurls = [
             'https://ogre.natalie.mu/media/news/comic/2011/0531/ika_roke1.jpg?imwidth=750',
-        );
+        ];
         $this->checkResponse($url, $title, $imageurls);
     }
 
@@ -431,9 +433,9 @@ class ImageLnkTest extends PHPUnit_Framework_TestCase
     {
         $url = 'https://natalie.mu/music/gallery/news/50476/80357';
         $title = '新しくなった怒髪天のロゴ。 [画像ギャラリー 1/2] - 音楽ナタリー';
-        $imageurls = array(
+        $imageurls = [
             'https://ogre.natalie.mu/media/news/music/2011/0601/dohatsuten_topB.jpg?imwidth=750',
-        );
+        ];
         $this->checkResponse($url, $title, $imageurls);
     }
 
@@ -442,9 +444,9 @@ class ImageLnkTest extends PHPUnit_Framework_TestCase
     {
         $url = 'https://www.4gamer.net/games/044/G004471/20110616072/screenshot.html?num=003';
         $title = '「Wizardry Online」のCBT「機能テスト」先行体験プレイレポートを掲載。実態はやはり高難度……しかし序盤は「ロスト」の心配無用？ - 4Gamer.net';
-        $imageurls = array(
+        $imageurls = [
             'https://www.4gamer.net/games/044/G004471/20110616072/SS/003.jpg',
-        );
+        ];
         $this->checkResponse($url, $title, $imageurls);
     }
 
@@ -452,9 +454,9 @@ class ImageLnkTest extends PHPUnit_Framework_TestCase
     {
         $url = 'https://www.4gamer.net/games/044/G004471/20110616072/screenshot.html';
         $title = '「Wizardry Online」のCBT「機能テスト」先行体験プレイレポートを掲載。実態はやはり高難度……しかし序盤は「ロスト」の心配無用？ - 4Gamer.net';
-        $imageurls = array(
+        $imageurls = [
             'https://www.4gamer.net/games/044/G004471/20110616072/SS/001.jpg',
-        );
+        ];
         $this->checkResponse($url, $title, $imageurls);
     }
 
@@ -467,9 +469,9 @@ class ImageLnkTest extends PHPUnit_Framework_TestCase
 
         $url = 'https://www.famitsu.com/news/201106/images/00045516/qSmn53J8Boevo2zZqF3IYq6hCI37GJ7w.html';
         $title = '『侵略！イカ娘』が釣りゲームになって登場！　エビでイカを釣らなイカ？関連スクリーンショット・写真画像';
-        $imageurls = array(
+        $imageurls = [
             'https://www.famitsu.com/news/201106/images/00045516/qSmn53J8Boevo2zZqF3IYq6hCI37GJ7w.jpg',
-        );
+        ];
         $this->checkResponse($url, $title, $imageurls);
     }
 
@@ -481,9 +483,9 @@ class ImageLnkTest extends PHPUnit_Framework_TestCase
 
         $url = 'https://www.famitsu.com/news/201106/images/00045487/AGE4AGCB21y4EX6lmIuMOTSYW3Bs4o9Q.html';
         $title = '『ギアーズ オブ ウォー 3』の真髄に迫る、“Horde”いよいよ解禁！【スタジオツアー1】関連スクリーンショット・写真画像';
-        $imageurls = array(
+        $imageurls = [
             'https://www.famitsu.com/news/201106/images/00045487/AGE4AGCB21y4EX6lmIuMOTSYW3Bs4o9Q.jpg',
-        );
+        ];
         $this->checkResponse($url, $title, $imageurls);
     }
 
@@ -492,9 +494,9 @@ class ImageLnkTest extends PHPUnit_Framework_TestCase
     {
         $url = 'https://www.zakzak.co.jp/gravure/idol/photos/20110627/idl1106271244001-p1.htm';
         $title = '１６歳の森野朝美、スレンダーボディー炸裂にドキッ  - グラビアアイドル - ZAKZAK';
-        $imageurls = array(
+        $imageurls = [
             'https://www.zakzak.co.jp/gravure/idol/images/20110627/idl1106271244001-p1.jpg',
-        );
+        ];
         $this->checkResponse($url, $title, $imageurls);
     }
 
@@ -502,9 +504,9 @@ class ImageLnkTest extends PHPUnit_Framework_TestCase
     {
         $url = 'https://www.zakzak.co.jp/sports/etc_sports/photos/20150808/spo1508081531009-p1.htm';
         $title = '松山、４９位に後退　池ポチャ２度の大乱調　ブリヂストン招待  - スポーツ - ZAKZAK';
-        $imageurls = array(
+        $imageurls = [
             'https://www.zakzak.co.jp/sports/etc_sports/images/20150808/spo1508081531009-p1.jpg',
-        );
+        ];
         $this->checkResponse($url, $title, $imageurls);
     }
 
@@ -513,9 +515,9 @@ class ImageLnkTest extends PHPUnit_Framework_TestCase
     {
         $url = 'https://ja.uncyclopedia.info/wiki/%E3%83%95%E3%82%A1%E3%82%A4%E3%83%AB:CaesiumSan_01.jpg';
         $title = 'ファイル:CaesiumSan 01.jpg - アンサイクロペディア';
-        $imageurls = array(
+        $imageurls = [
             'https://images.uncyc.org/ja/2/25/CaesiumSan_01.jpg',
-        );
+        ];
         $this->checkResponse($url, $title, $imageurls);
     }
 
@@ -523,9 +525,9 @@ class ImageLnkTest extends PHPUnit_Framework_TestCase
     {
         $url = 'https://ja.uncyclopedia.info/wiki/%E3%83%95%E3%82%A1%E3%82%A4%E3%83%AB:Sigeru.jpg';
         $title = 'ファイル:Sigeru.jpg - アンサイクロペディア';
-        $imageurls = array(
+        $imageurls = [
             'https://images.uncyc.org/ja/1/11/Sigeru.jpg',
-        );
+        ];
         $this->checkResponse($url, $title, $imageurls);
     }
 
@@ -533,9 +535,9 @@ class ImageLnkTest extends PHPUnit_Framework_TestCase
     {
         $url = 'https://ansaikuropedia.org/wiki/%E3%83%95%E3%82%A1%E3%82%A4%E3%83%AB:GRP_0258.JPG';
         $title = 'ファイル:GRP 0258.JPG - アンサイクロペディア';
-        $imageurls = array(
+        $imageurls = [
             'https://images.uncyc.org/ja/f/f4/GRP_0258.JPG',
-        );
+        ];
         $this->checkResponse($url, $title, $imageurls);
     }
 
@@ -544,9 +546,9 @@ class ImageLnkTest extends PHPUnit_Framework_TestCase
     {
         $url = 'https://news.livedoor.com/article/image_detail/5786423/?img_id=2118390';
         $title = '【画像】【こんにちは！ナマな人々】露出度高めなコスプレ娘・知羽音さん 1/2 - ライブドアニュース';
-        $imageurls = array(
+        $imageurls = [
             'https://image.news.livedoor.com/newsimage/c/0/c08fd40e8bba4eee8ed91b72707e0378.jpg',
-        );
+        ];
         $this->checkResponse($url, $title, $imageurls);
     }
 
@@ -554,9 +556,9 @@ class ImageLnkTest extends PHPUnit_Framework_TestCase
     {
         $url = 'https://news.livedoor.com/article/image_detail/5460430/?img_id=1848550';
         $title = '【画像】美少女時計に人気モデル 前田希美 黒田瑞貴 志田友美が登場 ウェブ版もスタート 17/18 - ライブドアニュース';
-        $imageurls = array(
+        $imageurls = [
             'https://image.news.livedoor.com/newsimage/0/1/01e1a_756_b0853.jpg',
-        );
+        ];
         $this->checkResponse($url, $title, $imageurls);
     }
 
@@ -565,9 +567,9 @@ class ImageLnkTest extends PHPUnit_Framework_TestCase
     {
         $url = 'https://twitter.com/tekezo/status/474587873925017600';
         $title = 'twitter: Takayama Fumihiko: KeyRemap4MacBook v9.99.11 or later allows you to change keys only when you are editing text (or not). http://t.co/WnuoqQxDRW';
-        $imageurls = array(
+        $imageurls = [
             'http://pbs.twimg.com/media/BpYTJ-iIcAARRVg.png:large',
-        );
+        ];
         $this->checkResponse($url, $title, $imageurls);
     }
 
@@ -575,9 +577,9 @@ class ImageLnkTest extends PHPUnit_Framework_TestCase
     {
         $url = 'https://mobile.twitter.com/tekezo/status/474587873925017600';
         $title = 'twitter: Takayama Fumihiko: KeyRemap4MacBook v9.99.11 or later allows you to change keys only when you are editing text (or not). http://t.co/WnuoqQxDRW';
-        $imageurls = array(
+        $imageurls = [
             'http://pbs.twimg.com/media/BpYTJ-iIcAARRVg.png:large',
-        );
+        ];
         $this->checkResponse($url, $title, $imageurls);
     }
 
@@ -586,9 +588,9 @@ class ImageLnkTest extends PHPUnit_Framework_TestCase
     {
         $url = 'https://music.apple.com/jp/album/muscle-march-original-soundtrack/id455935658?l=en';
         $title = 'Muscle March Original Soundtrack by Namco Sounds on iTunes';
-        $imageurls = array(
+        $imageurls = [
             'regex:#https://is.-ssl.mzstatic.com/image/thumb/Music/87/7a/56/mzi.vzoqpscv.jpg/1200x630wp.png#',
-        );
+        ];
         $this->checkResponse($url, $title, $imageurls);
     }
 
@@ -597,9 +599,9 @@ class ImageLnkTest extends PHPUnit_Framework_TestCase
     {
         $url = 'https://japan.cnet.com/article/35008398/14/';
         $title = 'NEC PCができるまで--山形の米沢事業所を訪問 - (page 14) - CNET Japan: 　シートを重ねるだけでキートップの相違を検出できる「発見くん」。これは数字の「0」とアルファベットの「O」が誤って取り付けられた例だ。工場には、トヨタ生産方式で知られる「ニンベンの付いた自働化」があらゆるところに取り入れられている。';
-        $imageurls = array(
+        $imageurls = [
             'https://japan.cnet.com/storage/2011/09/30/9d06e8a0497f76a9d42bdbce397e2796/110930necr9138308.jpg',
-        );
+        ];
         $this->checkResponse($url, $title, $imageurls);
     }
 
@@ -607,9 +609,9 @@ class ImageLnkTest extends PHPUnit_Framework_TestCase
     {
         $url = 'https://japan.cnet.com/image/l/storage/35004965/storage/2011/07/07/6158a520ae3ce67be4959c9b8cf62e72/20110707_casio_06.jpg';
         $title = 'CNET Japan: レンズ部を中心にフレームは360度回転し、モニタも270度回転する';
-        $imageurls = array(
+        $imageurls = [
             'https://japan.cnet.com/storage/2011/07/07/6158a520ae3ce67be4959c9b8cf62e72/20110707_casio_06.jpg',
-        );
+        ];
         $this->checkResponse($url, $title, $imageurls);
     }
 
@@ -626,9 +628,9 @@ class ImageLnkTest extends PHPUnit_Framework_TestCase
     {
         $url = 'https://cookpad.com/recipe/720203';
         $title = '大根とツナとホタテのサラダ♪ by ともにゃんママ [クックパッド] 簡単おいしいみんなのレシピが256万品';
-        $imageurls = array(
+        $imageurls = [
             'https://img.cpcdn.com/recipes/720203/280x487s/c6460850a2fcfcbc68c431e5f8c7f918.jpg?u=887658&p=1232792798',
-        );
+        ];
         $this->checkResponse($url, $title, $imageurls);
     }
 
@@ -637,9 +639,9 @@ class ImageLnkTest extends PHPUnit_Framework_TestCase
     {
         $url = 'https://news.mynavi.jp/photo/article/20111108-a008/images/005l.jpg';
         $title = '拡大画像 005 | サイボウズ、クラウド基盤「cybozu.com」の運用を開始しPaaSを提供 | マイナビニュース';
-        $imageurls = array(
+        $imageurls = [
             'https://news.mynavi.jp/article/20111108-a008/images/005l.jpg',
-        );
+        ];
         $this->checkResponse($url, $title, $imageurls);
     }
 
@@ -647,9 +649,9 @@ class ImageLnkTest extends PHPUnit_Framework_TestCase
     {
         $url = 'https://news.mynavi.jp/photo/article/20110307-appinventor/images/006l.jpg';
         $title = '拡大画像 006l | 経験ゼロでも大丈夫!? App Inventorで始めるAndroidアプリ開発 (1) まずは稼働環境を整備 | マイナビニュース';
-        $imageurls = array(
+        $imageurls = [
             'https://news.mynavi.jp/article/20110307-appinventor/images/006l.jpg',
-        );
+        ];
         $this->checkResponse($url, $title, $imageurls);
     }
 
@@ -658,9 +660,9 @@ class ImageLnkTest extends PHPUnit_Framework_TestCase
     {
         $url = 'https://stocks.finance.yahoo.co.jp/stocks/detail/?code=3656.T&d=1m';
         $title = 'ＫＬａｂ(株)【3656】：株式/株価 - Yahoo!ファイナンス';
-        $imageurls = array(
+        $imageurls = [
             'https://chart.yahoo.co.jp/?code=3656.T&tm=1m&size=e',
-        );
+        ];
         $this->checkResponse($url, $title, $imageurls);
     }
 
@@ -669,9 +671,9 @@ class ImageLnkTest extends PHPUnit_Framework_TestCase
     {
         $url = 'https://chan.sankakucomplex.com/post/show/5949839/';
         $title = 'Post 5949839';
-        $imageurls = array(
+        $imageurls = [
             'regex:#https://cs\.sankakucomplex\.com/data/sample/2e/54/sample-2e540481ae41d3b9d652f1ac92a82b5c\.jpg\?.*#',
-        );
+        ];
         $this->checkResponse($url, $title, $imageurls);
     }
 
@@ -679,9 +681,9 @@ class ImageLnkTest extends PHPUnit_Framework_TestCase
     {
         $url = 'https://chan.sankakucomplex.com/ja/post/show/6135230';
         $title = 'Post 6135230';
-        $imageurls = array(
+        $imageurls = [
             'regex:#https://cs\.sankakucomplex\.com/data/sample/7b/44/sample-7b44e9025158c4e7fc0ca1cbaafa3e9d.jpg\?.*#',
-        );
+        ];
         $this->checkResponse($url, $title, $imageurls);
     }
 
@@ -690,9 +692,9 @@ class ImageLnkTest extends PHPUnit_Framework_TestCase
     {
         $url = 'https://www.dropbox.com/s/v8a95rih0ah0ej0/chart2.png?dl=0';
         $title = 'Dropbox - chart2 (1).png - Simplify your life';
-        $imageurls = array(
+        $imageurls = [
             'regex:#^https://[a-z0-9]+\.previews\.dropboxusercontent\.com/p/thumb/.+?/p\.png\?size=2048x1536&size_mode=3#',
-        );
+        ];
         $referer = 'https://www.dropbox.com/s/v8a95rih0ah0ej0/chart2%20%281%29.png?dl=0';
         $this->checkResponse($url, $title, $imageurls, $referer);
     }
@@ -702,9 +704,9 @@ class ImageLnkTest extends PHPUnit_Framework_TestCase
     {
         $url = 'https://imgur.com/gallery/GHlof1T';
         $title = 'klab';
-        $imageurls = array(
+        $imageurls = [
             'https://i.imgur.com/DghXdFe.jpg',
-        );
+        ];
         $this->checkResponse($url, $title, $imageurls);
     }
 }
