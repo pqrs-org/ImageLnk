@@ -196,7 +196,7 @@ class ImageLnkTest extends TestCase
         $url = 'https://www.nicovideo.jp/watch/sm17606436';
         $title = '【折り紙】バラを折ってみた';
         $imageurls = [
-            'https://nicovideo.cdn.nimg.jp/thumbnails/17606436/17606436.L',
+            'https://img.cdn.nimg.jp/s/nicovideo/thumbnails/17606436/17606436.original/r1280x720l?key=7fabfe53a977d05d842996d437bc6a25c235545cd77b69674c8cb1a29a2c41ca',
         ];
         $this->checkResponse($url, $title, $imageurls);
     }
