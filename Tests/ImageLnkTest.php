@@ -387,7 +387,7 @@ class ImageLnkTest extends TestCase
         $url = 'https://www.instagram.com/p/6XQ5nTTdjq/';
         $title = '@imagelnk on Instagram: “pepper”';
         $imageurls = [
-            'regex:#https://.+.cdninstagram.com/vp/.+?/t51.2885-15/e35/11356624_508726059287524_1160649839_n.jpg#',
+            'regex:#https://.+.cdninstagram.com/.+?/t51.2885-15/e35/11356624_508726059287524_1160649839_n\.jpg?.+#',
         ];
         $this->checkResponse($url, $title, $imageurls);
     }
@@ -397,7 +397,7 @@ class ImageLnkTest extends TestCase
         $url = 'https://instagram.com/p/6XQ5nTTdjq/';
         $title = '@imagelnk on Instagram: “pepper”';
         $imageurls = [
-            'regex:#https://.+.cdninstagram.com/vp/.+?/t51.2885-15/e35/11356624_508726059287524_1160649839_n.jpg#',
+            'regex:#https://.+.cdninstagram.com/.+?/t51.2885-15/e35/11356624_508726059287524_1160649839_n\.jpg?.+#',
         ];
         $referer = 'https://www.instagram.com/p/6XQ5nTTdjq/';
         $this->checkResponse($url, $title, $imageurls, $referer);
