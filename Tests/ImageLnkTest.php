@@ -96,30 +96,10 @@ class ImageLnkTest extends TestCase
     // ======================================================================
     public function testAscii1()
     {
-        $url = 'https://ascii.jp/elem/000/001/013/1013475/img.html';
-        $title = 'いよいよ来た！ Windows 10が「無償アップグレードの予約」を開始！';
-        $imageurls = [
-            'https://ascii.jp/elem/000/001/013/1013475/01_814x528.png',
-        ];
-        $this->checkResponse($url, $title, $imageurls);
-    }
-
-    public function testAscii2()
-    {
         $url = 'https://weekly.ascii.jp/elem/000/000/066/66769/';
         $title = 'ThinkPad Tabletに3G版が登場！　しかもSIMフリーだと!?';
         $imageurls = [
             'https://weekly.ascii.jp/elem/000/000/066/66769/lenovo_sim_free03_cs1e1_x1000.jpg',
-        ];
-        $this->checkResponse($url, $title, $imageurls);
-    }
-
-    public function testAscii3()
-    {
-        $url = 'https://ascii.jp/elem/000/000/672/672411/img800.html';
-        $title = '寒い日に寄り添ってぬくぬくする猫たち';
-        $imageurls = [
-            'https://ascii.jp/elem/000/000/672/672411/DSC00017_800x.jpg',
         ];
         $this->checkResponse($url, $title, $imageurls);
     }
