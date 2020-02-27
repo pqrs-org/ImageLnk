@@ -33,12 +33,11 @@ class ImageLnk_Engine_twitter
             )
         );
 
-        $cacheFilePath = ImageLnk_Cache::getCacheFilePathFromURL($url);
+        $cacheFilePath = ImageLnk_Cache::getCacheFilePathFromURL('internal:twitter:' . $id);
         ImageLnk_Cache::writeToCacheFile($cacheFilePath, $tmhOAuth->response['response']);
 
-        if ($code == 200) {
-            $info = json_decode($tmhOAuth->response['response']);
-
+        $info = json_decode($tmhOAuth->response['response']);
+        if ($info !== false) {
             $response->setTitle('twitter: ' . $info->user->name . ': ' . $info->full_text);
             if (isset($info->extended_entities->media)) {
                 foreach ($info->extended_entities->media as $m) {
