@@ -1,5 +1,7 @@
 <?php //-*- Mode: php; indent-tabs-mode: nil; -*-
 
+use KubAT\PhpSimple\HtmlDomParser;
+
 class ImageLnk_Engine_ascii
 {
     const LANGUAGE = 'Japanese';
@@ -7,7 +9,7 @@ class ImageLnk_Engine_ascii
 
     public static function handle_common($url)
     {
-        if (!preg_match('%^https?://ascii\.jp(/elem/.*?/)img.*\.html$%', $url, $matches)) {
+        if (!preg_match('%^https?://ascii\.jp/elem/.*/([^/]+?)/img.*\.html$%', $url, $matches)) {
             return false;
         }
 
@@ -17,16 +19,18 @@ class ImageLnk_Engine_ascii
         $data = ImageLnk_Cache::get($url);
         $html = $data['data'];
 
+        $dom = HtmlDomParser::str_get_html($html);
+
         $response = new ImageLnk_Response();
         $response->setReferer($url);
 
         $response->setTitle(ImageLnk_Helper::getTitle($html));
-        if (preg_match('/<ul id="rellist" >.*?<a .*?>(.+?)<\/a>/s', $html, $matches)) {
-            $response->setTitle($matches[1]);
-        }
 
-        if (preg_match("/src=\"({$id}.*?)\"/", $html, $matches)) {
-            $response->addImageURL('https://ascii.jp' . $matches[1]);
+        foreach ($dom->find('img') as $img) {
+            $src = $img->getAttribute('src');
+            if (preg_match('%/' . $id . '/%', $src)) {
+                $response->addImageURL($src);
+            }
         }
 
         return $response;
