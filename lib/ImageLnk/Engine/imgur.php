@@ -9,7 +9,7 @@ class ImageLnk_Engine_imgur
 
     public static function handle($url)
     {
-        if (!preg_match('%^https://imgur.com/gallery/%', $url)) {
+        if (!preg_match('%^https?://imgur.com/gallery/%', $url)) {
             return false;
         }
 
