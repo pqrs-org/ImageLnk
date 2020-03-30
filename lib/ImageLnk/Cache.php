@@ -54,7 +54,7 @@ class ImageLnk_Cache
         return file_get_contents($path);
     }
 
-    public static function get($url, $referer = null)
+    public static function get($url, $header = [])
     {
         $path = self::getCacheFilePathFromURL($url);
 
@@ -64,7 +64,7 @@ class ImageLnk_Cache
             $data = unserialize($cache);
             $data['from_cache'] = true;
         } else {
-            $response = ImageLnk_Fetcher::fetch($url, $referer);
+            $response = ImageLnk_Fetcher::fetch($url, $header);
 
             $data['from_cache'] = false;
             $data['data'] = $response->getBody();

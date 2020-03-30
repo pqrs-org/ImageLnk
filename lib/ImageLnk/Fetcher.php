@@ -29,7 +29,7 @@ class ImageLnk_Fetcher
     }
 
     // ======================================================================
-    public static function fetch($url, $referer = null)
+    public static function fetch($url, $header = null)
     {
         if (preg_match('/^https?:\/\/[^\/]*pixiv\.net\//', $url)) {
             return ImageLnk_Fetcher_Pixiv::fetch($url, $referer);
@@ -41,7 +41,12 @@ class ImageLnk_Fetcher
         $request = new HTTP_Request2($url, HTTP_Request2::METHOD_GET, $config);
         $request->setHeader('User-Agent', self::USER_AGENT);
 
+        foreach ($header as $k => $v) {
+            $request->setHeader($k, $v);
+        }
+
         // For some sites (itmedia, ...), we need to set referer.
+        $referer = $header['Referer'] ?? null;
         if ($referer === null) {
             $referer = $url;
         }
