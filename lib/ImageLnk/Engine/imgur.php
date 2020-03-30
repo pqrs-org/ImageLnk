@@ -1,7 +1,5 @@
 <?php //-*- Mode: php; indent-tabs-mode: nil; -*-
 
-use KubAT\PhpSimple\HtmlDomParser;
-
 class ImageLnk_Engine_imgur
 {
     const LANGUAGE = null;
@@ -9,26 +7,24 @@ class ImageLnk_Engine_imgur
 
     public static function handle($url)
     {
-        if (!preg_match('%^https?://imgur.com/gallery/%', $url)) {
+        if (!preg_match('%^https?://imgur.com/gallery/(.+)%', $url, $matches)) {
             return false;
         }
 
-        // ----------------------------------------
-        $data = ImageLnk_Cache::get($url);
-        $html = $data['data'];
+        $id = $matches[1];
 
-        $dom = HtmlDomParser::str_get_html($html);
+        // ----------------------------------------
+        $data = ImageLnk_Cache::get('https://api.imgur.com/post/v1/posts/' . $id, [
+            'Authorization' => 'Client-ID ' . ImageLnk_Config::v('imgur_client_id'),
+        ]);
+
+        $json = json_decode($data['data']);
 
         $response = new ImageLnk_Response();
         $response->setReferer($url);
 
-        $title = $dom->find('meta[property=og:title]', 0)->content;
-        $response->setTitle($title);
-
-        $link = $dom->find('link[rel=image_src]', 0);
-        if ($link) {
-            $response->addImageURL($link->getAttribute('href'));
-        }
+        $response->setTitle($json->title);
+        $response->addImageURL('https://i.imgur.com/' . $json->cover_id . '.jpg');
 
         return $response;
     }
