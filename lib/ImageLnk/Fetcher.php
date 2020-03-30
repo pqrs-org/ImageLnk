@@ -29,10 +29,10 @@ class ImageLnk_Fetcher
     }
 
     // ======================================================================
-    public static function fetch($url, $header = null)
+    public static function fetch($url, $header = [])
     {
         if (preg_match('/^https?:\/\/[^\/]*pixiv\.net\//', $url)) {
-            return ImageLnk_Fetcher_Pixiv::fetch($url, $referer);
+            return ImageLnk_Fetcher_Pixiv::fetch($url, $header);
         }
 
         // --------------------------------------------------

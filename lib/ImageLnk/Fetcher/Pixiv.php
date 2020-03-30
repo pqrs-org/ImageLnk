@@ -64,7 +64,7 @@ class ImageLnk_Fetcher_Pixiv extends ImageLnk_Fetcher
         );
     }
 
-    public static function fetch($url, $referer = null)
+    public static function fetch($url, $header = [])
     {
         $urlInfo = parse_url($url);
         if (preg_match('%artworks/(\d+)%', $urlInfo['path'], $matches)) {
