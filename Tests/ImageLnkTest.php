@@ -520,17 +520,6 @@ class ImageLnkTest extends TestCase
     }
 
     // ======================================================================
-    public function testItunes1()
-    {
-        $url = 'https://music.apple.com/jp/album/muscle-march-original-soundtrack/id455935658?l=en';
-        $title = 'Muscle March Original Soundtrack by Namco Sounds on iTunes';
-        $imageurls = [
-            'regex:#https://is.-ssl.mzstatic.com/image/thumb/Music/87/7a/56/mzi.vzoqpscv.jpg/1200x630wp.png#',
-        ];
-        $this->checkResponse($url, $title, $imageurls);
-    }
-
-    // ======================================================================
     public function testCnetJp1()
     {
         $url = 'https://japan.cnet.com/article/35008398/14/';
