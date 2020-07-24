@@ -554,7 +554,7 @@ class ImageLnkTest extends TestCase
         $url = 'https://cookpad.com/recipe/720203';
         $title = '大根とツナとホタテのサラダ♪ by ともにゃんママ [クックパッド] 簡単おいしいみんなのレシピが256万品';
         $imageurls = [
-            'https://img.cpcdn.com/recipes/720203/280x487s/c40a1d97fe52ba54be28d0617dd7453c?u=887658&p=1232792798',
+            'https://img.cpcdn.com/recipes/720203/840x1461s/0faabd4907e35e0c7544d50d8bba9a14?u=887658&p=1232792798',
         ];
         $this->checkResponse($url, $title, $imageurls);
     }
