@@ -408,7 +408,7 @@ class ImageLnkTest extends TestCase
     public function test4gamer1()
     {
         $url = 'https://www.4gamer.net/games/044/G004471/20110616072/screenshot.html?num=003';
-        $title = '「Wizardry Online」のCBT「機能テスト」先行体験プレイレポートを掲載。実態はやはり高難度……しかし序盤は「ロスト」の心配無用？ - 4Gamer.net';
+        $title = '画像集/「Wizardry Online」のCBT「機能テスト」先行体験プレイレポートを掲載。実態はやはり高難度……しかし序盤は「ロスト」の心配無用？';
         $imageurls = [
             'https://www.4gamer.net/games/044/G004471/20110616072/SS/003.jpg',
         ];
@@ -418,7 +418,7 @@ class ImageLnkTest extends TestCase
     public function test4gamer2()
     {
         $url = 'https://www.4gamer.net/games/044/G004471/20110616072/screenshot.html';
-        $title = '「Wizardry Online」のCBT「機能テスト」先行体験プレイレポートを掲載。実態はやはり高難度……しかし序盤は「ロスト」の心配無用？ - 4Gamer.net';
+        $title = '画像集/「Wizardry Online」のCBT「機能テスト」先行体験プレイレポートを掲載。実態はやはり高難度……しかし序盤は「ロスト」の心配無用？';
         $imageurls = [
             'https://www.4gamer.net/games/044/G004471/20110616072/SS/001.jpg',
         ];
