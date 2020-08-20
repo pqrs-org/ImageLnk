@@ -31,7 +31,7 @@ class ImageLnk_Fetcher
         );
 
         // For some sites (itmedia, ...), we need to set referer.
-        $referer = $header['Referer'] ?? null;
+        $referer = $headers['Referer'] ?? null;
         if ($referer === null) {
             $headers['Referer'] = $url;
         }

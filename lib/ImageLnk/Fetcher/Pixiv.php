@@ -15,7 +15,7 @@ class ImageLnk_Fetcher_Pixiv_Response
         return $this->data;
     }
 
-    public function getHeader()
+    public function getHeaders()
     {
         return $this->headers;
     }
