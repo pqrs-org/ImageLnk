@@ -43,16 +43,20 @@ class ImageLnk_Fetcher
             $url = ImageLnk_Config::v('twimg_proxy');
         }
 
+        $options = [
+            'timeout' => 60,
+            'verify' => false,
+            'headers' => $headers,
+        ];
+        if (count($query) > 0) {
+            $options['query'] = $query;
+        }
+
         $client = new \GuzzleHttp\Client();
         $response = $client->request(
             'GET',
             $url,
-            [
-                'timeout' => 60,
-                'verify' => false,
-                'query' => $query,
-                'headers' => $headers,
-            ]
+            $options,
         );
 
         return $response;
