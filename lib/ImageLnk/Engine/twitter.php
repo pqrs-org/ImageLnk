@@ -17,31 +17,41 @@ class ImageLnk_Engine_twitter
         $response = new ImageLnk_Response();
         $response->setReferer($url);
 
-        $tmhOAuth = new tmhOAuth(
-            array(
-                'consumer_key' => ImageLnk_Config::v('twitter_consumer_key'),
-                'consumer_secret' => ImageLnk_Config::v('twitter_consumer_secret'),
-                'user_token' => ImageLnk_Config::v('twitter_user_token'),
-                'user_secret' => ImageLnk_Config::v('twitter_user_secret'),
-            )
+        $client = new GuzzleHttp\Client();
+        $apiResponse = $client->request(
+            'GET',
+            'https://api.twitter.com/2/tweets/' . $id,
+            [
+                'headers' => [
+                    'Authorization' => 'Bearer ' .ImageLnk_Config::v('twitter_bearer'),
+                ],
+                'query' => [
+                    'expansions' => 'author_id,attachments.media_keys',
+                    'media.fields' => 'url',
+                ],
+            ]
         );
-        $code = $tmhOAuth->request(
-            'GET', $tmhOAuth->url('1.1/statuses/show.json'), array(
-                'id' => $id,
-                'include_entities' => '1',
-                'tweet_mode' => 'extended',
-            )
-        );
+
+        $info = json_decode($apiResponse->getBody());
 
         $cacheFilePath = ImageLnk_Cache::getCacheFilePathFromURL('internal:twitter:' . $id);
-        ImageLnk_Cache::writeToCacheFile($cacheFilePath, $tmhOAuth->response['response']);
+        ImageLnk_Cache::writeToCacheFile($cacheFilePath, json_encode($info));
 
-        $info = json_decode($tmhOAuth->response['response']);
         if ($info !== false) {
-            $response->setTitle('twitter: ' . $info->user->name . ': ' . $info->full_text);
-            if (isset($info->extended_entities->media)) {
-                foreach ($info->extended_entities->media as $m) {
-                    $response->addImageURL($m->media_url . ':large');
+            $user = null;
+            foreach ($info->includes->users as $u) {
+                if ($info->data->author_id === $u->id) {
+                    $user = $u;
+                    break;
+                }
+            }
+
+            if ($user !== null) {
+                $response->setTitle('twitter: ' . $user->name . ': ' . $info->data->text);
+                if (isset($info->includes->media)) {
+                    foreach ($info->includes->media as $m) {
+                        $response->addImageURL($m->url . ':large');
+                    }
                 }
             }
         }
