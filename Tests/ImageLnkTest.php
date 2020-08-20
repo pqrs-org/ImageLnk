@@ -252,7 +252,7 @@ class ImageLnkTest extends TestCase
         $url = 'http://photozou.jp/photo/show/744707/79931926';
         $response = ImageLnk::getImageInfo($url);
 
-        $title = 'テスト裏にキュゥべぇ描いた... - 写真共有サイト「フォト蔵」';
+        $title = 'テスト裏にキュゥべぇ描いた... - Photo sharing "PhotoZou"';
         $actual = $response->getTitle();
         $this->assertSame($title, $actual);
 
@@ -272,7 +272,7 @@ class ImageLnkTest extends TestCase
         $url = 'http://photozou.jp/photo/photo_only/744707/79931926?size=450';
         $response = ImageLnk::getImageInfo($url);
 
-        $title = 'テスト裏にキュゥべぇ描いた... - 写真共有サイト「フォト蔵」';
+        $title = 'テスト裏にキュゥべぇ描いた... - Photo sharing "PhotoZou"';
         $actual = $response->getTitle();
         $this->assertSame($title, $actual);
 
