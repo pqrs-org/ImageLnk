@@ -67,8 +67,8 @@ class ImageLnk_Cache
             $response = ImageLnk_Fetcher::fetch($url, $header);
 
             $data['from_cache'] = false;
-            $data['data'] = $response->getBody();
-            $data['response'] = $response->getHeader();
+            $data['data'] = strval($response->getBody());
+            $data['response'] = $response->getHeaders();
 
             self::writeToCacheFile($path, serialize($data));
         }

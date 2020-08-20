@@ -6,4 +6,6 @@ cache_expire_minutes: 5
 auth_pixiv_id: imagelnk
 auth_pixiv_password: XXXXXXXX
 twitter_bearer: XXXXXXXX
+twimg_proxy: XXXXXXXX
+twimg_proxy_secret: XXXXXXXX
 imgur_client_id: XXXXXXXX

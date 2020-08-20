@@ -17,13 +17,13 @@ class ImageLnk_Engine_twitter
         $response = new ImageLnk_Response();
         $response->setReferer($url);
 
-        $client = new GuzzleHttp\Client();
+        $client = new \GuzzleHttp\Client();
         $apiResponse = $client->request(
             'GET',
             'https://api.twitter.com/2/tweets/' . $id,
             [
                 'headers' => [
-                    'Authorization' => 'Bearer ' .ImageLnk_Config::v('twitter_bearer'),
+                    'Authorization' => 'Bearer ' . ImageLnk_Config::v('twitter_bearer'),
                 ],
                 'query' => [
                     'expansions' => 'author_id,attachments.media_keys',
