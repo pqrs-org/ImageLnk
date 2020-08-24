@@ -27,7 +27,7 @@ class ImageLnk_Engine_twitter
                 ],
                 'query' => [
                     'expansions' => 'author_id,attachments.media_keys',
-                    'media.fields' => 'url',
+                    'media.fields' => 'url,preview_image_url',
                 ],
             ]
         );
@@ -50,7 +50,11 @@ class ImageLnk_Engine_twitter
                 $response->setTitle('twitter: ' . $user->name . ': ' . $info->data->text);
                 if (isset($info->includes->media)) {
                     foreach ($info->includes->media as $m) {
-                        $response->addImageURL($m->url . ':large');
+                        if (isset($m->url)) {
+                            $response->addImageURL($m->url);
+                        } elseif (isset($m->preview_image_url)) {
+                            $response->addImageURL($m->preview_image_url);
+                        }
                     }
                 }
             }

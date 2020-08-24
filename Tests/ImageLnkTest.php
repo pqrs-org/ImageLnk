@@ -504,7 +504,7 @@ class ImageLnkTest extends TestCase
         $url = 'https://twitter.com/tekezo/status/474587873925017600';
         $title = 'twitter: Takayama Fumihiko: KeyRemap4MacBook v9.99.11 or later allows you to change keys only when you are editing text (or not). http://t.co/WnuoqQxDRW';
         $imageurls = [
-            'https://pbs.twimg.com/media/BpYTJ-iIcAARRVg.png:large',
+            'https://pbs.twimg.com/media/BpYTJ-iIcAARRVg.png',
         ];
         $this->checkResponse($url, $title, $imageurls);
     }
@@ -514,7 +514,7 @@ class ImageLnkTest extends TestCase
         $url = 'https://mobile.twitter.com/tekezo/status/474587873925017600';
         $title = 'twitter: Takayama Fumihiko: KeyRemap4MacBook v9.99.11 or later allows you to change keys only when you are editing text (or not). http://t.co/WnuoqQxDRW';
         $imageurls = [
-            'https://pbs.twimg.com/media/BpYTJ-iIcAARRVg.png:large',
+            'https://pbs.twimg.com/media/BpYTJ-iIcAARRVg.png',
         ];
         $this->checkResponse($url, $title, $imageurls);
     }
@@ -524,10 +524,10 @@ class ImageLnkTest extends TestCase
         $url = 'https://twitter.com/ImageLnk/status/1296296267526500353';
         $title = 'twitter: ImageLnk: Images https://t.co/sHtxQG7qis';
         $imageurls = [
-            'https://pbs.twimg.com/media/Ef1efyBU0AEFBV6.jpg:large',
-            'https://pbs.twimg.com/media/Ef1ehO8VoAEp0YG.jpg:large',
-            'https://pbs.twimg.com/media/Ef1ej1WUYAATrzu.jpg:large',
-            'https://pbs.twimg.com/media/Ef1ek9QU4AITU84.jpg:large',
+            'https://pbs.twimg.com/media/Ef1efyBU0AEFBV6.jpg',
+            'https://pbs.twimg.com/media/Ef1ehO8VoAEp0YG.jpg',
+            'https://pbs.twimg.com/media/Ef1ej1WUYAATrzu.jpg',
+            'https://pbs.twimg.com/media/Ef1ek9QU4AITU84.jpg',
         ];
         $this->checkResponse($url, $title, $imageurls);
     }
