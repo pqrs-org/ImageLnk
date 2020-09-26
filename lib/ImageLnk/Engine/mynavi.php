@@ -24,7 +24,7 @@ class ImageLnk_Engine_mynavi
 
         $response->setTitle(ImageLnk_Helper::getTitle($html));
 
-        $img = $dom->find('.js-magnify img', 0);
+        $img = $dom->find('figure img', 0);
         if ($img) {
             $response->addImageURL($img->src);
         }
