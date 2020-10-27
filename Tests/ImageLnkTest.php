@@ -610,7 +610,7 @@ class ImageLnkTest extends TestCase
         $url = 'https://chan.sankakucomplex.com/post/show/5949839/';
         $title = 'Post 5949839';
         $imageurls = [
-            'regex:#https://cs\.sankakucomplex\.com/data/sample/2e/54/sample-2e540481ae41d3b9d652f1ac92a82b5c\.jpg\?.*#',
+            'regex:#https://s\.sankakucomplex\.com/data/sample/2e/54/sample-2e540481ae41d3b9d652f1ac92a82b5c\.jpg\?.*#',
         ];
         $this->checkResponse($url, $title, $imageurls);
     }
@@ -620,7 +620,7 @@ class ImageLnkTest extends TestCase
         $url = 'https://chan.sankakucomplex.com/ja/post/show/6135230';
         $title = 'Post 6135230';
         $imageurls = [
-            'regex:#https://cs\.sankakucomplex\.com/data/sample/7b/44/sample-7b44e9025158c4e7fc0ca1cbaafa3e9d.jpg\?.*#',
+            'regex:#https://s\.sankakucomplex\.com/data/sample/7b/44/sample-7b44e9025158c4e7fc0ca1cbaafa3e9d.jpg\?.*#',
         ];
         $this->checkResponse($url, $title, $imageurls);
     }
