@@ -586,7 +586,7 @@ class ImageLnkTest extends TestCase
     public function testMynavi2()
     {
         $url = 'https://news.mynavi.jp/photo/article/20110307-appinventor/images/006l.jpg';
-        $title = '拡大画像 006l | 経験ゼロでも大丈夫!? App Inventorで始めるAndroidアプリ開発 (1) まずは稼働環境を整備 | マイナビニュース';
+        $title = '拡大画像 006l | 経験ゼロでも大丈夫!? App Inventorで始めるAndroidアプリ開発 | マイナビニュース';
         $imageurls = [
             'https://news.mynavi.jp/article/20110307-appinventor/images/006l.jpg',
         ];
