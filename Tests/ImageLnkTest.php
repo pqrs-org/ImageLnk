@@ -345,7 +345,7 @@ class ImageLnkTest extends TestCase
         $url = 'https://maegamipattun.tumblr.com/post/7815975799';
         $title = '前髪ぱっつん専用タンブラー';
         $imageurls = [
-            'regex:#https://\d+.media.tumblr.com/tumblr_l1n113Lyub1qaxrtko1_640.jpg#',
+            'regex:#https://\d+.media.tumblr.com/tumblr_l1n113Lyub1qaxrtko1_1280.jpg#',
         ];
         $this->checkResponse($url, $title, $imageurls);
     }
