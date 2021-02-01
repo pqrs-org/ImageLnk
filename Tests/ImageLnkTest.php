@@ -576,7 +576,7 @@ class ImageLnkTest extends TestCase
     public function testMynavi1()
     {
         $url = 'https://news.mynavi.jp/photo/article/20111108-a008/images/005l.jpg';
-        $title = '拡大画像 005 | サイボウズ、クラウド基盤「cybozu.com」の運用を開始しPaaSを提供 | マイナビニュース';
+        $title = '拡大画像 005l | サイボウズ、クラウド基盤「cybozu.com」の運用を開始しPaaSを提供 | TECH+';
         $imageurls = [
             'https://news.mynavi.jp/article/20111108-a008/images/005l.jpg',
         ];
@@ -586,7 +586,7 @@ class ImageLnkTest extends TestCase
     public function testMynavi2()
     {
         $url = 'https://news.mynavi.jp/photo/article/20110307-appinventor/images/006l.jpg';
-        $title = '拡大画像 006l | 経験ゼロでも大丈夫!? App Inventorで始めるAndroidアプリ開発 | マイナビニュース';
+        $title = '拡大画像 006l | 経験ゼロでも大丈夫!? App Inventorで始めるAndroidアプリ開発 (1) | TECH+';
         $imageurls = [
             'https://news.mynavi.jp/article/20110307-appinventor/images/006l.jpg',
         ];
