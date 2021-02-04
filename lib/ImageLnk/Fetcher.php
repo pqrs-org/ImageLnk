@@ -37,7 +37,9 @@ class ImageLnk_Fetcher
         }
 
         $query = [];
-        if (preg_match('%^https?://pbs\.twimg\.com/%', $url)) {
+        if (preg_match('%^https?://pbs\.twimg\.com/%', $url) ||
+            preg_match('%^https?://\d+\.media\.tumblr\.com/%', $url)
+        ) {
             $query['url'] = $url;
             $query['secret'] = ImageLnk_Config::v('twimg_proxy_secret');
             $url = ImageLnk_Config::v('twimg_proxy');
