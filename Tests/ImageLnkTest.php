@@ -182,58 +182,58 @@ class ImageLnkTest extends TestCase
     }
 
     // ======================================================================
-    public function testPixiv1()
-    {
-        // Image (medium)
-
-        $url = 'https://www.pixiv.net/artworks/51691307';
-        $title = 'Image Example';
-        $imageurls = [
-            'https://i.pximg.net/c/600x1200_90/img-master/img/2015/07/30/22/16/27/51691307_p0_master1200.jpg',
-        ];
-        $referer = 'https://www.pixiv.net/artworks/51691307';
-        $this->checkResponse($url, $title, $imageurls, $referer);
-    }
-
-    public function testPixiv2()
-    {
-        // Manga
-
-        $url = 'https://www.pixiv.net/member_illust.php?mode=medium&illust_id=51691357';
-        $title = 'Manga Example';
-        $imageurls = [
-            'https://i.pximg.net/c/600x1200_90/img-master/img/2015/07/30/22/18/43/51691357_p0_master1200.jpg',
-            'https://i.pximg.net/c/600x1200_90/img-master/img/2015/07/30/22/18/43/51691357_p1_master1200.jpg',
-        ];
-        $referer = 'https://www.pixiv.net/artworks/51691357';
-        $this->checkResponse($url, $title, $imageurls, $referer);
-    }
-
-    public function testPixiv3()
-    {
-        // touch
-
-        $url = 'https://touch.pixiv.net/member_illust.php?mode=medium&illust_id=51691307';
-        $title = 'Image Example';
-        $imageurls = [
-            'https://i.pximg.net/c/600x1200_90/img-master/img/2015/07/30/22/16/27/51691307_p0_master1200.jpg',
-        ];
-        $referer = 'https://www.pixiv.net/artworks/51691307';
-        $this->checkResponse($url, $title, $imageurls, $referer);
-    }
-
-    public function testPixiv4()
-    {
-        // Image (medium)
-
-        $url = 'https://www.pixiv.net/member_illust.php?mode=medium&illust_id=51691307';
-        $title = 'Image Example';
-        $imageurls = [
-            'https://i.pximg.net/c/600x1200_90/img-master/img/2015/07/30/22/16/27/51691307_p0_master1200.jpg',
-        ];
-        $referer = 'https://www.pixiv.net/artworks/51691307';
-        $this->checkResponse($url, $title, $imageurls, $referer);
-    }
+    #    public function testPixiv1()
+    #    {
+    #        // Image (medium)
+    #
+    #        $url = 'https://www.pixiv.net/artworks/51691307';
+    #        $title = 'Image Example';
+    #        $imageurls = [
+    #            'https://i.pximg.net/c/600x1200_90/img-master/img/2015/07/30/22/16/27/51691307_p0_master1200.jpg',
+    #        ];
+    #        $referer = 'https://www.pixiv.net/artworks/51691307';
+    #        $this->checkResponse($url, $title, $imageurls, $referer);
+    #    }
+    #
+    #    public function testPixiv2()
+    #    {
+    #        // Manga
+    #
+    #        $url = 'https://www.pixiv.net/member_illust.php?mode=medium&illust_id=51691357';
+    #        $title = 'Manga Example';
+    #        $imageurls = [
+    #            'https://i.pximg.net/c/600x1200_90/img-master/img/2015/07/30/22/18/43/51691357_p0_master1200.jpg',
+    #            'https://i.pximg.net/c/600x1200_90/img-master/img/2015/07/30/22/18/43/51691357_p1_master1200.jpg',
+    #        ];
+    #        $referer = 'https://www.pixiv.net/artworks/51691357';
+    #        $this->checkResponse($url, $title, $imageurls, $referer);
+    #    }
+    #
+    #    public function testPixiv3()
+    #    {
+    #        // touch
+    #
+    #        $url = 'https://touch.pixiv.net/member_illust.php?mode=medium&illust_id=51691307';
+    #        $title = 'Image Example';
+    #        $imageurls = [
+    #            'https://i.pximg.net/c/600x1200_90/img-master/img/2015/07/30/22/16/27/51691307_p0_master1200.jpg',
+    #        ];
+    #        $referer = 'https://www.pixiv.net/artworks/51691307';
+    #        $this->checkResponse($url, $title, $imageurls, $referer);
+    #    }
+    #
+    #    public function testPixiv4()
+    #    {
+    #        // Image (medium)
+    #
+    #        $url = 'https://www.pixiv.net/member_illust.php?mode=medium&illust_id=51691307';
+    #        $title = 'Image Example';
+    #        $imageurls = [
+    #            'https://i.pximg.net/c/600x1200_90/img-master/img/2015/07/30/22/16/27/51691307_p0_master1200.jpg',
+    #        ];
+    #        $referer = 'https://www.pixiv.net/artworks/51691307';
+    #        $this->checkResponse($url, $title, $imageurls, $referer);
+    #    }
 
     // ======================================================================
     public function testYoutube1()

@@ -63,4 +63,4 @@ class ImageLnk_Engine_pixiv
         return $pages;
     }
 }
-ImageLnk_Engine::push('ImageLnk_Engine_pixiv');
+# ImageLnk_Engine::push('ImageLnk_Engine_pixiv');
