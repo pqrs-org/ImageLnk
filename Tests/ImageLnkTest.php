@@ -594,17 +594,6 @@ class ImageLnkTest extends TestCase
     }
 
     // ======================================================================
-    public function testStocksFinanceYahooCoJp()
-    {
-        $url = 'https://stocks.finance.yahoo.co.jp/stocks/detail/?code=3656.T&d=1m';
-        $title = 'ＫＬａｂ(株)【3656】：株式/株価 - Yahoo!ファイナンス';
-        $imageurls = [
-            'https://chart.yahoo.co.jp/?code=3656.T&tm=1m&size=e',
-        ];
-        $this->checkResponse($url, $title, $imageurls);
-    }
-
-    // ======================================================================
     public function testSankakucomplex1()
     {
         $url = 'https://chan.sankakucomplex.com/post/show/5949839/';
