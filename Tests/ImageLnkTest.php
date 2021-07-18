@@ -293,7 +293,7 @@ class ImageLnkTest extends TestCase
         $url = 'https://game.watch.impress.co.jp/img/gmw/docs/448/930/html/psn01.jpg.html';
         $title = '[拡大画像] SCEJ、PlayStation NetworkとQriocityのサービスを5月28日から再開。安全管理措置を導入し、ゲームコンテンツの無償提供も';
         $imageurls = [
-            'https://game.watch.impress.co.jp/img/gmw/docs/448/930/psn01.jpg',
+            'https://asset.watch.impress.co.jp/img/gmw/docs/448/930/psn01.jpg',
         ];
         $this->checkResponse($url, $title, $imageurls);
     }
@@ -303,7 +303,7 @@ class ImageLnkTest extends TestCase
         $url = 'https://dc.watch.impress.co.jp/img/dcw/docs/422/882/html/009.jpg.html';
         $title = '[画像] 写真で見る写真で見るカシオ「TRYX」（β機）(9/31) - デジカメ Watch Watch';
         $imageurls = [
-            'https://dc.watch.impress.co.jp/img/dcw/docs/422/882/009.jpg',
+            'https://asset.watch.impress.co.jp/img/dcw/docs/422/882/009.jpg',
         ];
         $this->checkResponse($url, $title, $imageurls);
     }
@@ -313,7 +313,7 @@ class ImageLnkTest extends TestCase
         $url = 'https://k-tai.watch.impress.co.jp/img/ktw/docs/460/236/html/sanzo.jpg.html';
         $title = '[拡大画像]サンヨーホームズ、Android採用のロボットを搭載した住宅(1/2) -  ケータイ Watch';
         $imageurls = [
-            'https://k-tai.watch.impress.co.jp/img/ktw/docs/460/236/sanzo.jpg',
+            'https://asset.watch.impress.co.jp/img/ktw/docs/460/236/sanzo.jpg',
         ];
         $this->checkResponse($url, $title, $imageurls);
     }
